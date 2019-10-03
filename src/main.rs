@@ -108,39 +108,38 @@ fn main() {
     let y_values = vec![-10000,10000];
     let z_values = vec![-200000,200000];
     let mut positions = Vec::new();
-    for _ in 0..10 {
+    for _ in 0..100 {
         let x = get_random_in_range(&x_values);
         let y = get_random_in_range(&y_values);
         let z = get_random_in_range(&z_values);
         let position = vec![x, y, z];
         positions.push(position)
     }
-    println!("{:?}", positions);
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
         let mut inlength = 0;
         let mut outlength = 0;
         let p = j as i32;
+        let current_pos = &positions[j];
         if p + 1 == positions.len() as i32 {
-            let current_pos = &positions[j];
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
             inlength = (distance / 2.0 * 1.3) as i32;
+            outlength = (distance / 2.0 * 1.3) as i32;
         }
         else if p - 1 >= 0 {
-            let current_pos = &positions[j];
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
             inlength = (distance / 2.0 * 1.3) as i32;
             outlength = (distance / 2.0 * 1.3) as i32;
         }
         else {
-            outlength = 60000;
+
         }
-        lengths.push(vec![inlength, outlength]) 
+        lengths.push(vec![inlength, outlength]);
+        println!("x=\"{}\" y=\"{}\" z=\"{}\"", current_pos[0], current_pos[1], current_pos[2])
     }
     println!("{:?}", lengths);
-    println!("")
 }
 
 fn get_random_in_range(range: &Vec<i32>) -> (i32) {
@@ -155,6 +154,3 @@ fn distance(point_b: &Vec<i32>, point_a: &Vec<i32>) -> (f32) {
     value
 }
 
-
-
-893], [-70649, -1488, 127693], [90648, -6587, 123797], [155973, 3372, 196175], [5529], [-81620, 6389, -5904]]
