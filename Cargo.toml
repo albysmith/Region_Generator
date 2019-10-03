@@ -5,3 +5,7 @@ authors = ["albysmith <48844001+albysmith@users.noreply.github.com>"]
 edition = "2018"
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }
+rand = "0.7.2"
+serde-xml-rs = "0.3.1"
+toml = "0.5.3"
