@@ -107,6 +107,7 @@ fn main() {
     let x_values = vec![-500000,500000];
     let y_values = vec![-10000,10000];
     let z_values = vec![-500000,500000];
+    let variant = vec![1.0, 1.5];
     let mut positions = Vec::new();
     for _ in 0..100 {
         let x = get_random_in_range(&x_values);
@@ -123,20 +124,23 @@ fn main() {
         if p + 1 == positions.len() as i32 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0 * 1.3) as i32;
+            let variance =  get_variance_in_range(&variant);
+            inlength = (distance / 2.0 * variance) as i32;
         }
         else if p - 1 >= 0 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0 * 1.3) as i32;
+
+            let variance =  get_variance_in_range(&variant);
+            inlength = (distance / 2.0 * variance) as i32;
         }
         else {
 
         }
         lengths.push(inlength);
-        println!("x=\"{}\" y=\"{}\" z=\"{}\"", current_pos[0], current_pos[1], current_pos[2])
+        // println!("x=\"{}\" y=\"{}\" z=\"{}\"", current_pos[0], current_pos[1], current_pos[2])
     }
-    println!("{:?}", lengths);
+    // println!("{:?}", lengths);
 
     let mut region_string = "".to_string();
     for q in 0..positions.len() {
@@ -155,6 +159,12 @@ fn main() {
 }
 
 fn get_random_in_range(range: &Vec<i32>) -> (i32) {
+    let mut prng = rand::thread_rng();
+    let value = prng.gen_range(range[0], range[1]);
+    value
+}
+
+fn get_variance_in_range(range: &Vec<f32>) -> (f32) {
     let mut prng = rand::thread_rng();
     let value = prng.gen_range(range[0], range[1]);
     value
