@@ -104,9 +104,9 @@ Create this first, then play with the rest; that will be easier!
 */ 
 
 fn main() {
-    let x_values = vec![-200000,200000];
+    let x_values = vec![-500000,500000];
     let y_values = vec![-10000,10000];
-    let z_values = vec![-200000,200000];
+    let z_values = vec![-500000,500000];
     let mut positions = Vec::new();
     for _ in 0..100 {
         let x = get_random_in_range(&x_values);
@@ -118,28 +118,40 @@ fn main() {
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
         let mut inlength = 0;
-        let mut outlength = 0;
         let p = j as i32;
         let current_pos = &positions[j];
         if p + 1 == positions.len() as i32 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
             inlength = (distance / 2.0 * 1.3) as i32;
-            outlength = (distance / 2.0 * 1.3) as i32;
         }
         else if p - 1 >= 0 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
             inlength = (distance / 2.0 * 1.3) as i32;
-            outlength = (distance / 2.0 * 1.3) as i32;
         }
         else {
 
         }
-        lengths.push(vec![inlength, outlength]);
+        lengths.push(inlength);
         println!("x=\"{}\" y=\"{}\" z=\"{}\"", current_pos[0], current_pos[1], current_pos[2])
     }
     println!("{:?}", lengths);
+
+    let mut region_string = "".to_string();
+    for q in 0..positions.len() {
+        let position = &positions[q];
+        let inlength = lengths[q];
+        let mut outlength = 0;
+        if ((q + 1) as i32) < positions.len() as i32 {
+            outlength = lengths[q+1];
+        }
+        let add_string = format!("<splineposition x=\"{}\" y=\"{}\" z=\"{}\" inlength=\"{}\" outlength=\"{}\" /> \n", position[0], position[1], position [2], inlength, outlength);
+        region_string.push_str(add_string.as_str());
+    }
+    let out_path = "E:/Rust/Projects/OutPut Files/Regions/";
+    let mut outputfile = File::create(format!("{}{}", &out_path, "region_definitions.xml")).unwrap();
+    outputfile.write_all(region_string.as_bytes()).unwrap();
 }
 
 fn get_random_in_range(range: &Vec<i32>) -> (i32) {
