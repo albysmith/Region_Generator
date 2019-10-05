@@ -1,0 +1,791 @@
+[defaults]
+[defaults.asteroids]
+#asteroids
+[defaults.asteroids.asteroid_highyield_v1]
+density_factor = 3.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 8
+noisescale = 5000 
+minnoisevalue = 0.95 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_highyield_sil_v1]
+density_factor = 100.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 4000 
+minnoisevalue = 0.0 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_highyield_niv_v1]
+density_factor = 100.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 4000 
+minnoisevalue = 0.0 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "nividium"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_ore_xxl]
+density_factor = 1.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 10000 
+minnoisevalue = 0.95 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_ore_xl]
+density_factor = 2.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 15000 
+minnoisevalue = 0.883 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_ore_l]
+density_factor = 1.5 
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 50000 
+minnoisevalue = 0.85 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_ore_m]
+density_factor = 4.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 8
+noisescale = 1000 
+minnoisevalue = 0.01 
+maxnoisevalue = 0.8
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_ore_s]
+density_factor = 6.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 16
+noisescale = 1000 
+minnoisevalue = 0.01 
+maxnoisevalue = 0.8
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_ore_xs]
+density_factor = 8.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 32
+noisescale = 1000 
+minnoisevalue = 0.01 
+maxnoisevalue = 0.5 
+distancefactor = 1.0
+resource = "ore"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_silicon_xl]
+density_factor = 1.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 50000 
+minnoisevalue = 0.9 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_silicon_l]
+density_factor = 2.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 1500 
+minnoisevalue = 0.6 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_silicon_m]
+density_factor = 4.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 8
+noisescale = 1500 
+minnoisevalue = 0.6 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_silicon_s]
+density_factor = 6.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 32
+noisescale = 1500 
+minnoisevalue = 0.5 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_silicon_xs]
+density_factor = 1.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 32
+noisescale = 1500 
+minnoisevalue = 0.35 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "silicon"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_nividium_l]
+density_factor = 0.625 
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 10000 
+minnoisevalue = 0.9 
+maxnoisevalue = 1.0
+distancefactor = 1.0
+resource = "nividium"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_nividium_m]
+density_factor = 12.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 8
+noisescale = 1500 
+minnoisevalue = 0.6 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "nividium"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_nividium_s]
+density_factor = 15.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 16
+noisescale = 1500 
+minnoisevalue = 0.5 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "nividium"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_nividium_xs]
+density_factor = 5.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 32
+noisescale = 1500 
+minnoisevalue = 0.35 
+maxnoisevalue = 1.0 
+distancefactor = 1.0
+resource = "nividium"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_ice_xl]
+density_factor = 0.0
+density_randomization = [0.1,0.5]
+rotation = 360
+rotationvariation = 4
+noisescale = 35000 
+minnoisevalue = 0.05 
+maxnoisevalue = 0.25 
+distancefactor = 1.0
+resource = "ice"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_ice_l]
+density_factor = 3.0
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 8
+noisescale = 5000 
+minnoisevalue = 0.75 
+maxnoisevalue = 1 
+distancefactor = 2.0
+resource = "ice"
+resource_amount = "veryhigh"
+
+[defaults.asteroids.asteroid_ice_m]
+density_factor = 18.0
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 16
+noisescale = 5000 
+minnoisevalue = 0.75 
+maxnoisevalue = 1 
+distancefactor = 2.0
+resource = "ice"
+resource_amount = "high"
+
+[defaults.asteroids.asteroid_ice_s]
+density_factor = 24.0
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 32
+noisescale = 5000 
+minnoisevalue = 0.75 
+maxnoisevalue = 1 
+distancefactor = 2.0
+resource = "ice"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_ice_xs]
+density_factor = 30.0
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 64
+noisescale = 5000 
+minnoisevalue = 0.75 
+maxnoisevalue = 1 
+distancefactor = 2.0
+resource = "ice"
+resource_amount = "medium"
+
+[defaults.asteroids.asteroid_xenon_xxl]
+density_factor = 0.10 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+
+[defaults.asteroids.asteroid_xenon_xl]
+density_factor = 0.10 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.asteroids.asteroid_xenon_l]
+density_factor = 0.10 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.asteroids.asteroid_xenon_m]
+density_factor = 0.10
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.asteroids.asteroid_xenon_s]
+density_factor = 0.10 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.asteroids.asteroid_xenon_xs]
+density_factor = 0.10 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 50000 
+minnoisevalue = 0.93 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+#DEBRIS
+[debris]
+[defaults.debris.debris_xl]
+density_factor = 0.408 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 1000 
+minnoisevalue = 0.5 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_l]
+density_factor = 0.7 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 1000 
+minnoisevalue = 0.5 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_m]
+density_factor = 6.0 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 1000 
+minnoisevalue = 0.5 
+maxnoisevalue = 1 
+distancefactor = 1.0
+
+[defaults.debris.debris_s]
+density_factor = 0.5 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10
+noisescale = 1000 
+minnoisevalue = 0.5 
+maxnoisevalue = 1 
+distancefactor = 1.0
+
+[defaults.debris.debris_station_l]
+density_factor = 3.0 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 0
+noisescale = 1000 
+minnoisevalue = 0.9 
+maxnoisevalue = 1 
+distancefactor = 1.0
+
+[defaults.debris.env_debris_station_l_05]
+density_factor = 0.051 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 0
+noisescale = 1000 
+minnoisevalue = 0.5 
+maxnoisevalue = 1 
+distancefactor = 1.0
+
+[defaults.debris.debris_teladi_xl]
+density_factor = 3.0 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10 
+noisescale = 1000 
+minnoisevalue = 0.0 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_paranid_xl]
+density_factor = 0.9
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 1 
+noisescale = 10000 
+minnoisevalue = 0.540 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_paranid_l]
+density_factor = 0.30
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 1 
+noisescale = 10000 
+minnoisevalue = 0.540 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_split_xl]
+density_factor = 1.15
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 1 
+noisescale = 1000 
+minnoisevalue = 0.0 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_split_s]
+density_factor = 2.0 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 1 
+noisescale = 1000 
+minnoisevalue = 0.0 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_xenon_xl]
+density_factor = 0.7  
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10 
+noisescale = 10000 
+minnoisevalue = 0.50 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_xenon_l]
+density_factor = 0.3  
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10 
+noisescale = 10000 
+minnoisevalue = 0.50 
+maxnoisevalue = 1 
+distancefactor = 2.0
+
+[defaults.debris.debris_xenon_m]
+density_factor = 0.1 
+density_randomization = [0.1,0.5]
+rotation = 360 
+rotationvariation = 10 
+noisescale = 10000 
+minnoisevalue = 0.50 
+maxnoisevalue = 1 
+distancefactor = 2.0
+#LOCKBOX
+[lockbox]
+[defaults.lockbox.lockboxes_rare]
+density_factor = 0.000025 
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 70 
+noisescale = 1000 
+minnoisevalue = 0.1 
+maxnoisevalue = 1
+distancefactor = 0.0
+
+[defaults.lockbox.lockboxes_extra]
+density_factor = 0.00005
+density_randomization = [0.1,0.5]
+rotation = 0 
+rotationvariation = 70 
+noisescale = 1000 
+minnoisevalue = 0.1 
+maxnoisevalue = 1
+distancefactor = 0.0
+
+
+
+#NEBULA
+[defaults.nebula]
+[defaults.nebula.fogtest_nebula_vol_macro]
+localred=255
+localgreen=255
+localblue=255 
+localdensity=1.0 
+uniformred=49 
+uniformgreen=49
+uniformblue=49
+uniformdensity=0.2
+backgroundfog=true
+resources="methane"
+noisescale=4000 
+minnoisevalue=0.0 
+maxnoisevalue=1
+
+[defaults.nebula.fog_smallstones_v1_macro] # might be broken
+localred=255 
+localgreen=255
+localblue=255
+localdensity=15.0 
+uniformred=10 
+uniformgreen=14 
+uniformblue=20 
+uniformdensity=0.15 
+backgroundfog=false 
+resources="hydrogen"  
+noisescale=4000 
+minnoisevalue=0.0 
+maxnoisevalue=1
+
+[defaults.nebula.fogvolume_small_macro]
+localred=100 
+localgreen=100
+localblue=100
+localdensity=0.8
+uniformred=49
+uniformgreen=49
+uniformblue=49
+uniformdensity=0.2
+backgroundfog=true 
+resources="methane" 
+noisescale=4000 
+minnoisevalue=0.0 
+maxnoisevalue=1
+
+[defaults.nebula.fogpattern_v2_macro]
+localred=161
+localgreen=194
+localblue=226
+localdensity=0.075
+uniformred=10
+uniformgreen=14
+uniformblue=20
+uniformdensity=0.3
+backgroundfog=false
+resources="helium" 
+noisescale=4000 
+minnoisevalue=0.0 
+maxnoisevalue=1
+
+#POSITIONALS
+[defaults.positionals]
+[defaults.positionals.fog_outside_set3_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_whiteblue_macro]
+lodrule="nebulabig"
+densityfactor=0.15
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.50
+maxnoisevalue=1
+distancefactor=0.2
+[defaults.positionals.fog_outside_set1_lightbrown_macro] # might not work
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_big_lightorange_macro]
+lodrule="nebula"
+densityfactor=0.10
+rotation=0
+rotationvariation=0.5
+noisescale=50000
+minnoisevalue=0.80
+maxnoisevalue=1.0
+distancefactor=0.250
+[defaults.positionals.fog_outside_set1_lightorange_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_lightblue_macro] # might not work
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_big_lightpurple_macro]  # might not work
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_blue_macro] # might not work
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_burgundy_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_green_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_darkblue_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_red_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_grey_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_dust_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+[defaults.positionals.fog_outside_set1_lightbrown2_macro]
+lodrule="nebula"
+densityfactor=0.50
+rotation=0
+rotationvariation=0.5
+noisescale=1000
+minnoisevalue=0.10
+maxnoisevalue=0.5
+distancefactor=0.5
+
+
+#SOUNDS
+[defaults.sounds]
+[zoned_sound_01]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_02]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_03]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_04]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_05]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_06]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[zoned_sound_07]
+noisescale=26000 
+minnoisevalue=0.8 
+playtime=20
+[legacy_music_pool]
+noisescale=26000 
+minnoisevalue=0.6 
+playtime=120
+priority= 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

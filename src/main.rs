@@ -48,7 +48,148 @@ struct SplineSquared {
     y_values: Vec<i64>,
     y_variance: Vec<i64>,
 }
-
+#[derive(Deserialize, Debug, Default, Clone)]
+struct DefaultsToml {
+    defaults: Defaults,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Defaults {
+    asteroids: Asteroids,
+    debris: Debris,
+    lockbox: Lockbox,
+    nebula: Nebula,
+    positionals: Positionals,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Asteroids {
+    asteroid_highyield_v1: ResourceAsteroid,
+    asteroid_highyield_sil_v1: ResourceAsteroid,
+    asteroid_highyield_niv_v1: ResourceAsteroid,
+    asteroid_ore_xxl: ResourceAsteroid,
+    asteroid_ore_xl: ResourceAsteroid,
+    asteroid_ore_l: ResourceAsteroid,
+    asteroid_ore_m: ResourceAsteroid,
+    asteroid_ore_s: ResourceAsteroid,
+    asteroid_ore_xs: ResourceAsteroid,
+    asteroid_silicon_xl: ResourceAsteroid,
+    asteroid_silicon_l: ResourceAsteroid,
+    asteroid_silicon_m: ResourceAsteroid,
+    asteroid_silicon_s: ResourceAsteroid,
+    asteroid_silicon_xs: ResourceAsteroid,
+    asteroid_nividium_l: ResourceAsteroid,
+    asteroid_nividium_m: ResourceAsteroid,
+    asteroid_nividium_s: ResourceAsteroid,
+    asteroid_nividium_xs: ResourceAsteroid,
+    asteroid_ice_xl: ResourceAsteroid,
+    asteroid_ice_l: ResourceAsteroid,
+    asteroid_ice_m: ResourceAsteroid,
+    asteroid_ice_s: ResourceAsteroid,
+    asteroid_ice_xs: ResourceAsteroid,
+    asteroid_xenon_xxl: NonResource,
+    asteroid_xenon_xl: NonResource,
+    asteroid_xenon_l: NonResource,
+    asteroid_xenon_m: NonResource,
+    asteroid_xenon_s: NonResource,
+    asteroid_xenon_xs: NonResource,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Debris {
+    debris_xl: NonResource,
+    debris_l: NonResource,
+    debris_m: NonResource,
+    debris_s: NonResource,
+    debris_station_l: NonResource,
+    env_debris_station_l_05: NonResource,
+    debris_teladi_xl: NonResource,
+    debris_paranid_xl: NonResource,
+    debris_paranid_l: NonResource,
+    debris_split_xl: NonResource,
+    debris_split_s: NonResource,
+    debris_xenon_xl: NonResource,
+    debris_xenon_l: NonResource,
+    debris_xenon_m: NonResource,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Lockbox {
+    lockboxes_rare: NonResource,
+    lockboxes_extra: NonResource,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Nebula {
+    fogtest_nebula_vol_macro: ResourceNebula,
+    fog_smallstones_v1_macro: ResourceNebula,
+    fogvolume_small_macro: ResourceNebula,
+    fogpattern_v2_macro: ResourceNebula,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Positionals {
+    fog_outside_set3_macro: OtherNebula,
+    fog_outside_set1_whiteblue_macro: OtherNebula,
+    fog_outside_set1_lightbrown_macro: OtherNebula,
+    fog_outside_set1_big_lightorange_macro: OtherNebula,
+    fog_outside_set1_lightorange_macro: OtherNebula,
+    fog_outside_set1_lightblue_macro: OtherNebula,
+    fog_outside_set1_big_lightpurple_macro: OtherNebula,
+    fog_outside_set1_blue_macro: OtherNebula,
+    fog_outside_set1_burgundy_macro: OtherNebula,
+    fog_outside_set1_green_macro: OtherNebula,
+    fog_outside_set1_darkblue_macro: OtherNebula,
+    fog_outside_set1_red_macro: OtherNebula,
+    fog_outside_set1_grey_macro: OtherNebula,
+    fog_outside_set1_dust_macro: OtherNebula,
+    fog_outside_set1_lightbrown2_macro: OtherNebula,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct ResourceAsteroid {
+    density_factor: f64, 
+    density_randomization: Vec<f64>,
+    rotation: i64, 
+    rotationvariation: i64, 
+    noisescale: i64,
+    minnoisevalue: f64, 
+    maxnoisevalue: f64, 
+    distancefactor: f64, 
+    resource: String,
+    resource_amount: String,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct NonResource {
+    density_factor: f64, 
+    density_randomization: Vec<f64>,
+    rotation: i64, 
+    rotationvariation: i64, 
+    noisescale: i64,
+    minnoisevalue: f64, 
+    maxnoisevalue: f64, 
+    distancefactor: f64, 
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct ResourceNebula {
+    localred: i64,
+    localgreen: i64,
+    localblue: i64,
+    localdensity: f64,
+    uniformred: i64,
+    uniformgreen: i64,
+    uniformblue: i64,
+    uniformdensity: f64,
+    backgroundfog: bool,
+    resources: String,
+    noisescale: i64,
+    minnoisevalue: f64,
+    maxnoisevalue: i64,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct OtherNebula {
+    lodrule: String,
+    densityfactor: f64,
+    rotation: i64,
+    rotationvariation: f64,
+    noisescale: i64,
+    minnoisevalue: f64,
+    maxnoisevalue: f64,
+    distancefactor: f64,
+}
 
 
 /*
@@ -151,6 +292,8 @@ fn main() {
     let mut prng = rand::thread_rng();
     let toml_str = include_str!("Config.toml");
     let toml_parsed: Toml = toml::from_str(&toml_str).unwrap();
+    let defaults_str = include_str!("RegionConfig.toml");
+    let defaults_parsed: DefaultsToml = toml::from_str(&defaults_str).unwrap_or_default();
     
 
 
