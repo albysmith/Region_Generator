@@ -15,6 +15,20 @@ width_deadzone = [-100000000, 100000000]
 y_values = [-10000,10000]
 y_variance = [-1000, 1000]
 
+[spline_squared]
+# step_range * step_rate = the min and max x values for your region
+# default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
+step_range = [-50, 50]
+step_rate = 10000
+h_offset_range = [-200000, 200000]
+h_deadzone_range = [-100000, 100000]
+v_offset_range = [-200000, 200000]
+v_deadzone_range = [-100000, 100000]
+width_variance = [-7500000, 7500000]
+width_deadzone = [-10000, 10000]
+y_values = [-10000,10000]
+y_variance = [-1000, 1000]
+
 
 
 [user_gen_region]

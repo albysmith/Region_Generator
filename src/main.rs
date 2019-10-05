@@ -1,8 +1,8 @@
 use rand::seq::SliceRandom;
 use rand::Rng;
-use std::borrow::Borrow;
-use std::collections::HashMap;
-use std::fs;
+// use std::borrow::Borrow;
+// use std::collections::HashMap;
+// use std::fs;
 use std::fs::File;
 use std::io::Write;
 #[macro_use]
@@ -14,6 +14,7 @@ extern crate serde_xml_rs;
 struct Toml {
     config: Config,
     spline_cubed: SplineCubed,
+    spline_squared: SplineSquared,
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -34,6 +35,20 @@ struct SplineCubed {
     y_values: Vec<i64>,
     y_variance: Vec<i64>,
 }
+#[derive(Deserialize, Debug, Default, Clone)]
+struct SplineSquared {
+    step_range: Vec<i64>,
+    step_rate: i64,
+    h_offset_range: Vec<i64>,
+    h_deadzone_range: Vec<i64>,
+    v_offset_range: Vec<i64>,
+    v_deadzone_range: Vec<i64>,
+    width_variance: Vec<i64>,
+    width_deadzone: Vec<i64>,
+    y_values: Vec<i64>,
+    y_variance: Vec<i64>,
+}
+
 
 
 /*
@@ -139,30 +154,27 @@ fn main() {
     
 
 
-    let chosen_region = ["cubed", "cubed"].choose(&mut prng).unwrap();
+    let chosen_profile = ["squared", "cubed"].choose(&mut prng).unwrap();
 
-    let positions = match chosen_region {
-      &"cubed" => get_positions_spline_cubed(&toml_parsed.spline_cubed),
-      _        => panic!("broken at profile select"),
+    let positions = match chosen_profile {
+      &"cubed"   => get_positions_spline_cubed(&toml_parsed.spline_cubed),
+      &"squared" => get_positions_spline_squared(&toml_parsed.spline_squared),
+      _          => panic!("broken at profile select"),
     };
 
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
         let mut inlength = 0;
-        let p = j as i64;
         let current_pos = &positions[j];
-        if p + 1 == positions.len() as i64 {
+        if j as i64 + 1 == positions.len() as i64 {
             let prior_pos = &positions[j-1];
-            let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0) as i64;
+            inlength = (distance(current_pos, prior_pos) / 2.0) as i64;
         }
-        else if p - 1 >= 0 {
+        else if j as i64 - 1 >= 0 {
             let prior_pos = &positions[j-1];
-            let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0) as i64;
+            inlength = (distance(current_pos, prior_pos) / 2.0) as i64;
         }
         else {
-
         }
         lengths.push(inlength);
     }
@@ -175,7 +187,7 @@ fn main() {
         if ((q + 1) as i64) < positions.len() as i64 {
             outlength = lengths[q+1];
         }
-        let add_string = format!("<splineposition x=\"{}\" y=\"{}\" z=\"{}\" inlength=\"{}\" outlength=\"{}\" /> \n", position[0], position[1], position [2], inlength, outlength);
+        let add_string = format!("<splineposition x=\"{}\" y=\"{}\" z=\"{}\" inlength=\"{}\" outlength=\"{}\" /> \n", position.0, position.1, position.2, inlength, outlength);
         region_string.push_str(add_string.as_str());
     }
     let out_path = "E:/Rust/Projects/OutPut Files/Regions/";
@@ -189,16 +201,17 @@ fn get_random_in_range(range: &Vec<i64>) -> (i64) {
     value
 }
 
-// fn get_variance_in_range(range: &Vec<f64>) -> (f64) {
+// fn get_float_in_range(range: &Vec<f64>) -> (f64) {
 //     let mut prng = rand::thread_rng();
 //     let value = prng.gen_range(range[0], range[1]);
 //     value
 // }
 
-fn distance(point_a: &Vec<f64>, point_b: &Vec<f64>) -> (f64) {
-    let dx = point_a[0] - point_b[0];
-    let dy = point_a[2] - point_b[2];
-    let value = ((dy/dx).powi(2) + 1.0).sqrt() * dx;
+fn distance(point_a: &(i64, i64, i64), point_b: &(i64, i64, i64)) -> (f64) {
+    let dx = (point_a.0 - point_b.0) as f64;
+    let dy = (point_a.1 - point_b.1) as f64;
+    let dz = (point_a.2 - point_b.2) as f64;
+    let value = ((((dz/dx).powi(2)) + 1.0).sqrt() * dx) + dy;
     value
 }
 
@@ -208,24 +221,47 @@ fn get_spline_offset(range: &Vec<i64>, deadzone: &Vec<i64>) -> f64 {
     value
 }
 
-fn get_positions_spline_cubed(config: &SplineCubed) -> Vec<Vec<f64>> {
+fn get_positions_spline_cubed(config: &SplineCubed) -> Vec<(i64, i64, i64)> {
     // spline_cubed
     // if we pick spline_cubed, then dump toml_parsed.spline_cubed and output a list of x, y, z positions
     let min_step = config.step_range[0];
     let max_step = config.step_range[1];
-    let step = config.step_rate as f64;
+    let step = config.step_rate;
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
     let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
-    let mut y = get_random_in_range(&config.y_values) as f64;
+    let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
 
     let mut positions = Vec::new();
     for i in min_step..=max_step {
-        let x = i as f64 * step;
-        y += y_variance as f64;
-        let z = ((x + h_offset).powi(3)) / width + v_offset;
-        let position = vec![x, y, z];
+        let x = i * step;
+        y += y_variance;
+        let z = (((x as f64 + h_offset).powi(3)) / width + v_offset) as i64;
+        let position = (x, y, z);
+        positions.push(position)
+    }
+    positions
+}
+
+fn get_positions_spline_squared(config: &SplineSquared) -> Vec<(i64, i64, i64)> {
+    // spline_squared
+    // if we pick spline_squared, then dump toml_parsed.spline_squared and output a list of x, y, z positions
+    let min_step = config.step_range[0];
+    let max_step = config.step_range[1];
+    let step = config.step_rate;
+    let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
+    let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
+    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let mut y = get_random_in_range(&config.y_values);
+    let y_variance = get_random_in_range(&config.y_variance);
+
+    let mut positions = Vec::new();
+    for i in min_step..=max_step {
+        let x = i * step;
+        y += y_variance;
+        let z = (((x as f64 + h_offset).powi(2)) / width + v_offset) as i64;
+        let position = (x, y, z);
         positions.push(position)
     }
     positions
