@@ -119,9 +119,7 @@ Create this first, then play with the rest; that will be easier!
 */ 
 
 fn main() {
-    // let x_values = vec![-500000, -400000, -300000, -200000, -100000, 0, 100000, 200000, 300000, 400000, 500000];
     let y_values = vec![-10000,10000];
-    // let z_values = vec![-500000,500000];
     let variant = vec![1.0, 1.2];
     let mut positions = Vec::new();
     for i in -50..=50 {
@@ -153,9 +151,7 @@ fn main() {
 
         }
         lengths.push(inlength);
-        // println!("x=\"{}\" y=\"{}\" z=\"{}\"", current_pos[0], current_pos[1], current_pos[2])
     }
-    // println!("{:?}", lengths);
 
     let mut region_string = "".to_string();
     for q in 0..positions.len() {
@@ -185,8 +181,8 @@ fn get_variance_in_range(range: &Vec<f32>) -> (f32) {
     value
 }
 
-fn distance(point_b: &Vec<f32>, point_a: &Vec<f32>) -> (f32) {
-    let squared = (point_b[0] - point_a[0]).powi(2) + (point_b[2] - point_a[2]).powi(2);
+fn distance(point_a: &Vec<f32>, point_b: &Vec<f32>) -> (f32) {
+    let squared = (point_a[0] - point_b[0]).powi(2) + (point_a[2] - point_b[2]).powi(2);
     let value = squared.sqrt();
     value
 }
