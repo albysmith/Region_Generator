@@ -13,26 +13,12 @@ extern crate serde_xml_rs;
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Toml {
     config: Config,
-    spline_cubed: SplineCubed,
+
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Config {
 
-}
-
-#[derive(Deserialize, Debug, Default, Clone)]
-struct SplineCubed {
-    step_range: Vec<i64>,
-    step_rate: i64,
-    h_offset_range: Vec<i64>,
-    h_deadzone_range: Vec<i64>,
-    v_offset_range: Vec<i64>,
-    v_deadzone_range: Vec<i64>,
-    width_variance: Vec<i64>,
-    width_deadzone: Vec<i64>,
-    y_values: Vec<i64>,
-    y_variance: Vec<i64>,
 }
 
 
@@ -133,33 +119,33 @@ Create this first, then play with the rest; that will be easier!
 */ 
 
 fn main() {
-    let mut prng = rand::thread_rng();
-    let toml_str = include_str!("Config.toml");
-    let toml_parsed: Toml = toml::from_str(&toml_str).unwrap();
-    
-
-
-    let chosen_region = ["cubed", "cubed"].choose(&mut prng).unwrap();
-
-    let positions = match chosen_region {
-      &"cubed" => get_positions_spline_cubed(&toml_parsed.spline_cubed),
-      _        => panic!("broken at profile select"),
-    };
-
+    let y_values = vec![-10000,10000];
+    let variant = vec![1.0, 1.2];
+    let mut positions = Vec::new();
+    for i in -50..=50 {
+        let x = i as f32 * 10000.0;
+        let y = get_random_in_range(&y_values) as f32;
+        let z = (x.powi(3)) / 100000000000.0;
+        let position = vec![x, y, z];
+        positions.push(position)
+    }
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
         let mut inlength = 0;
-        let p = j as i64;
+        let p = j as i32;
         let current_pos = &positions[j];
-        if p + 1 == positions.len() as i64 {
+        if p + 1 == positions.len() as i32 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0) as i64;
+            let variance =  get_variance_in_range(&variant);
+            inlength = (distance / 2.0 * variance) as i32;
         }
         else if p - 1 >= 0 {
             let prior_pos = &positions[j-1];
             let distance = distance(current_pos, prior_pos);
-            inlength = (distance / 2.0) as i64;
+
+            let variance =  get_variance_in_range(&variant);
+            inlength = (distance / 2.0 * variance) as i32;
         }
         else {
 
@@ -172,7 +158,7 @@ fn main() {
         let position = &positions[q];
         let inlength = lengths[q];
         let mut outlength = 0;
-        if ((q + 1) as i64) < positions.len() as i64 {
+        if ((q + 1) as i32) < positions.len() as i32 {
             outlength = lengths[q+1];
         }
         let add_string = format!("<splineposition x=\"{}\" y=\"{}\" z=\"{}\" inlength=\"{}\" outlength=\"{}\" /> \n", position[0], position[1], position [2], inlength, outlength);
@@ -183,50 +169,21 @@ fn main() {
     outputfile.write_all(region_string.as_bytes()).unwrap();
 }
 
-fn get_random_in_range(range: &Vec<i64>) -> (i64) {
+fn get_random_in_range(range: &Vec<i32>) -> (i32) {
     let mut prng = rand::thread_rng();
     let value = prng.gen_range(range[0], range[1]);
     value
 }
 
-// fn get_variance_in_range(range: &Vec<f64>) -> (f64) {
-//     let mut prng = rand::thread_rng();
-//     let value = prng.gen_range(range[0], range[1]);
-//     value
-// }
-
-fn distance(point_a: &Vec<f64>, point_b: &Vec<f64>) -> (f64) {
-    let dx = point_a[0] - point_b[0];
-    let dy = point_a[2] - point_b[2];
-    let value = ((dy/dx).powi(2) + 1.0).sqrt() * dx;
-    value
-}
-
-fn get_spline_offset(range: &Vec<i64>, deadzone: &Vec<i64>) -> f64 {
+fn get_variance_in_range(range: &Vec<f32>) -> (f32) {
     let mut prng = rand::thread_rng();
-    let value = *[prng.gen_range(range[0], deadzone[0]), prng.gen_range(deadzone[1], range[1])].choose(&mut prng).unwrap() as f64;
+    let value = prng.gen_range(range[0], range[1]);
     value
 }
 
-fn get_positions_spline_cubed(config: &SplineCubed) -> Vec<Vec<f64>> {
-    // spline_cubed
-    // if we pick spline_cubed, then dump toml_parsed.spline_cubed and output a list of x, y, z positions
-    let min_step = config.step_range[0];
-    let max_step = config.step_range[1];
-    let step = config.step_rate as f64;
-    let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
-    let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
-    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
-    let mut y = get_random_in_range(&config.y_values) as f64;
-    let y_variance = get_random_in_range(&config.y_variance);
-
-    let mut positions = Vec::new();
-    for i in min_step..=max_step {
-        let x = i as f64 * step;
-        y += y_variance as f64;
-        let z = ((x + h_offset).powi(3)) / width + v_offset;
-        let position = vec![x, y, z];
-        positions.push(position)
-    }
-    positions
+fn distance(point_a: &Vec<f32>, point_b: &Vec<f32>) -> (f32) {
+    let squared = (point_a[0] - point_b[0]).powi(2) + (point_a[2] - point_b[2]).powi(2);
+    let value = squared.sqrt();
+    value
 }
+
