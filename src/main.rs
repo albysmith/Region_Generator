@@ -98,21 +98,36 @@ Create this first, then play with the rest; that will be easier!
       <splineposition x="6217.93" y="-1234.38" z="-17130.4" tx="0.910818" ty="-0.410074" tz="-0.0474369" inlength="1911.49" outlength="0.0" />
     </boundary>
 
+***what are some good formulas to use?
 
+  h_offset = horizontal offset (applied inversely to pos/neg sign)
+  v_offset = vertical offset
+
+  y = (x + h_offset)^2 / width + v_offset --- width between 100000-2000000 and inverse h_offset
+  y = (x + h_offset)^3 / width + v_offset --- width between 10000000000-100000000000
+  y = height * sin ( x + h_offset / width) + v_offset
+
+  set a few height/width values and create 10+ formulas to pick from.  maybe also do some linear options?
+
+
+***how do I get good points on the curve to create a nice curve?
+
+  points every 10km (10000)
+  lower the variance for the lengths
 
 
 */ 
 
 fn main() {
-    let x_values = vec![-500000,500000];
+    // let x_values = vec![-500000, -400000, -300000, -200000, -100000, 0, 100000, 200000, 300000, 400000, 500000];
     let y_values = vec![-10000,10000];
-    let z_values = vec![-500000,500000];
-    let variant = vec![1.0, 1.5];
+    // let z_values = vec![-500000,500000];
+    let variant = vec![1.0, 1.2];
     let mut positions = Vec::new();
-    for _ in 0..100 {
-        let x = get_random_in_range(&x_values);
-        let y = get_random_in_range(&y_values);
-        let z = get_random_in_range(&z_values);
+    for i in -50..=50 {
+        let x = i as f32 * 10000.0;
+        let y = get_random_in_range(&y_values) as f32;
+        let z = (x.powi(3)) / 100000000000.0;
         let position = vec![x, y, z];
         positions.push(position)
     }
@@ -170,8 +185,8 @@ fn get_variance_in_range(range: &Vec<f32>) -> (f32) {
     value
 }
 
-fn distance(point_b: &Vec<i32>, point_a: &Vec<i32>) -> (f32) {
-    let squared = (point_b[0] as f32 - point_a[0] as f32).powi(2) + (point_b[2] as f32 - point_a[2] as f32).powi(2);
+fn distance(point_b: &Vec<f32>, point_a: &Vec<f32>) -> (f32) {
+    let squared = (point_b[0] - point_a[0]).powi(2) + (point_b[2] - point_a[2]).powi(2);
     let value = squared.sqrt();
     value
 }
