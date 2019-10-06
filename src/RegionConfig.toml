@@ -4,7 +4,7 @@
 # [asteroid_highyield_v1]
 [defaults.resourceasteroids.asteroid_highyield_v1]
 name = "asteroid_highyield_v1"
-density_factor = 3.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 8
@@ -18,7 +18,7 @@ resource_amount = "veryhigh"
 # [asteroid_highyield_sil_v1]
 [defaults.resourceasteroids.asteroid_highyield_sil_v1]
 name = "asteroid_highyield_sil_v1"
-density_factor = 100.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -31,7 +31,7 @@ resource_amount = "veryhigh"
 
 [defaults.resourceasteroids.asteroid_highyield_niv_v1]
 name = "asteroid_highyield_niv_v1"
-density_factor = 100.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -57,7 +57,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_ore_xl]
 name = "asteroid_ore_xl"
-density_factor = 2.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -70,7 +70,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_ore_l]
 name = "asteroid_ore_l"
-density_factor = 1.5 
+density_factor = 1.0 
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -83,7 +83,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ore_m]
 name = "asteroid_ore_m"
-density_factor = 4.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 8
@@ -96,7 +96,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ore_s]
 name = "asteroid_ore_s"
-density_factor = 6.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 16
@@ -109,7 +109,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ore_xs]
 name = "asteroid_ore_xs"
-density_factor = 8.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 32
@@ -135,7 +135,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_silicon_l]
 name = "asteroid_silicon_l"
-density_factor = 2.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -148,7 +148,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_silicon_m]
 name = "asteroid_silicon_m"
-density_factor = 4.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 8
@@ -161,7 +161,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_silicon_s]
 name = "asteroid_silicon_s"
-density_factor = 6.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 32
@@ -200,7 +200,7 @@ resource_amount = "veryhigh"
 
 [defaults.resourceasteroids.asteroid_nividium_m]
 name = "asteroid_nividium_m"
-density_factor = 12.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 8
@@ -213,7 +213,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_nividium_s]
 name = "asteroid_nividium_s"
-density_factor = 15.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 16
@@ -226,7 +226,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_nividium_xs]
 name = "asteroid_nividium_xs"
-density_factor = 5.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 32
@@ -239,7 +239,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ice_xl]
 name = "asteroid_ice_xl"
-density_factor = 0.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
@@ -252,7 +252,7 @@ resource_amount = "veryhigh"
 
 [defaults.resourceasteroids.asteroid_ice_l]
 name = "asteroid_ice_l"
-density_factor = 3.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 0 
 rotationvariation = 8
@@ -265,7 +265,7 @@ resource_amount = "veryhigh"
 
 [defaults.resourceasteroids.asteroid_ice_m]
 name = "asteroid_ice_m"
-density_factor = 18.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 0 
 rotationvariation = 16
@@ -278,7 +278,7 @@ resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_ice_s]
 name = "asteroid_ice_s"
-density_factor = 24.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 0 
 rotationvariation = 32
@@ -291,7 +291,7 @@ resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ice_xs]
 name = "asteroid_ice_xs"
-density_factor = 30.0
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 0 
 rotationvariation = 64
@@ -373,7 +373,7 @@ distancefactor = 2.0
 # [defaults.debris]
 [defaults.debris.debris_xl]
 name = "debris_xl"
-density_factor = 0.408 
+density_factor = 0.208 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 10
@@ -384,7 +384,7 @@ distancefactor = 2.0
 
 [defaults.debris.debris_l]
 name = "debris_l"
-density_factor = 0.7 
+density_factor = 0.5 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 10
@@ -395,7 +395,7 @@ distancefactor = 2.0
 
 [defaults.debris.debris_m]
 name = "debris_m"
-density_factor = 6.0 
+density_factor = 1.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 10
@@ -417,7 +417,7 @@ distancefactor = 1.0
 
 [defaults.debris.debris_station_l]
 name = "debris_station_l"
-density_factor = 3.0 
+density_factor = 1.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 0
@@ -439,7 +439,7 @@ distancefactor = 1.0
 
 [defaults.debris.debris_teladi_xl]
 name = "debris_teladi_xl"
-density_factor = 3.0 
+density_factor = 1.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 10 
@@ -472,7 +472,7 @@ distancefactor = 2.0
 
 [defaults.debris.debris_split_xl]
 name = "debris_split_xl"
-density_factor = 1.15
+density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 1 
@@ -483,7 +483,7 @@ distancefactor = 2.0
 
 [defaults.debris.debris_split_s]
 name = "debris_split_s"
-density_factor = 2.0 
+density_factor = 1.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 1 
@@ -573,7 +573,7 @@ name = "fog_smallstones_v1_macro"
 localred=255 
 localgreen=255
 localblue=255
-localdensity=15.0 
+localdensity=1.0 
 uniformred=10 
 uniformgreen=14 
 uniformblue=20 

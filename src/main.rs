@@ -15,17 +15,33 @@ struct Toml {
     spline_cubed: Spline,
     splat: Splat,
     spline_squared: Spline,
-    spline_sqrt: Spline,
-    spline_cbrt: Spline,
+    spline_sin: Spline,
+    spline_ellipse: Ellipse,
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Config {
     region_types: Vec<String>,
-    number_to_create: i64,
+    number_of_cycles: i64,
     out_path: String,
 }
 
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Ellipse {
+    radius: Vec<i64>,
+    step_range: Vec<i64>,
+    h_step_rate: Vec<i64>,
+    starting_angle: Vec<f64>,
+    h_offset_range: Vec<i64>,
+    h_deadzone_range: Vec<i64>,
+    v_offset_range: Vec<i64>,
+    v_deadzone_range: Vec<i64>,
+    width_variance: Vec<f64>,
+    width_deadzone: Vec<f64>,
+    y_values: Vec<i64>,
+    y_variance: Vec<i64>,
+    fields: Fields,
+}
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Spline {
     radius: Vec<i64>,
@@ -35,8 +51,8 @@ struct Spline {
     h_deadzone_range: Vec<i64>,
     v_offset_range: Vec<i64>,
     v_deadzone_range: Vec<i64>,
-    width_variance: Vec<i64>,
-    width_deadzone: Vec<i64>,
+    width_variance: Vec<f64>,
+    width_deadzone: Vec<f64>,
     y_values: Vec<i64>,
     y_variance: Vec<i64>,
     fields: Fields,
@@ -214,7 +230,19 @@ struct OtherNebula {
     maxnoisevalue: f64,
     distancefactor: f64,
 }
+#[derive(Deserialize, Debug, Default, Clone)]
+struct OffsetsFile {
+    offset: Vec<Offset>,
 
+}
+#[derive(Deserialize, Debug, Default, Clone)]
+struct Offset {
+    cluster: String,
+    name: String,
+    x: String,
+    y: String,
+    z: String,
+}
 
 /*
 
@@ -313,34 +341,70 @@ Create this first, then play with the rest; that will be easier!
 */ 
 
 fn main() {
-    let mut prng = rand::thread_rng();
     let toml_str = include_str!("Config.toml");
     let toml_parsed: Toml = toml::from_str(&toml_str).unwrap();
     let defaults_str = include_str!("RegionConfig.toml");
     let defaults_parsed: DefaultsToml = toml::from_str(&defaults_str).unwrap();
+    let offsets_str = include_str!("offsets.toml");
+    let offsets_parsed: OffsetsFile = toml::from_str(&offsets_str).unwrap();
     
     let mut region_def_string = "".to_string();
+    let mut region_names = Vec::new();
 
-    for _ in 0..toml_parsed.config.number_to_create {
-        let chosen_profile = &toml_parsed.config.region_types.choose(&mut prng).unwrap();
-        let region = match chosen_profile.as_str() {
-            "cubed"   => create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults),
-            "squared" => create_region_spline_squared(&toml_parsed.spline_squared, &defaults_parsed.defaults),
-            "splat"   => create_region_splat(&toml_parsed.splat, &defaults_parsed.defaults),
-            "sqrt"    => create_region_spline_sqrt(&toml_parsed.spline_sqrt, &defaults_parsed.defaults),
-            "cbrt"    => create_region_spline_cbrt(&toml_parsed.spline_cbrt, &defaults_parsed.defaults),
-            _         => panic!("broken at profile select"),
-        };
-        region_def_string.push_str(region.as_str());
+    // println!("we got everything parsed");
+
+    for count in 0..toml_parsed.config.number_of_cycles {
+        let spline_cubed_region = create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults, count);
+                region_names.push(("cubed", count));
+                region_def_string.push_str(spline_cubed_region.as_str());
+        let spline_squared_region = create_region_spline_squared(&toml_parsed.spline_squared, &defaults_parsed.defaults, count);
+                region_names.push(("squared", count));
+                region_def_string.push_str(spline_squared_region.as_str());
+        let splat_region = create_region_splat(&toml_parsed.splat, &defaults_parsed.defaults, count);
+                region_names.push(("splat", count));
+                region_def_string.push_str(splat_region.as_str());
+        let spline_sin_region = create_region_spline_sin(&toml_parsed.spline_sin, &defaults_parsed.defaults, count);
+                region_names.push(("sin", count));
+                region_def_string.push_str(spline_sin_region.as_str());
+        let spline_ellipse_region = create_region_spline_ellipse(&toml_parsed.spline_ellipse, &defaults_parsed.defaults, count);
+                region_names.push(("ellipse", count));
+                region_def_string.push_str(spline_ellipse_region.as_str());
+        println!("completed cycle {}", count);
     }
 
     let out_path = &toml_parsed.config.out_path;
     let mut outputfile = File::create(format!("{}{}", out_path, "region_definitions.xml")).unwrap();
     outputfile.write_all(region_def_string.as_bytes()).unwrap();
+
+    let mut connections_string = "".to_string();
+    for region in region_names.iter() {
+        let formula = region.0;
+        let cycle_count = region.1 as usize;
+        let name = format!("{}_{}", cycle_count, formula);
+        let offset_values = &offsets_parsed.offset[cycle_count];
+        connections_string.push_str(format!("
+        <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
+        offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, name, name).as_str());
+    }
+    let mut connectionfile = File::create(format!("{}{}", out_path, "connections.xml")).unwrap();
+    connectionfile.write_all(connections_string.as_bytes()).unwrap();
 }
 
-fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults) -> String {
-    let mut region_string = "\n<region name=\"spline_cubed\" > \n".to_string();
+    //   <connection name="C01S01_Region002_connection" ref="regions">
+    //     <offset>
+    //       <position x="101824.5546875" y="0" z="143180.734375" />
+    //     </offset>
+    //     <macro name="C01S01_Region002_macro">
+    //       <component connection="cluster" ref="standardregion" />
+    //       <properties>
+    //         <region ref="p1_40km_asteroid_field" />
+    //       </properties>
+    //     </macro>
+    //   </connection>
+
+
+fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, count: i64) -> String {
+    let mut region_string = format!("\n<region name=\"{}_cubed\" > \n", count).to_string();
     let positions = get_positions_spline_cubed(&spline_cubed);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_cubed.radius);
@@ -349,11 +413,12 @@ fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults) -> Str
     let fields_string = get_fields_and_resources(&spline_cubed.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
+    // println!("made a spline cubed for count:{}", count);
     region_string
 }
 
-fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults) -> String {
-    let mut region_string = "\n<region name=\"spline_squared\" > \n".to_string();
+fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults, count: i64) -> String {
+    let mut region_string = format!("\n<region name=\"{}_squared\" > \n", count).to_string();
     let positions = get_positions_spline_squared(&spline_squared);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_squared.radius);
@@ -362,43 +427,47 @@ fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults) ->
     let fields_string = get_fields_and_resources(&spline_squared.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
+    // println!("made a spline squared for count:{}", count);
     region_string
 }
 
-fn create_region_spline_sqrt(spline_sqrt: &Spline, defaults: &Defaults) -> String {
-    let mut region_string = "\n<region name=\"spline_sqrt\" > \n".to_string();
-    let positions = get_positions_spline_sqrt(&spline_sqrt);
+fn create_region_spline_sin(spline_sin: &Spline, defaults: &Defaults, count: i64) -> String {
+    let mut region_string = format!("\n<region name=\"{}_sin\" > \n", count).to_string();
+    let positions = get_positions_spline_sin(&spline_sin);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_sqrt.radius);
+    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_sin.radius);
     region_string.push_str(boundary_string.as_str());
     region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&spline_sqrt.fields, defaults);
+    let fields_string = get_fields_and_resources(&spline_sin.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
+    // println!("made a spline sin for count:{}", count);
     region_string
 }
 
-fn create_region_spline_cbrt(spline_cbrt: &Spline, defaults: &Defaults) -> String {
-    let mut region_string = "\n<region name=\"spline_cbrt\" > \n".to_string();
-    let positions = get_positions_spline_cbrt(&spline_cbrt);
+fn create_region_spline_ellipse(spline_ellipse: &Ellipse, defaults: &Defaults, count: i64) -> String {
+    let mut region_string = format!("\n<region name=\"{}_ellipse\" > \n", count).to_string();
+    let positions = get_positions_spline_ellipse(&spline_ellipse);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_cbrt.radius);
+    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_ellipse.radius);
     region_string.push_str(boundary_string.as_str());
     region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&spline_cbrt.fields, defaults);
+    let fields_string = get_fields_and_resources(&spline_ellipse.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
+    // println!("made a spline ellipse for count:{}", count);
     region_string
 }
 
-fn create_region_splat(splat: &Splat, defaults: &Defaults) -> String {
-    let mut region_string = "\n<region name=\"splat\" > \n".to_string();
+fn create_region_splat(splat: &Splat, defaults: &Defaults, count: i64) -> String {
+    let mut region_string = format!("\n<region name=\"{}_splat\" > \n", count).to_string();
     let boundary_string = format!("<boundary class=\"cylinder\"> \n<size r=\"{}\" linear=\"{}\" />\n</boundary>\n", get_random_in_range(&splat.radius), get_random_in_range(&splat.linear)).to_string();
     region_string.push_str(boundary_string.as_str());
     region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&splat.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
+    // println!("made a splat for count:{}", count);
     region_string
 }
 
@@ -415,14 +484,21 @@ fn get_variant_in_range(range: &Vec<f64>) -> (f32) {
 }
 
 fn distance(point_a: &(i64, i64, i64), point_b: &(i64, i64, i64)) -> (f64) {
-    let dx = (point_a.0 - point_b.0) as f64;
-    let dy = (point_a.1 - point_b.1) as f64;
-    let dz = (point_a.2 - point_b.2) as f64;
-    let value = ((((dz/dx).powi(2)) + 1.0).sqrt() * dx) + dy;
+    let dx = (point_a.0 - point_b.0) as f64 + 1.0;
+    let dy = (point_a.1 - point_b.1) as f64 + 1.0;
+    let dz = (point_a.2 - point_b.2) as f64 + 1.0;
+    let value = ((((dz/dx).powi(2)) + 1.0).sin() * dx) + dy;
+    // println!("made distance for something");
     value
 }
 
 fn get_spline_offset(range: &Vec<i64>, deadzone: &Vec<i64>) -> f64 {
+    let mut prng = rand::thread_rng();
+    let value = *[prng.gen_range(range[0], deadzone[0]), prng.gen_range(deadzone[1], range[1])].choose(&mut prng).unwrap() as f64;
+    value
+}
+
+fn get_width_offset(range: &Vec<f64>, deadzone: &Vec<f64>) -> f64 {
     let mut prng = rand::thread_rng();
     let value = *[prng.gen_range(range[0], deadzone[0]), prng.gen_range(deadzone[1], range[1])].choose(&mut prng).unwrap() as f64;
     value
@@ -434,7 +510,7 @@ fn get_positions_spline_cubed(config: &Spline) -> Vec<(i64, i64, i64)> {
     let step = config.step_rate;
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
-    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let width = get_width_offset(&config.width_variance, &config.width_deadzone);
     let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
 
@@ -444,7 +520,9 @@ fn get_positions_spline_cubed(config: &Spline) -> Vec<(i64, i64, i64)> {
         y += y_variance;
         let z = (((x as f64 + h_offset).powi(3)) / width + v_offset) as i64;
         let position = (x, y, z);
-        positions.push(position)
+        if z < 10000000 {
+            positions.push(position)
+        }
     }
     positions
 }
@@ -455,7 +533,7 @@ fn get_positions_spline_squared(config: &Spline) -> Vec<(i64, i64, i64)> {
     let step = config.step_rate;
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
-    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let width = get_width_offset(&config.width_variance, &config.width_deadzone);
     let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
 
@@ -465,74 +543,91 @@ fn get_positions_spline_squared(config: &Spline) -> Vec<(i64, i64, i64)> {
         y += y_variance;
         let z = (((x as f64 + h_offset).powi(2)) / width + v_offset) as i64;
         let position = (x, y, z);
-        positions.push(position)
+        if z < 10000000 {
+            positions.push(position)
+        }
     }
     positions
 }
 
-fn get_positions_spline_sqrt(config: &Spline) -> Vec<(i64, i64, i64)> {
+fn get_positions_spline_sin(config: &Spline) -> Vec<(i64, i64, i64)> {
     let min_step = config.step_range[0];
     let max_step = config.step_range[1];
     let step = config.step_rate;
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
-    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let width = get_width_offset(&config.width_variance, &config.width_deadzone);
     let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
+    // println!("width {}",width);
 
     let mut positions = Vec::new();
     for i in min_step..=max_step {
         let x = i * step;
         y += y_variance;
-        let z = (((x as f64 + h_offset).sqrt()) / width + v_offset) as i64;
+        let z = ((((x as f64 * width) + h_offset).sin()) * x as f64 + v_offset) as i64;
         let position = (x, y, z);
-        positions.push(position)
+        if z < 10000000 && z > -10000000 {
+            positions.push(position)
+        }
     }
+    // println!("made positions spline sin");
     positions
 }
 
-fn get_positions_spline_cbrt(config: &Spline) -> Vec<(i64, i64, i64)> {
+fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
     let min_step = config.step_range[0];
     let max_step = config.step_range[1];
-    let step = config.step_rate;
+    let h_step = get_random_in_range(&config.h_step_rate);
+    let radius = h_step * max_step;
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
-    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
-    let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
 
     let mut positions = Vec::new();
-    for i in min_step..=max_step {
-        let x = i * step;
+    let mut angle: f32 = get_variant_in_range(&config.starting_angle) as f32;
+    let mut y = get_random_in_range(&config.y_values);
+    for _ in min_step..=max_step {
+        angle += 0.06;
+        let x = radius as f32 * angle.cos() + radius as f32 * angle.sin() + h_offset as f32;
         y += y_variance;
-        let z = (((x as f64 + h_offset).cbrt()) / width + v_offset) as i64;
-        let position = (x, y, z);
-        positions.push(position)
+        let z = -radius as f32 * angle.sin() + radius  as f32  * angle.cos() + v_offset as f32;
+        let position = (x as i64, y, z as i64);
+        positions.push(position);
+        println!("angle {}, position {:?}", angle, position)
     }
     positions
 }
 
-fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i64> {
+fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i32> {
+    // println!("started lengths for something with position count: {}",positions.len() );
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
-        let mut inlength = 0;
+        // println!("started lengths counter count: {}", j);
+        let mut inlength: i32 = 0;
         let current_pos = &positions[j];
+        // println!("current_pos: {:?}", current_pos);
         if j as i64 + 1 == positions.len() as i64 {
             let prior_pos = &positions[j-1];
-            inlength = (distance(current_pos, prior_pos) / 2.0) as i64;
+            inlength = (distance(current_pos, prior_pos) / 2.0) as i32;
         }
-        else if j as i64 - 1 >= 0 {
+        else if j != 0 {
             let prior_pos = &positions[j-1];
-            inlength = (distance(current_pos, prior_pos) / 2.0) as i64;
+            inlength = (distance(current_pos, prior_pos) / 2.0) as i32;
         }
         else {
         }
+        // println!("finished lengths counter count: {}", j);
+        if inlength < 0 {
+            inlength = -inlength
+        }
         lengths.push(inlength);
     }
+    // println!("made lengths for something");
     lengths
 }
 
-fn get_spline_boundary_format(positions: &Vec<(i64, i64, i64)>, lengths: &Vec<i64>, radius_range: &Vec<i64>) -> String {
+fn get_spline_boundary_format(positions: &Vec<(i64, i64, i64)>, lengths: &Vec<i32>, radius_range: &Vec<i64>) -> String {
     let mut boundary_string = "  <boundary class=\"splinetube\"> \n".to_string();
     let radius = get_random_in_range(radius_range);
     boundary_string.push_str(format!("    <size r=\"{}\" /> \n", radius).as_str());
@@ -551,12 +646,10 @@ fn get_spline_boundary_format(positions: &Vec<(i64, i64, i64)>, lengths: &Vec<i6
 }
 
 fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
-    let mut prng = rand::thread_rng();
     let mut fields_string = "<fields> \n".to_string();
     let mut resources_string = "<resources> \n".to_string();
-    for _ in 0..fields.region_count {
-        let chosen_field = &fields.region_objects.choose(&mut prng).unwrap();
-        let add_strings = match chosen_field {
+    for obj in fields.region_objects.iter() {
+        let add_strings = match obj {
             1 => get_resource_asteroid(&fields.fields_mods, &defaults.resourceasteroids),
             2 => get_nonresource_asteroid(&fields.fields_mods, &defaults.asteroids),
             3 => get_debris(&fields.fields_mods, &defaults.debris),
