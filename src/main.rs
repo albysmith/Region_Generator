@@ -12,8 +12,11 @@ extern crate serde_xml_rs;
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Toml {
     config: Config,
-    spline_cubed: SplineCubed,
-    spline_squared: SplineSquared,
+    spline_cubed: Spline,
+    splat: Splat,
+    spline_squared: Spline,
+    spline_sqrt: Spline,
+    spline_cbrt: Spline,
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -24,7 +27,7 @@ struct Config {
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
-struct SplineCubed {
+struct Spline {
     radius: Vec<i64>,
     step_range: Vec<i64>,
     step_rate: i64,
@@ -39,18 +42,9 @@ struct SplineCubed {
     fields: Fields,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
-struct SplineSquared {
+struct Splat {
     radius: Vec<i64>,
-    step_range: Vec<i64>,
-    step_rate: i64,
-    h_offset_range: Vec<i64>,
-    h_deadzone_range: Vec<i64>,
-    v_offset_range: Vec<i64>,
-    v_deadzone_range: Vec<i64>,
-    width_variance: Vec<i64>,
-    width_deadzone: Vec<i64>,
-    y_values: Vec<i64>,
-    y_variance: Vec<i64>,
+    linear: Vec<i64>,
     fields: Fields,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -212,7 +206,7 @@ struct ResourceNebula {
 struct OtherNebula {
     name: String,
     lodrule: String,
-    densityfactor: f64,
+    density_factor: f64,
     rotation: i64,
     rotationvariation: f64,
     noisescale: i64,
@@ -332,7 +326,9 @@ fn main() {
         let region = match chosen_profile.as_str() {
             "cubed"   => create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults),
             "squared" => create_region_spline_squared(&toml_parsed.spline_squared, &defaults_parsed.defaults),
-            // "splat"   => create_region_splat(&toml_parsed.splat, &defaults_parsed),
+            "splat"   => create_region_splat(&toml_parsed.splat, &defaults_parsed.defaults),
+            "sqrt"    => create_region_spline_sqrt(&toml_parsed.spline_sqrt, &defaults_parsed.defaults),
+            "cbrt"    => create_region_spline_cbrt(&toml_parsed.spline_cbrt, &defaults_parsed.defaults),
             _         => panic!("broken at profile select"),
         };
         region_def_string.push_str(region.as_str());
@@ -343,7 +339,7 @@ fn main() {
     outputfile.write_all(region_def_string.as_bytes()).unwrap();
 }
 
-fn create_region_spline_cubed(spline_cubed: &SplineCubed, defaults: &Defaults) -> String {
+fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults) -> String {
     let mut region_string = "\n<region name=\"spline_cubed\" > \n".to_string();
     let positions = get_positions_spline_cubed(&spline_cubed);
     let lengths = get_lengths(&positions);
@@ -356,7 +352,7 @@ fn create_region_spline_cubed(spline_cubed: &SplineCubed, defaults: &Defaults) -
     region_string
 }
 
-fn create_region_spline_squared(spline_squared: &SplineSquared, defaults: &Defaults) -> String {
+fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults) -> String {
     let mut region_string = "\n<region name=\"spline_squared\" > \n".to_string();
     let positions = get_positions_spline_squared(&spline_squared);
     let lengths = get_lengths(&positions);
@@ -364,6 +360,43 @@ fn create_region_spline_squared(spline_squared: &SplineSquared, defaults: &Defau
     region_string.push_str(boundary_string.as_str());
     region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&spline_squared.fields, defaults);
+    region_string.push_str(fields_string.as_str());
+    region_string.push_str("</region> \n");
+    region_string
+}
+
+fn create_region_spline_sqrt(spline_sqrt: &Spline, defaults: &Defaults) -> String {
+    let mut region_string = "\n<region name=\"spline_sqrt\" > \n".to_string();
+    let positions = get_positions_spline_sqrt(&spline_sqrt);
+    let lengths = get_lengths(&positions);
+    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_sqrt.radius);
+    region_string.push_str(boundary_string.as_str());
+    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    let fields_string = get_fields_and_resources(&spline_sqrt.fields, defaults);
+    region_string.push_str(fields_string.as_str());
+    region_string.push_str("</region> \n");
+    region_string
+}
+
+fn create_region_spline_cbrt(spline_cbrt: &Spline, defaults: &Defaults) -> String {
+    let mut region_string = "\n<region name=\"spline_cbrt\" > \n".to_string();
+    let positions = get_positions_spline_cbrt(&spline_cbrt);
+    let lengths = get_lengths(&positions);
+    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_cbrt.radius);
+    region_string.push_str(boundary_string.as_str());
+    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    let fields_string = get_fields_and_resources(&spline_cbrt.fields, defaults);
+    region_string.push_str(fields_string.as_str());
+    region_string.push_str("</region> \n");
+    region_string
+}
+
+fn create_region_splat(splat: &Splat, defaults: &Defaults) -> String {
+    let mut region_string = "\n<region name=\"splat\" > \n".to_string();
+    let boundary_string = format!("<boundary class=\"cylinder\"> \n<size r=\"{}\" linear=\"{}\" />\n</boundary>\n", get_random_in_range(&splat.radius), get_random_in_range(&splat.linear)).to_string();
+    region_string.push_str(boundary_string.as_str());
+    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    let fields_string = get_fields_and_resources(&splat.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
     region_string
@@ -395,7 +428,7 @@ fn get_spline_offset(range: &Vec<i64>, deadzone: &Vec<i64>) -> f64 {
     value
 }
 
-fn get_positions_spline_cubed(config: &SplineCubed) -> Vec<(i64, i64, i64)> {
+fn get_positions_spline_cubed(config: &Spline) -> Vec<(i64, i64, i64)> {
     let min_step = config.step_range[0];
     let max_step = config.step_range[1];
     let step = config.step_rate;
@@ -416,7 +449,7 @@ fn get_positions_spline_cubed(config: &SplineCubed) -> Vec<(i64, i64, i64)> {
     positions
 }
 
-fn get_positions_spline_squared(config: &SplineSquared) -> Vec<(i64, i64, i64)> {
+fn get_positions_spline_squared(config: &Spline) -> Vec<(i64, i64, i64)> {
     let min_step = config.step_range[0];
     let max_step = config.step_range[1];
     let step = config.step_rate;
@@ -431,6 +464,48 @@ fn get_positions_spline_squared(config: &SplineSquared) -> Vec<(i64, i64, i64)> 
         let x = i * step;
         y += y_variance;
         let z = (((x as f64 + h_offset).powi(2)) / width + v_offset) as i64;
+        let position = (x, y, z);
+        positions.push(position)
+    }
+    positions
+}
+
+fn get_positions_spline_sqrt(config: &Spline) -> Vec<(i64, i64, i64)> {
+    let min_step = config.step_range[0];
+    let max_step = config.step_range[1];
+    let step = config.step_rate;
+    let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
+    let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
+    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let mut y = get_random_in_range(&config.y_values);
+    let y_variance = get_random_in_range(&config.y_variance);
+
+    let mut positions = Vec::new();
+    for i in min_step..=max_step {
+        let x = i * step;
+        y += y_variance;
+        let z = (((x as f64 + h_offset).sqrt()) / width + v_offset) as i64;
+        let position = (x, y, z);
+        positions.push(position)
+    }
+    positions
+}
+
+fn get_positions_spline_cbrt(config: &Spline) -> Vec<(i64, i64, i64)> {
+    let min_step = config.step_range[0];
+    let max_step = config.step_range[1];
+    let step = config.step_rate;
+    let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
+    let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
+    let width = get_spline_offset(&config.width_variance, &config.width_deadzone);
+    let mut y = get_random_in_range(&config.y_values);
+    let y_variance = get_random_in_range(&config.y_variance);
+
+    let mut positions = Vec::new();
+    for i in min_step..=max_step {
+        let x = i * step;
+        y += y_variance;
+        let z = (((x as f64 + h_offset).cbrt()) / width + v_offset) as i64;
         let position = (x, y, z);
         positions.push(position)
     }
@@ -457,30 +532,10 @@ fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i64> {
     lengths
 }
 
-/*
-fn match_objects(defaults_parsed: &DefaultsToml, chosen_object: Toml)  {  //pass in the object and its struct from the profile
-    let default_values = match chosen_object.spline_cubed.asteroid_highyield_sil_v1.name.as_str() {
-    "asteroid_highyield_sil_v1"     =>  {  //pass to a function that checks for non-null values and replaces them with the values from the correct default struct.  update profile with defaults, but don't overwrite anything that's non-null
-                                      if chosen_object.spline_cubed.asteroid_highyield_sil_v1.density_factor != None {
-                                        println!("value is none");
-                                        // chosen_object.spline_cubed.asteroid_highyield_sil_v1 = ObjectStruct {density_randomization = defaults_parsed.defaults.asteroids.asteroid_highyield_v1.density_randomization..}
-                                        let profile = chosen_object.spline_cubed.asteroid_highyield_sil_v1;
-                                        let default = defaults_parsed.defaults.asteroids.asteroid_highyield_v1.clone();
-                                        let new_struct = ResourceAsteroid {density_factor: profile.density_factor.unwrap(), .. default } ;
-                                          println!("{:#?}", new_struct);
-                                      }
-                                    }, 
-    // "asteroid_highyield_sil_v1" => defaults_parsed.defaults.asteroids.asteroid_highyield_sil_v1.clone(),
-    _                           => panic!("broken at object match"),
-    };
-    
-}
-*/
-
 fn get_spline_boundary_format(positions: &Vec<(i64, i64, i64)>, lengths: &Vec<i64>, radius_range: &Vec<i64>) -> String {
     let mut boundary_string = "  <boundary class=\"splinetube\"> \n".to_string();
     let radius = get_random_in_range(radius_range);
-    boundary_string.push_str(format!("    <radius r=\"{}\" /> \n", radius).as_str());
+    boundary_string.push_str(format!("    <size r=\"{}\" /> \n", radius).as_str());
     for q in 0..positions.len() {
         let position = &positions[q];
         let inlength = lengths[q];
@@ -504,11 +559,11 @@ fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
         let add_strings = match chosen_field {
             1 => get_resource_asteroid(&fields.fields_mods, &defaults.resourceasteroids),
             2 => get_nonresource_asteroid(&fields.fields_mods, &defaults.asteroids),
-            // 3 => get_debris(&fields.debris_mods, &defaults.debris);
-            // 4 => get_lockbox(&fields.lockbox_mods, &defaults.lockbox);
-            // 5 => get_resource_nebula(&fields.resource_nebula_mods, &defaults.nebula);
-            // 6 => get_nonresource_nebula(&fields.nonresource_nebula_mods, &defaults.positionals);
-            // 7 => get_sound_region(&fields.sound_mods, &defaults.sounds);
+            3 => get_debris(&fields.fields_mods, &defaults.debris),
+            4 => get_lockbox(&fields.fields_mods, &defaults.lockbox),
+            5 => get_resource_nebula(&fields.fields_mods, &defaults.nebula),
+            6 => get_nonresource_nebula(&fields.fields_mods, &defaults.positionals),
+            // 7 => get_sound_region(&fields.fields_mods, &defaults.sounds),
             _ => panic!("broken at resource choices"),
         };
         fields_string.push_str(&add_strings[0].as_str());
@@ -559,7 +614,7 @@ fn get_resource_asteroid(fields_mods: &FieldsMods, resourceasteroids: &ResourceR
     let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
     let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
     let distancefactor = roid_choice.distancefactor;
-    let field = format!("<asteroid groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation, rotationvariation, noisescale, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    let field = format!("<asteroid groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
     let resource = format!("<resource ware=\"{}\" yield=\"{}\" />\n", roid_choice.resource, roid_choice.resource_amount).to_string();
     add_strings.push(field);
     add_strings.push(resource);
@@ -579,15 +634,129 @@ fn get_nonresource_asteroid(fields_mods: &FieldsMods, asteroids: &NonResourceRoi
         _ => panic!("broken at nonresourceroids"),
     };
     let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
-    // let density_randomization = roid_choice.density_randomization * get_variant_in_range(&fields_mods.density_randomization);
     let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
     let rotationvariation = roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
     let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
     let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
     let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
     let distancefactor = roid_choice.distancefactor;
-    let field = format!("<asteroid groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation, rotationvariation, noisescale, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    let field = format!("<asteroid groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
     add_strings.push(field);
     add_strings
 }
 
+fn get_debris(fields_mods: &FieldsMods, debris: &Debris) -> Vec<String> {
+    let mut prng = rand::thread_rng();
+    let mut add_strings = Vec::new();
+    let roid_choice = match [1,2,3,4,5,6,7,8,9,10,11,12,13,14].choose(&mut prng).unwrap() {
+        1 => &debris.debris_xl,
+        2 => &debris.debris_l, 
+        3 => &debris.debris_m, 
+        4 => &debris.debris_s, 
+        5 => &debris.debris_station_l, 
+        6 => &debris.env_debris_station_l_05,  
+        7 => &debris.debris_teladi_xl, 
+        8 => &debris.debris_paranid_xl,
+        9 => &debris.debris_paranid_l, 
+        10 => &debris.debris_split_xl, 
+        11 => &debris.debris_split_s,  
+        12 => &debris.debris_xenon_xl, 
+        13 => &debris.debris_xenon_l,  
+        14 => &debris.debris_xenon_m,  
+        _ => panic!("broken at debris"),
+    };
+    let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
+    let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
+    let rotationvariation = roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
+    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+    let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+    let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
+    let distancefactor = roid_choice.distancefactor;
+    let field = format!("<debris groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    add_strings.push(field);
+    add_strings
+}
+
+fn get_lockbox(fields_mods: &FieldsMods, lockbox: &Lockbox) -> Vec<String> {
+    let mut prng = rand::thread_rng();
+    let mut add_strings = Vec::new();
+    let roid_choice = match [1,2].choose(&mut prng).unwrap() {
+        1 => &lockbox.lockboxes_rare,
+        2 => &lockbox.lockboxes_extra, 
+        _ => panic!("broken at debris"),
+    };
+    let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
+    let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
+    let rotationvariation = roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
+    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+    let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+    let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
+    let distancefactor = roid_choice.distancefactor;
+    let field = format!("<object ref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    add_strings.push(field);
+    add_strings
+}
+
+fn get_resource_nebula(fields_mods: &FieldsMods, nebula: &Nebula) -> Vec<String> {
+    let mut prng = rand::thread_rng();
+    let mut add_strings = Vec::new();
+    let roid_choice = match [1,2,3,4].choose(&mut prng).unwrap() {
+        1 => &nebula.fog_smallstones_v1_macro,
+        2 => &nebula.fogpattern_v2_macro,
+        3 => &nebula.fogtest_nebula_vol_macro,
+        4 => &nebula.fogvolume_small_macro,
+        _ => panic!("broken at resource nebulas"),
+    };
+    let localred = roid_choice.localred;
+    let localgreen = roid_choice.localgreen;
+    let localblue = roid_choice.localblue;
+    let localdensity = roid_choice.localdensity as f32 * get_variant_in_range(&fields_mods.density_factor);
+    let uniformred = roid_choice.uniformred;
+    let uniformgreen = roid_choice.uniformgreen;
+    let uniformblue = roid_choice.uniformblue;
+    let uniformdensity = roid_choice.uniformdensity as f32 * get_variant_in_range(&fields_mods.density_randomization);
+    let backgroundfog = roid_choice.backgroundfog;
+    let resources = &roid_choice.resources;
+    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+    let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+    let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
+    let field = format!("<nebula ref=\"{}\" localred=\"{}\" localgreen=\"{}\" localblue=\"{}\" localdensity=\"{}\" uniformred=\"{}\" uniformgreen=\"{}\" uniformblue=\"{}\" uniformdensity=\"{}\" backgroundfog=\"{}\" resources=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\"  maxnoisevalue=\"{}\" /> \n", roid_choice.name, localred, localgreen, localblue, localdensity, uniformred, uniformgreen, uniformblue, uniformdensity, backgroundfog, resources, noisescale as i32, minnoisevalue,  maxnoisevalue).to_string();
+    let resource = format!("<resource ware=\"{}\" yield=\"{}\" />\n", roid_choice.resources, ["high", "medium"].choose(&mut prng).unwrap()).to_string();
+    add_strings.push(field);
+    add_strings.push(resource);
+    add_strings
+}
+
+fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -> Vec<String> {
+    let mut prng = rand::thread_rng();
+    let mut add_strings = Vec::new();
+    let roid_choice = match [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].choose(&mut prng).unwrap() {
+        1 => &positionals.fog_outside_set3_macro,
+        2 => &positionals.fog_outside_set1_whiteblue_macro,
+        3 => &positionals.fog_outside_set1_lightbrown_macro,
+        4 => &positionals.fog_outside_set1_big_lightorange_macro,
+        5 => &positionals.fog_outside_set1_lightorange_macro,
+        6 => &positionals.fog_outside_set1_lightblue_macro,
+        7 => &positionals.fog_outside_set1_big_lightpurple_macro,
+        8 => &positionals.fog_outside_set1_blue_macro,
+        9 => &positionals.fog_outside_set1_burgundy_macro,
+        10 => &positionals.fog_outside_set1_green_macro,
+        11 => &positionals.fog_outside_set1_darkblue_macro,
+        12 => &positionals.fog_outside_set1_red_macro,
+        13 => &positionals.fog_outside_set1_grey_macro,
+        14 => &positionals.fog_outside_set1_dust_macro,
+        15 => &positionals.fog_outside_set1_lightbrown2_macro,
+        _ => panic!("broken at plain fog"),
+    };
+    let lodrule = &roid_choice.lodrule;
+    let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
+    let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
+    let rotationvariation = roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
+    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+    let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+    let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
+    let distancefactor = roid_choice.distancefactor;
+    let field = format!("<positional ref=\"{}\" lodrule=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, lodrule, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    add_strings.push(field);
+    add_strings
+}

@@ -621,7 +621,7 @@ maxnoisevalue=1
 [defaults.positionals.fog_outside_set3_macro]
 name = "fog_outside_set3_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -631,7 +631,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_whiteblue_macro]
 name = "fog_outside_set1_whiteblue_macro"
 lodrule="nebulabig"
-densityfactor=0.15
+density_factor=0.15
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -641,7 +641,7 @@ distancefactor=0.2
 [defaults.positionals.fog_outside_set1_lightbrown_macro] # might not work
 name = "fog_outside_set1_lightbrown_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -651,7 +651,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_big_lightorange_macro]
 name = "fog_outside_set1_big_lightorange_macro"
 lodrule="nebula"
-densityfactor=0.10
+density_factor=0.10
 rotation=0
 rotationvariation=0.5
 noisescale=50000
@@ -661,7 +661,7 @@ distancefactor=0.250
 [defaults.positionals.fog_outside_set1_lightorange_macro]
 name = "fog_outside_set1_lightorange_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -671,7 +671,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_lightblue_macro] # might not work
 name = "fog_outside_set1_lightblue_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -681,7 +681,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_big_lightpurple_macro]  # might not work
 name = "fog_outside_set1_big_lightpurple_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -691,7 +691,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_blue_macro] # might not work
 name = "fog_outside_set1_blue_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -701,7 +701,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_burgundy_macro]
 name = "fog_outside_set1_burgundy_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -711,7 +711,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_green_macro]
 name = "fog_outside_set1_green_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -721,7 +721,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_darkblue_macro]
 name = "fog_outside_set1_darkblue_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -731,7 +731,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_red_macro]
 name = "fog_outside_set1_red_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -741,7 +741,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_grey_macro]
 name = "fog_outside_set1_grey_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -751,7 +751,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_dust_macro]
 name = "fog_outside_set1_dust_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
@@ -761,7 +761,7 @@ distancefactor=0.5
 [defaults.positionals.fog_outside_set1_lightbrown2_macro]
 name = "fog_outside_set1_lightbrown2_macro"
 lodrule="nebula"
-densityfactor=0.50
+density_factor=0.50
 rotation=0
 rotationvariation=0.5
 noisescale=1000
