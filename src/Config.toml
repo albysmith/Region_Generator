@@ -35,6 +35,8 @@ distancefactor = [0.1,1.5]
 [splat]
 radius = [50000, 100000]
 linear = [10000, 100000]
+x_offset = [10000, 300000]
+z_offset = [10000, 300000]
 [splat.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
 region_objects =  [1,2,3,4,5,6]

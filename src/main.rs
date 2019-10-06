@@ -61,6 +61,8 @@ struct Spline {
 struct Splat {
     radius: Vec<i64>,
     linear: Vec<i64>,
+    x_offset: Vec<i64>,
+    z_offset: Vec<i64>,
     fields: Fields,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -239,9 +241,9 @@ struct OffsetsFile {
 struct Offset {
     cluster: String,
     name: String,
-    x: String,
-    y: String,
-    z: String,
+    x: i64,
+    y: i64,
+    z: i64,
 }
 
 /*
@@ -369,7 +371,7 @@ fn main() {
         let spline_ellipse_region = create_region_spline_ellipse(&toml_parsed.spline_ellipse, &defaults_parsed.defaults, count);
                 region_names.push(("ellipse", count));
                 region_def_string.push_str(spline_ellipse_region.as_str());
-        println!("completed cycle {}", count);
+        // println!("completed cycle {}", count);
     }
 
     let out_path = &toml_parsed.config.out_path;
@@ -381,7 +383,11 @@ fn main() {
         let formula = region.0;
         let cycle_count = region.1 as usize;
         let name = format!("{}_{}", cycle_count, formula);
-        let offset_values = &offsets_parsed.offset[cycle_count];
+        let mut offset_values = offsets_parsed.offset[cycle_count].clone();
+        if formula == "splat" {
+            offset_values.x += get_random_in_range(&toml_parsed.splat.x_offset);
+            offset_values.z += get_random_in_range(&toml_parsed.splat.z_offset);
+        }
         connections_string.push_str(format!("
         <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
         offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, name, name).as_str());
@@ -389,19 +395,6 @@ fn main() {
     let mut connectionfile = File::create(format!("{}{}", out_path, "connections.xml")).unwrap();
     connectionfile.write_all(connections_string.as_bytes()).unwrap();
 }
-
-    //   <connection name="C01S01_Region002_connection" ref="regions">
-    //     <offset>
-    //       <position x="101824.5546875" y="0" z="143180.734375" />
-    //     </offset>
-    //     <macro name="C01S01_Region002_macro">
-    //       <component connection="cluster" ref="standardregion" />
-    //       <properties>
-    //         <region ref="p1_40km_asteroid_field" />
-    //       </properties>
-    //     </macro>
-    //   </connection>
-
 
 fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, count: i64) -> String {
     let mut region_string = format!("\n<region name=\"{}_cubed\" > \n", count).to_string();
@@ -594,7 +587,7 @@ fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
         let z = -radius as f32 * angle.sin() + radius  as f32  * angle.cos() + v_offset as f32;
         let position = (x as i64, y, z as i64);
         positions.push(position);
-        println!("angle {}, position {:?}", angle, position)
+        // println!("angle {}, position {:?}", angle, position)
     }
     positions
 }
