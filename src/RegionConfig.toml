@@ -1,7 +1,9 @@
-[defaults]
-[defaults.asteroids]
+# [defaults]
+# [defaults.asteroids]
 #asteroids
-[defaults.asteroids.asteroid_highyield_v1]
+# [asteroid_highyield_v1]
+[defaults.resourceasteroids.asteroid_highyield_v1]
+name = "asteroid_highyield_v1"
 density_factor = 3.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -13,7 +15,9 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_highyield_sil_v1]
+# [asteroid_highyield_sil_v1]
+[defaults.resourceasteroids.asteroid_highyield_sil_v1]
+name = "asteroid_highyield_sil_v1"
 density_factor = 100.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -25,7 +29,8 @@ distancefactor = 1.0
 resource = "silicon"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_highyield_niv_v1]
+[defaults.resourceasteroids.asteroid_highyield_niv_v1]
+name = "asteroid_highyield_niv_v1"
 density_factor = 100.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -37,7 +42,8 @@ distancefactor = 1.0
 resource = "nividium"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_ore_xxl]
+[defaults.resourceasteroids.asteroid_ore_xxl]
+name = "asteroid_ore_xxl"
 density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -49,7 +55,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_ore_xl]
+[defaults.resourceasteroids.asteroid_ore_xl]
+name = "asteroid_ore_xl"
 density_factor = 2.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -61,7 +68,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_ore_l]
+[defaults.resourceasteroids.asteroid_ore_l]
+name = "asteroid_ore_l"
 density_factor = 1.5 
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -73,7 +81,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_ore_m]
+[defaults.resourceasteroids.asteroid_ore_m]
+name = "asteroid_ore_m"
 density_factor = 4.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -85,7 +94,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_ore_s]
+[defaults.resourceasteroids.asteroid_ore_s]
+name = "asteroid_ore_s"
 density_factor = 6.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -97,7 +107,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_ore_xs]
+[defaults.resourceasteroids.asteroid_ore_xs]
+name = "asteroid_ore_xs"
 density_factor = 8.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -109,7 +120,8 @@ distancefactor = 1.0
 resource = "ore"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_silicon_xl]
+[defaults.resourceasteroids.asteroid_silicon_xl]
+name = "asteroid_silicon_xl"
 density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -121,19 +133,21 @@ distancefactor = 1.0
 resource = "silicon"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_silicon_l]
+[defaults.resourceasteroids.asteroid_silicon_l]
+name = "asteroid_silicon_l"
 density_factor = 2.0
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
-noisescale = 1500 
+noisescale = 1500
 minnoisevalue = 0.6 
 maxnoisevalue = 1.0 
 distancefactor = 1.0
 resource = "silicon"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_silicon_m]
+[defaults.resourceasteroids.asteroid_silicon_m]
+name = "asteroid_silicon_m"
 density_factor = 4.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -145,7 +159,8 @@ distancefactor = 1.0
 resource = "silicon"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_silicon_s]
+[defaults.resourceasteroids.asteroid_silicon_s]
+name = "asteroid_silicon_s"
 density_factor = 6.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -157,7 +172,8 @@ distancefactor = 1.0
 resource = "silicon"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_silicon_xs]
+[defaults.resourceasteroids.asteroid_silicon_xs]
+name = "asteroid_silicon_xs"
 density_factor = 1.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -169,7 +185,8 @@ distancefactor = 1.0
 resource = "silicon"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_nividium_l]
+[defaults.resourceasteroids.asteroid_nividium_l]
+name = "asteroid_nividium_l"
 density_factor = 0.625 
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -181,7 +198,8 @@ distancefactor = 1.0
 resource = "nividium"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_nividium_m]
+[defaults.resourceasteroids.asteroid_nividium_m]
+name = "asteroid_nividium_m"
 density_factor = 12.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -193,7 +211,8 @@ distancefactor = 1.0
 resource = "nividium"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_nividium_s]
+[defaults.resourceasteroids.asteroid_nividium_s]
+name = "asteroid_nividium_s"
 density_factor = 15.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -205,7 +224,8 @@ distancefactor = 1.0
 resource = "nividium"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_nividium_xs]
+[defaults.resourceasteroids.asteroid_nividium_xs]
+name = "asteroid_nividium_xs"
 density_factor = 5.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -217,7 +237,8 @@ distancefactor = 1.0
 resource = "nividium"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_ice_xl]
+[defaults.resourceasteroids.asteroid_ice_xl]
+name = "asteroid_ice_xl"
 density_factor = 0.0
 density_randomization = [0.1,0.5]
 rotation = 360
@@ -229,7 +250,8 @@ distancefactor = 1.0
 resource = "ice"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_ice_l]
+[defaults.resourceasteroids.asteroid_ice_l]
+name = "asteroid_ice_l"
 density_factor = 3.0
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -241,7 +263,8 @@ distancefactor = 2.0
 resource = "ice"
 resource_amount = "veryhigh"
 
-[defaults.asteroids.asteroid_ice_m]
+[defaults.resourceasteroids.asteroid_ice_m]
+name = "asteroid_ice_m"
 density_factor = 18.0
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -253,7 +276,8 @@ distancefactor = 2.0
 resource = "ice"
 resource_amount = "high"
 
-[defaults.asteroids.asteroid_ice_s]
+[defaults.resourceasteroids.asteroid_ice_s]
+name = "asteroid_ice_s"
 density_factor = 24.0
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -265,7 +289,8 @@ distancefactor = 2.0
 resource = "ice"
 resource_amount = "medium"
 
-[defaults.asteroids.asteroid_ice_xs]
+[defaults.resourceasteroids.asteroid_ice_xs]
+name = "asteroid_ice_xs"
 density_factor = 30.0
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -278,6 +303,7 @@ resource = "ice"
 resource_amount = "medium"
 
 [defaults.asteroids.asteroid_xenon_xxl]
+name = "asteroid_xenon_xxl"
 density_factor = 0.10 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -289,6 +315,7 @@ distancefactor = 2.0
 
 
 [defaults.asteroids.asteroid_xenon_xl]
+name = "asteroid_xenon_xl"
 density_factor = 0.10 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -299,6 +326,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.asteroids.asteroid_xenon_l]
+name = "asteroid_xenon_l"
 density_factor = 0.10 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -309,6 +337,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.asteroids.asteroid_xenon_m]
+name = "asteroid_xenon_m"
 density_factor = 0.10
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -319,6 +348,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.asteroids.asteroid_xenon_s]
+name = "asteroid_xenon_s"
 density_factor = 0.10 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -329,6 +359,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.asteroids.asteroid_xenon_xs]
+name = "asteroid_xenon_xs"
 density_factor = 0.10 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -339,8 +370,9 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 #DEBRIS
-[debris]
+# [defaults.debris]
 [defaults.debris.debris_xl]
+name = "debris_xl"
 density_factor = 0.408 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -351,6 +383,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_l]
+name = "debris_l"
 density_factor = 0.7 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -361,6 +394,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_m]
+name = "debris_m"
 density_factor = 6.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -371,6 +405,7 @@ maxnoisevalue = 1
 distancefactor = 1.0
 
 [defaults.debris.debris_s]
+name = "debris_s"
 density_factor = 0.5 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -381,6 +416,7 @@ maxnoisevalue = 1
 distancefactor = 1.0
 
 [defaults.debris.debris_station_l]
+name = "debris_station_l"
 density_factor = 3.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -391,6 +427,7 @@ maxnoisevalue = 1
 distancefactor = 1.0
 
 [defaults.debris.env_debris_station_l_05]
+name = "env_debris_station_l_05"
 density_factor = 0.051 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -401,6 +438,7 @@ maxnoisevalue = 1
 distancefactor = 1.0
 
 [defaults.debris.debris_teladi_xl]
+name = "debris_teladi_xl"
 density_factor = 3.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -411,6 +449,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_paranid_xl]
+name = "debris_paranid_xl"
 density_factor = 0.9
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -421,6 +460,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_paranid_l]
+name = "debris_paranid_l"
 density_factor = 0.30
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -431,6 +471,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_split_xl]
+name = "debris_split_xl"
 density_factor = 1.15
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -441,6 +482,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_split_s]
+name = "debris_split_s"
 density_factor = 2.0 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -451,6 +493,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_xenon_xl]
+name = "debris_xenon_xl"
 density_factor = 0.7  
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -461,6 +504,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_xenon_l]
+name = "debris_xenon_l"
 density_factor = 0.3  
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -471,6 +515,7 @@ maxnoisevalue = 1
 distancefactor = 2.0
 
 [defaults.debris.debris_xenon_m]
+name = "debris_xenon_m"
 density_factor = 0.1 
 density_randomization = [0.1,0.5]
 rotation = 360 
@@ -480,8 +525,9 @@ minnoisevalue = 0.50
 maxnoisevalue = 1 
 distancefactor = 2.0
 #LOCKBOX
-[lockbox]
+# [defaults.lockbox]
 [defaults.lockbox.lockboxes_rare]
+name = "lockboxes_rare"
 density_factor = 0.000025 
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -492,6 +538,7 @@ maxnoisevalue = 1
 distancefactor = 0.0
 
 [defaults.lockbox.lockboxes_extra]
+name = "lockboxes_extra"
 density_factor = 0.00005
 density_randomization = [0.1,0.5]
 rotation = 0 
@@ -504,8 +551,9 @@ distancefactor = 0.0
 
 
 #NEBULA
-[defaults.nebula]
+# [defaults.nebula]
 [defaults.nebula.fogtest_nebula_vol_macro]
+name = "fogtest_nebula_vol_macro"
 localred=255
 localgreen=255
 localblue=255 
@@ -521,6 +569,7 @@ minnoisevalue=0.0
 maxnoisevalue=1
 
 [defaults.nebula.fog_smallstones_v1_macro] # might be broken
+name = "fog_smallstones_v1_macro"
 localred=255 
 localgreen=255
 localblue=255
@@ -536,6 +585,7 @@ minnoisevalue=0.0
 maxnoisevalue=1
 
 [defaults.nebula.fogvolume_small_macro]
+name = "fogvolume_small_macro"
 localred=100 
 localgreen=100
 localblue=100
@@ -551,6 +601,7 @@ minnoisevalue=0.0
 maxnoisevalue=1
 
 [defaults.nebula.fogpattern_v2_macro]
+name = "fogpattern_v2_macro"
 localred=161
 localgreen=194
 localblue=226
@@ -566,8 +617,9 @@ minnoisevalue=0.0
 maxnoisevalue=1
 
 #POSITIONALS
-[defaults.positionals]
+# [defaults.positionals]
 [defaults.positionals.fog_outside_set3_macro]
+name = "fog_outside_set3_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -577,14 +629,17 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_whiteblue_macro]
+name = "fog_outside_set1_whiteblue_macro"
 lodrule="nebulabig"
 densityfactor=0.15
+rotation=0
 rotationvariation=0.5
 noisescale=1000
 minnoisevalue=0.50
 maxnoisevalue=1
 distancefactor=0.2
 [defaults.positionals.fog_outside_set1_lightbrown_macro] # might not work
+name = "fog_outside_set1_lightbrown_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -594,6 +649,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_big_lightorange_macro]
+name = "fog_outside_set1_big_lightorange_macro"
 lodrule="nebula"
 densityfactor=0.10
 rotation=0
@@ -603,6 +659,7 @@ minnoisevalue=0.80
 maxnoisevalue=1.0
 distancefactor=0.250
 [defaults.positionals.fog_outside_set1_lightorange_macro]
+name = "fog_outside_set1_lightorange_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -612,6 +669,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_lightblue_macro] # might not work
+name = "fog_outside_set1_lightblue_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -621,6 +679,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_big_lightpurple_macro]  # might not work
+name = "fog_outside_set1_big_lightpurple_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -630,6 +689,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_blue_macro] # might not work
+name = "fog_outside_set1_blue_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -639,6 +699,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_burgundy_macro]
+name = "fog_outside_set1_burgundy_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -648,6 +709,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_green_macro]
+name = "fog_outside_set1_green_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -657,6 +719,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_darkblue_macro]
+name = "fog_outside_set1_darkblue_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -666,6 +729,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_red_macro]
+name = "fog_outside_set1_red_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -675,6 +739,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_grey_macro]
+name = "fog_outside_set1_grey_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -684,6 +749,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_dust_macro]
+name = "fog_outside_set1_dust_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -693,6 +759,7 @@ minnoisevalue=0.10
 maxnoisevalue=0.5
 distancefactor=0.5
 [defaults.positionals.fog_outside_set1_lightbrown2_macro]
+name = "fog_outside_set1_lightbrown2_macro"
 lodrule="nebula"
 densityfactor=0.50
 rotation=0
@@ -705,35 +772,43 @@ distancefactor=0.5
 
 #SOUNDS
 [defaults.sounds]
-[zoned_sound_01]
+[defaults.sounds.zoned_sound_01]
+name = "zoned_sound_01"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_02]
+[defaults.sounds.zoned_sound_02]
+name = "zoned_sound_02"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_03]
+[defaults.sounds.zoned_sound_03]
+name = "zoned_sound_03"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_04]
+[defaults.sounds.zoned_sound_04]
+name = "zoned_sound_04"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_05]
+[defaults.sounds.zoned_sound_05]
+name = "zoned_sound_05"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_06]
+[defaults.sounds.zoned_sound_06]
+name = "zoned_sound_06"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[zoned_sound_07]
+[defaults.sounds.zoned_sound_07]
+name = "zoned_sound_07"
 noisescale=26000 
 minnoisevalue=0.8 
 playtime=20
-[legacy_music_pool]
+[defaults.sounds.legacy_music_pool]
+name = "legacy_music_pool"
 noisescale=26000 
 minnoisevalue=0.6 
 playtime=120

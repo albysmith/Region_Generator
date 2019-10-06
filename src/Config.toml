@@ -1,9 +1,12 @@
 [config]
-region_types = []
+region_types = ["cubed", "squared"]
+number_to_create = 10
+out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 
 [spline_cubed]
 # step_range * step_rate = the min and max x values for your region
 # default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
+radius = [10000, 50000]
 step_range = [-50, 50]
 step_rate = 10000
 h_offset_range = [-200000, 200000]
@@ -13,11 +16,27 @@ v_deadzone_range = [-100000, 100000]
 width_variance = [-100000000000, 100000000000]
 width_deadzone = [-100000000, 100000000]
 y_values = [-10000,10000]
-y_variance = [-1000, 1000]
+y_variance = [-100, 100]
+[spline_cubed.fields]
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+region_objects =  [1,1,2,2]
+region_count = 2
+
+[spline_cubed.fields.fields_mods]
+density_factor = [0.1,1.5]
+density_randomization = [0.1,1.5]
+rotation = [0.1,1.5]
+rotationvariation = [0.1,1.5]
+noisescale = [0.1,1.5]
+minnoisevalue = [0.1,1.5]
+maxnoisevalue = [0.1,1.5]
+distancefactor = [0.1,1.5]
+
 
 [spline_squared]
 # step_range * step_rate = the min and max x values for your region
 # default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
+radius = [10000, 50000]
 step_range = [-50, 50]
 step_rate = 10000
 h_offset_range = [-200000, 200000]
@@ -27,7 +46,22 @@ v_deadzone_range = [-100000, 100000]
 width_variance = [-7500000, 7500000]
 width_deadzone = [-10000, 10000]
 y_values = [-10000,10000]
-y_variance = [-1000, 1000]
+y_variance = [-100, 100]
+[spline_squared.fields]
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+region_objects =  [1,1,2,2]
+region_count = 2
+
+[spline_squared.fields.fields_mods]
+density_factor = [0.1,1.5]
+density_randomization = [0.1,1.5]
+rotation = [0.1,1.5]
+rotationvariation = [0.1,1.5]
+noisescale = [0.1,1.5]
+minnoisevalue = [0.1,1.5]
+maxnoisevalue = [0.1,1.5]
+distancefactor = [0.1,1.5]
+
 
 
 
