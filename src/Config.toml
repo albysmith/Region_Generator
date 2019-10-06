@@ -1,6 +1,6 @@
 [config]
-region_types = ["cubed", "squared", "splat", "sin", "cbrt"]
 number_of_cycles = 10
+# enter your desired output path here (don't forget the ending "/"!!!)
 out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 
 [spline_cubed]
@@ -9,20 +9,26 @@ out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 radius = [10000, 50000]
 step_range = [-50, 50]
 step_rate = 10000
+# the next 4 values determine horizontal and vertical offset
+# there is a "deadzone" variable to avoid regions snaking directly through the center of the sector all the time
+# set values to -1 and 1 to effectively remove the deadzone if you wish
 h_offset_range = [-200000, 200000]
 h_deadzone_range = [-100000, 100000]
 v_offset_range = [-200000, 200000]
 v_deadzone_range = [-100000, 100000]
+# width variance changes the shape of the curve somewhat; deadzone and variance are set here based on graphical testing
+# numbers outside this range tend to create curves that are closer to lines and are generally unappealling
 width_variance = [-100000000000.0, 100000000000.0]
 width_deadzone = [-100000000.0, 100000000.0]
+# just to give y some action.....
 y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_cubed.fields]
-# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
 region_objects =  [1,2,3,4,5,6]
-region_count = 10
 
 [spline_cubed.fields.fields_mods]
+# multipliers are chosen at random between these values
 density_factor = [0.1,1.0]
 density_randomization = [0.1,1.5]
 rotation = [0.1,1.5]
@@ -33,14 +39,16 @@ maxnoisevalue = [0.9,1.5]
 distancefactor = [0.1,1.5]
 
 [splat]
-radius = [50000, 100000]
+# radius value of circular region
+radius = [50000, 300000]
+# height value of circular region
 linear = [10000, 100000]
+# used to offset the region within the sector
 x_offset = [10000, 300000]
 z_offset = [10000, 300000]
 [splat.fields]
-# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
 region_objects =  [1,2,3,4,5,6]
-region_count = 10
 
 [splat.fields.fields_mods]
 density_factor = [0.1,1.0]
@@ -67,9 +75,8 @@ width_deadzone = [-10000.0, 10000.0]
 y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_squared.fields]
-# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
 region_objects =  [1,2,3,4,5,6]
-region_count = 10
 
 [spline_squared.fields.fields_mods]
 density_factor = [0.1,1.0]
@@ -83,7 +90,7 @@ distancefactor = [0.1,1.5]
 
 [spline_sin]
 # step_range * step_rate = the min and max x values for your region
-# default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
+# default is [-50, 50] and 10000 for a range of -500km to 500km along the x axis, with a point every 10km
 radius = [10000, 50000]
 step_range = [-50, 50]
 step_rate = 10000
@@ -96,9 +103,8 @@ width_deadzone = [-0.000001, 0.000001]
 y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_sin.fields]
-# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
 region_objects =  [1,2,3,4,5,6]
-region_count = 10
 
 [spline_sin.fields.fields_mods]
 density_factor = [0.1,1.0]
@@ -111,24 +117,24 @@ maxnoisevalue = [0.9,1.5]
 distancefactor = [0.1,1.5]
 
 [spline_ellipse]
-# step_range * step_rate = the min and max x values for your region
-# default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
+# step_range[min] must always be 0
+# a random number between the min and max will determine the number of steps created. 100 points = a full circle 
+# that random number * a random number from h_step_range also determines the radius of the circle created 
+# radius value listed below is for the width of the region (same as the way it's used elsewhere)
 radius = [50000, 150000]
-step_range = [-25, 25]
-h_step_rate = [5000, 15000]
+step_range = [0, 100]
+h_step_rate = [1000, 5000]
+# starting_angle: measured in radians and determines the place in the circle where the steps begin. 0 is the origin, 2 comes back around to the same position.
 starting_angle = [0, 2]
 h_offset_range = [-200000, 200000]
 h_deadzone_range = [-100000, 100000]
 v_offset_range = [-200000, 200000]
 v_deadzone_range = [-100000, 100000]
-width_variance = [-750000.0, 750000.0]
-width_deadzone = [-10000.0, 10000.0]
 y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_ellipse.fields]
-# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog
+# 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
 region_objects =  [1,2,3,4,5,6]
-region_count = 10
 
 [spline_ellipse.fields.fields_mods]
 density_factor = [0.1,1.0]
@@ -140,10 +146,10 @@ minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
 distancefactor = [0.1,1.5]
 
-[user_gen_region]
-point_a = [-200000, 0, 200000]
-point_b = [-100000, 0, 100000]
-point_c = [0, 0, 0]
-point_d = [100000, 0, -100000]
-point_e = [200000, 0, -200000]
-length_variance = [1.0, 1.5]
+# [user_gen_region]
+# point_a = [-200000, 0, 200000]
+# point_b = [-100000, 0, 100000]
+# point_c = [0, 0, 0]
+# point_d = [100000, 0, -100000]
+# point_e = [200000, 0, -200000]
+# length_variance = [1.0, 1.5]

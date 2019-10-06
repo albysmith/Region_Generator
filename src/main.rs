@@ -1,8 +1,5 @@
 use rand::seq::SliceRandom;
 use rand::Rng;
-// use std::borrow::Borrow;
-// use std::collections::HashMap;
-// use std::fs;
 use std::fs::File;
 use std::io::Write;
 #[macro_use]
@@ -21,7 +18,6 @@ struct Toml {
 
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Config {
-    region_types: Vec<String>,
     number_of_cycles: i64,
     out_path: String,
 }
@@ -36,8 +32,6 @@ struct Ellipse {
     h_deadzone_range: Vec<i64>,
     v_offset_range: Vec<i64>,
     v_deadzone_range: Vec<i64>,
-    width_variance: Vec<f64>,
-    width_deadzone: Vec<f64>,
     y_values: Vec<i64>,
     y_variance: Vec<i64>,
     fields: Fields,
@@ -68,7 +62,6 @@ struct Splat {
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Fields {
     region_objects: Vec<i64>,
-    region_count: i64,
     fields_mods: FieldsMods,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -94,6 +87,7 @@ struct Defaults {
     lockbox: Lockbox,
     nebula: Nebula,
     positionals: Positionals,
+    sounds: Sounds,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct ResourceRoids {
@@ -178,6 +172,17 @@ struct Positionals {
     fog_outside_set1_lightbrown2_macro: OtherNebula,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
+struct Sounds {
+    zoned_sound_01: Sound,
+    zoned_sound_02: Sound,
+    zoned_sound_03: Sound,
+    zoned_sound_04: Sound,
+    zoned_sound_05: Sound,
+    zoned_sound_06: Sound,
+    zoned_sound_07: Sound,
+    legacy_music_pool: Sound,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
 struct ResourceAsteroid {
     name: String,
     density_factor: f64, 
@@ -233,9 +238,15 @@ struct OtherNebula {
     distancefactor: f64,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
+struct Sound {
+    name: String,
+    noisescale: i64,
+    minnoisevalue: f64,
+    playtime: i64,
+}
+#[derive(Deserialize, Debug, Default, Clone)]
 struct OffsetsFile {
     offset: Vec<Offset>,
-
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Offset {
@@ -245,102 +256,6 @@ struct Offset {
     y: i64,
     z: i64,
 }
-
-/*
-
-To make a region:
-<region name="" density="1.5" rotation="0")>
-    <boundary class="splinetube">
-        <size r="5000" />
-        <splineposition x="" y="" z="" inlength="" outlength="" />
-    </boundary>
-    <falloff>
-      <lateral>
-        <step position="0.0" value="0.0" />
-        <step position="0.1" value="1.0" />
-        <step position="0.9" value="1.0" />
-        <step position="1.0" value="0.0" />
-      </lateral>
-      <radial>
-        <step position="0.0" value="1.0" />
-        <step position="0.3" value="1.0" />
-        <step position="0.5" value="0.9" />
-        <step position="0.9" value="0.4" />
-        <step position="1.0" value="0.0" />
-      </radial>
-    </falloff>
-      <positional ref="fog_outside_set7_macro" densityfactor="3.0" noisescale="1000" seed="3214" minnoisevalue="0.0" maxnoisevalue="1"/>
-      <positional ref="fog_outside_set1_lightbrown_macro" densityfactor="0.30" noisescale="1000" seed="3214" minnoisevalue="0.10" maxnoisevalue="1" distancefactor="0.5"/>
-      <positional ref="fog_outside_set1_lightblue_macro" lodrule="nebula" densityfactor="0.50" noisescale="1000" seed="3214" minnoisevalue="0.10" maxnoisevalue="0.5" distancefactor="0.5"/>
-      <positional ref="fog_outside_set1_big_lightpurple_macro" lodrule="nebula" densityfactor="0.40" noisescale="1000" seed="3214" minnoisevalue="0.50" maxnoisevalue="1" distancefactor="0.5"/>
-      <positional ref="fog_outside_set1_lightspot_macro" lodrule="nebula" densityfactor="0.40" noisescale="1000" seed="3214" minnoisevalue="0.80" maxnoisevalue="1" distancefactor="1.0"/>
-      <positional ref="fog_outside_set1_lightorange_macro" lodrule="nebula" densityfactor="0.50" noisescale="1000" seed="3214" minnoisevalue="0.10" maxnoisevalue="0.5" distancefactor="0.5"/>
-      <positional ref="fog_outside_set1_green_macro" lodrule="nebula" densityfactor="0.50" noisescale="1000" seed="3214" minnoisevalue="0.40" maxnoisevalue="0.9" distancefactor="1.5"/>
-      <positional ref="fog_outside_set1_blue_macro" lodrule="nebula" densityfactor="0.50" noisescale="1000" seed="3214" minnoisevalue="0.40" maxnoisevalue="0.9" distancefactor="1.5"/>
-      <positional ref="fog_outside_set1_lightgreen_macro" lodrule="nebula" densityfactor="0.50" noisescale="1000" seed="3214" minnoisevalue="0.30" maxnoisevalue="0.9" distancefactor="0.5"/>
-      <asteroid groupref="asteroid_ore_l" densityfactor="2" noisescale="1000" seed="3214" minnoisevalue="0.5" maxnoisevalue="1"/>
-      <asteroid groupref="asteroid_silicon_m" densityfactor="1" noisescale="1000" seed="3214" minnoisevalue="0.25" maxnoisevalue="1"/>
-      <asteroid groupref="asteroid_ice_l" densityfactor="0.3" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
-      <asteroid groupref="asteroid_ice_m" densityfactor="1.8" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
-      <asteroid groupref="asteroid_xenon_xxl" densityfactor="2" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1" boxchecks="true" />
-      <asteroid groupref="asteroid_xenon_xl" densityfactor="1" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1" boxchecks="true" />
-      <asteroid groupref="asteroid_xenon_l" densityfactor="1" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1" boxchecks="true" />
-      <asteroid groupref="asteroid_nividium_l" densityfactor="0.125" noisescale="1000" seed="3214" minnoisevalue="0.95" maxnoisevalue="1"/>
-      <object ref="props_sm_lockbox_common_01_macro" densityfactor="0.005" />
-      <object ref="props_sm_lockbox_unusual_01_macro" densityfactor="0.005" />
-      <object ref="props_sm_lockbox_unusual_explosive_01_macro" densityfactor="0.0025" />
-      <object ref="props_sm_lockbox_unusual_fragile_01_macro" densityfactor="0.0025" />
-      <object ref="props_sm_lockbox_rare_02_macro" densityfactor="0.0025" />
-      <object ref="props_sm_lockbox_rare_explosive_01_macro" densityfactor="0.0025" />
-      <object ref="props_sm_lockbox_rare_fragile_01_macro" densityfactor="0.0025" />
-      <nebula ref="fogvolume_small_macro" localred="49" localgreen="43" localblue="19" localdensity="0.8" uniformred="49" uniformgreen="43" uniformblue="19" uniformdensity="0.2" />
-      <nebula ref="fogvolume_far_dv_macro" localred="172" localgreen="104" localblue="4" localdensity="0.2" uniformred="210" uniformgreen="125" uniformblue="6" uniformdensity="0.2"/>
-      <nebula ref="fogvolume_near_v2_dv_macro" localred="210" localgreen="125" localblue="6" localdensity="0.5" uniformred="210" uniformgreen="125" uniformblue="6" uniformdensity="0.0"/>
-    </fields>
-    <resources>
-      <resource ware="WARE" yield="medium or high" />
-    </resources>
-  </region>
-
-
-globalregion_<sector_macro_name>
-
-need input for sector macro names, count through all to create 1 region each
-but first i just need to be able to make 1 region
-
-
-Create this first, then play with the rest; that will be easier!
-
-    <boundary class="splinetube">
-      <size r="5000" />
-      <splineposition x="2409.45" y="-875.0" z="23566.0" tx="-0.330587" ty="0.265313" tz="-0.905716" inlength="0.0" outlength="4004.71" />
-      <splineposition x="-854.973" y="937.5" z="13772.7" tx="-0.28149" ty="0.0479245" tz="-0.958367" inlength="3027.82" outlength="3027.82" />
-      <splineposition x="-2704.81" y="0.0" z="6155.77" tx="-0.192943" ty="-0.223302" tz="-0.955463" inlength="2731.62" outlength="2731.62" />
-      <splineposition x="-4010.57" y="-2687.5" z="-1896.46" tx="0.0133637" ty="-0.0644138" tz="-0.997834" inlength="2599.0" outlength="2599.0" />
-      <splineposition x="-2487.18" y="-1000.0" z="-9404.63" tx="0.375348" ty="0.18733" tz="-0.907756" inlength="2416.26" outlength="2416.26" />
-      <splineposition x="1430.12" y="0.0" z="-15063.0" tx="0.747702" ty="-0.0194627" tz="-0.663749" inlength="1940.23" outlength="1940.23" />
-      <splineposition x="6217.93" y="-1234.38" z="-17130.4" tx="0.910818" ty="-0.410074" tz="-0.0474369" inlength="1911.49" outlength="0.0" />
-    </boundary>
-
-***what are some good formulas to use?
-
-  h_offset = horizontal offset (applied inversely to pos/neg sign)
-  v_offset = vertical offset
-
-  y = (x + h_offset)^2 / width + v_offset --- width between 100000-2000000 and inverse h_offset
-  y = (x + h_offset)^3 / width + v_offset --- width between 10000000000-100000000000
-  y = height * sin ( x + h_offset / width) + v_offset
-
-  set a few height/width values and create 10+ formulas to pick from.  maybe also do some linear options?
-
-
-***how do I get good points on the curve to create a nice curve?
-
-  points every 10km (10000)
-  lower the variance for the lengths
-
-
-*/ 
 
 fn main() {
     let toml_str = include_str!("Config.toml");
@@ -352,8 +267,6 @@ fn main() {
     
     let mut region_def_string = "".to_string();
     let mut region_names = Vec::new();
-
-    // println!("we got everything parsed");
 
     for count in 0..toml_parsed.config.number_of_cycles {
         let spline_cubed_region = create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults, count);
@@ -371,7 +284,6 @@ fn main() {
         let spline_ellipse_region = create_region_spline_ellipse(&toml_parsed.spline_ellipse, &defaults_parsed.defaults, count);
                 region_names.push(("ellipse", count));
                 region_def_string.push_str(spline_ellipse_region.as_str());
-        // println!("completed cycle {}", count);
     }
 
     let out_path = &toml_parsed.config.out_path;
@@ -406,7 +318,6 @@ fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, count:
     let fields_string = get_fields_and_resources(&spline_cubed.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    // println!("made a spline cubed for count:{}", count);
     region_string
 }
 
@@ -420,7 +331,6 @@ fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults, co
     let fields_string = get_fields_and_resources(&spline_squared.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    // println!("made a spline squared for count:{}", count);
     region_string
 }
 
@@ -434,7 +344,6 @@ fn create_region_spline_sin(spline_sin: &Spline, defaults: &Defaults, count: i64
     let fields_string = get_fields_and_resources(&spline_sin.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    // println!("made a spline sin for count:{}", count);
     region_string
 }
 
@@ -448,7 +357,6 @@ fn create_region_spline_ellipse(spline_ellipse: &Ellipse, defaults: &Defaults, c
     let fields_string = get_fields_and_resources(&spline_ellipse.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    // println!("made a spline ellipse for count:{}", count);
     region_string
 }
 
@@ -460,7 +368,6 @@ fn create_region_splat(splat: &Splat, defaults: &Defaults, count: i64) -> String
     let fields_string = get_fields_and_resources(&splat.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    // println!("made a splat for count:{}", count);
     region_string
 }
 
@@ -481,7 +388,6 @@ fn distance(point_a: &(i64, i64, i64), point_b: &(i64, i64, i64)) -> (f64) {
     let dy = (point_a.1 - point_b.1) as f64 + 1.0;
     let dz = (point_a.2 - point_b.2) as f64 + 1.0;
     let value = ((((dz/dx).powi(2)) + 1.0).sin() * dx) + dy;
-    // println!("made distance for something");
     value
 }
 
@@ -552,7 +458,6 @@ fn get_positions_spline_sin(config: &Spline) -> Vec<(i64, i64, i64)> {
     let width = get_width_offset(&config.width_variance, &config.width_deadzone);
     let mut y = get_random_in_range(&config.y_values);
     let y_variance = get_random_in_range(&config.y_variance);
-    // println!("width {}",width);
 
     let mut positions = Vec::new();
     for i in min_step..=max_step {
@@ -564,12 +469,11 @@ fn get_positions_spline_sin(config: &Spline) -> Vec<(i64, i64, i64)> {
             positions.push(position)
         }
     }
-    // println!("made positions spline sin");
     positions
 }
 
 fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
-    let min_step = config.step_range[0];
+    let step_count = get_random_in_range(&config.step_range);
     let max_step = config.step_range[1];
     let h_step = get_random_in_range(&config.h_step_rate);
     let radius = h_step * max_step;
@@ -580,26 +484,22 @@ fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
     let mut positions = Vec::new();
     let mut angle: f32 = get_variant_in_range(&config.starting_angle) as f32;
     let mut y = get_random_in_range(&config.y_values);
-    for _ in min_step..=max_step {
+    for _ in 0..=step_count {
         angle += 0.06;
         let x = radius as f32 * angle.cos() + radius as f32 * angle.sin() + h_offset as f32;
         y += y_variance;
         let z = -radius as f32 * angle.sin() + radius  as f32  * angle.cos() + v_offset as f32;
         let position = (x as i64, y, z as i64);
         positions.push(position);
-        // println!("angle {}, position {:?}", angle, position)
     }
     positions
 }
 
 fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i32> {
-    // println!("started lengths for something with position count: {}",positions.len() );
     let mut lengths = Vec::new();
     for j in 0..positions.len() {
-        // println!("started lengths counter count: {}", j);
         let mut inlength: i32 = 0;
         let current_pos = &positions[j];
-        // println!("current_pos: {:?}", current_pos);
         if j as i64 + 1 == positions.len() as i64 {
             let prior_pos = &positions[j-1];
             inlength = (distance(current_pos, prior_pos) / 2.0) as i32;
@@ -610,13 +510,11 @@ fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i32> {
         }
         else {
         }
-        // println!("finished lengths counter count: {}", j);
         if inlength < 0 {
             inlength = -inlength
         }
         lengths.push(inlength);
     }
-    // println!("made lengths for something");
     lengths
 }
 
@@ -649,7 +547,7 @@ fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
             4 => get_lockbox(&fields.fields_mods, &defaults.lockbox),
             5 => get_resource_nebula(&fields.fields_mods, &defaults.nebula),
             6 => get_nonresource_nebula(&fields.fields_mods, &defaults.positionals),
-            // 7 => get_sound_region(&fields.fields_mods, &defaults.sounds),
+            7 => get_sound_region(&fields.fields_mods, &defaults.sounds),
             _ => panic!("broken at resource choices"),
         };
         fields_string.push_str(&add_strings[0].as_str());
@@ -693,7 +591,6 @@ fn get_resource_asteroid(fields_mods: &FieldsMods, resourceasteroids: &ResourceR
         _ => panic!("broken at resourceroids"),
     };
     let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
-    // let density_randomization = roid_choice.density_randomization * get_variant_in_range(&fields_mods.density_randomization);
     let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
     let rotationvariation = roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
     let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
@@ -769,7 +666,7 @@ fn get_lockbox(fields_mods: &FieldsMods, lockbox: &Lockbox) -> Vec<String> {
     let roid_choice = match [1,2].choose(&mut prng).unwrap() {
         1 => &lockbox.lockboxes_rare,
         2 => &lockbox.lockboxes_extra, 
-        _ => panic!("broken at debris"),
+        _ => panic!("broken at lockbox"),
     };
     let density_factor = roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
     let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
@@ -843,6 +740,28 @@ fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -
     let maxnoisevalue = roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
     let distancefactor = roid_choice.distancefactor;
     let field = format!("<positional ref=\"{}\" lodrule=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, lodrule, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    add_strings.push(field);
+    add_strings
+}
+
+fn get_sound_region(fields_mods: &FieldsMods, sounds: &Sounds) -> Vec<String> {
+    let mut prng = rand::thread_rng();
+    let mut add_strings = Vec::new();
+    let roid_choice = match [1,2,3,4,5,6,7,8].choose(&mut prng).unwrap() {
+        1 => &sounds.zoned_sound_01,
+        2 => &sounds.zoned_sound_02,
+        3 => &sounds.zoned_sound_03,
+        4 => &sounds.zoned_sound_04,
+        5 => &sounds.zoned_sound_05,
+        6 => &sounds.zoned_sound_06,
+        7 => &sounds.zoned_sound_07,
+        8 => &sounds.legacy_music_pool,
+        _ => panic!("broken at sound"),
+    };
+    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+    let minnoisevalue = roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+    let playtime = roid_choice.playtime;
+    let field = format!("<ambientsound soundid=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" playtime=\"{}\" /> \n", roid_choice.name, noisescale as i32, minnoisevalue, playtime).to_string();
     add_strings.push(field);
     add_strings
 }
