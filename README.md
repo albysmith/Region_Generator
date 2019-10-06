@@ -3,7 +3,7 @@
 This is a tool designed by mewo and alby smith for use in modding X4: Foundations.
 
 **** config files are not yet set to reasonable values ***
-
+ 
 Configuration files include:
 -- generic config.toml to input variables for region shape, number of regions created, and what fields (asteroids, nebula, lockboxes, etc.) will appear in the region
 -- regionconfig.toml to determine default values for each field that may appear in the region; these are modified by the values in the generic config.toml file
