@@ -7,7 +7,7 @@ out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 # step_range * step_rate = the min and max x values for your region
 # default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
 radius = [10000, 50000]
-step_range = [-50, 50]
+step_range = [-20, 50]
 step_rate = 10000
 # the next 4 values determine horizontal and vertical offset
 # there is a "deadzone" variable to avoid regions snaking directly through the center of the sector all the time
@@ -29,18 +29,18 @@ region_objects =  [1,2,3,4,5,6]
 
 [spline_cubed.fields.fields_mods]
 # multipliers are chosen at random between these values
-density_factor = [0.1,1.0]
-density_randomization = [0.1,1.5]
-rotation = [0.1,1.5]
-rotationvariation = [0.1,1.5]
-noisescale = [0.1,1.5]
+density_factor = [0.9,1.1]
+density_randomization = [0.9,1.1]
+rotation = [0.9,1.1]
+rotationvariation = [0.9,1.1]
+noisescale = [0.9,1.1]
 minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
-distancefactor = [0.1,1.5]
+distancefactor = [0.9,1.1]
 
 [splat]
 # radius value of circular region
-radius = [50000, 300000]
+radius = [50000, 200000]
 # height value of circular region
 linear = [10000, 100000]
 # used to offset the region within the sector
@@ -51,20 +51,20 @@ z_offset = [10000, 300000]
 region_objects =  [1,2,3,4,5,6]
 
 [splat.fields.fields_mods]
-density_factor = [0.1,1.0]
-density_randomization = [0.1,1.5]
-rotation = [0.1,1.5]
-rotationvariation = [0.1,1.5]
-noisescale = [0.1,1.5]
+density_factor = [0.9,1.1]
+density_randomization = [0.9,1.1]
+rotation = [0.9,1.1]
+rotationvariation = [0.9,1.1]
+noisescale = [0.9,1.1]
 minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
-distancefactor = [0.1,1.5]
+distancefactor = [0.9,1.1]
 
 [spline_squared]
 # step_range * step_rate = the min and max x values for your region
 # default is [-50, 50] and 10000 for a range of -500km to 500km, with a point every 10km
 radius = [10000, 50000]
-step_range = [-50, 50]
+step_range = [-50, 20]
 step_rate = 10000
 h_offset_range = [-200000, 200000]
 h_deadzone_range = [-100000, 100000]
@@ -79,14 +79,14 @@ y_variance = [-100, 100]
 region_objects =  [1,2,3,4,5,6]
 
 [spline_squared.fields.fields_mods]
-density_factor = [0.1,1.0]
-density_randomization = [0.1,1.5]
-rotation = [0.1,1.5]
-rotationvariation = [0.1,1.5]
-noisescale = [0.1,1.5]
+density_factor = [0.9,1.1]
+density_randomization = [0.9,1.1]
+rotation = [0.9,1.1]
+rotationvariation = [0.9,1.1]
+noisescale = [0.9,1.1]
 minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
-distancefactor = [0.1,1.5]
+distancefactor = [0.9,1.1]
 
 [spline_sin]
 # step_range * step_rate = the min and max x values for your region
@@ -107,23 +107,23 @@ y_variance = [-100, 100]
 region_objects =  [1,2,3,4,5,6]
 
 [spline_sin.fields.fields_mods]
-density_factor = [0.1,1.0]
-density_randomization = [0.1,1.5]
-rotation = [0.1,1.5]
-rotationvariation = [0.1,1.5]
-noisescale = [0.1,1.5]
+density_factor = [0.9,1.1]
+density_randomization = [0.9,1.1]
+rotation = [0.9,1.1]
+rotationvariation = [0.9,1.1]
+noisescale = [0.9,1.1]
 minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
-distancefactor = [0.1,1.5]
+distancefactor = [0.9,1.1]
 
 [spline_ellipse]
 # step_range[min] must always be 0
 # a random number between the min and max will determine the number of steps created. 100 points = a full circle 
 # that random number * a random number from h_step_range also determines the radius of the circle created 
 # radius value listed below is for the width of the region (same as the way it's used elsewhere)
-radius = [50000, 150000]
+radius = [50000, 100000]
 step_range = [0, 100]
-h_step_rate = [1000, 5000]
+ellipse_radius = [10000, 150000]
 # starting_angle: measured in radians and determines the place in the circle where the steps begin. 0 is the origin, 2 comes back around to the same position.
 starting_angle = [0, 2]
 h_offset_range = [-200000, 200000]
@@ -137,14 +137,14 @@ y_variance = [-100, 100]
 region_objects =  [1,2,3,4,5,6]
 
 [spline_ellipse.fields.fields_mods]
-density_factor = [0.1,1.0]
-density_randomization = [0.1,1.5]
-rotation = [0.1,1.5]
-rotationvariation = [0.1,1.5]
-noisescale = [0.1,1.5]
+density_factor = [0.9,1.1]
+density_randomization = [0.9,1.1]
+rotation = [0.9,1.1]
+rotationvariation = [0.9,1.1]
+noisescale = [0.9,1.1]
 minnoisevalue = [0.1,0.9]
 maxnoisevalue = [0.9,1.5]
-distancefactor = [0.1,1.5]
+distancefactor = [0.9,1.1]
 
 # [user_gen_region]
 # point_a = [-200000, 0, 200000]

@@ -26,7 +26,7 @@ struct Config {
 struct Ellipse {
     radius: Vec<i64>,
     step_range: Vec<i64>,
-    h_step_rate: Vec<i64>,
+    ellipse_radius: Vec<i64>,
     starting_angle: Vec<f64>,
     h_offset_range: Vec<i64>,
     h_deadzone_range: Vec<i64>,
@@ -223,7 +223,7 @@ struct ResourceNebula {
     resources: String,
     noisescale: i64,
     minnoisevalue: f64,
-    maxnoisevalue: i64,
+    maxnoisevalue: f64,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct OtherNebula {
@@ -302,7 +302,12 @@ fn main() {
     outputfile.write_all(region_def_string.as_bytes()).unwrap();
 
     let mut connections_string = "".to_string();
+    let mut congroup = 0;
     for region in region_names.iter() {
+        if congroup != region.1 {
+            congroup += 1;
+            connections_string.push_str(&format!("\n new region - {}\n", congroup));
+        }
         let formula = region.0;
         let cycle_count = region.1 as usize;
         let name = format!("{}_{}", cycle_count, formula);
@@ -510,9 +515,7 @@ fn get_positions_spline_sin(config: &Spline) -> Vec<(i64, i64, i64)> {
 
 fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
     let step_count = get_random_in_range(&config.step_range);
-    let max_step = config.step_range[1];
-    let h_step = get_random_in_range(&config.h_step_rate);
-    let radius = h_step * max_step;
+    let radius = get_random_in_range(&config.ellipse_radius);
     let h_offset = get_spline_offset(&config.h_offset_range, &config.h_deadzone_range);
     let v_offset = get_spline_offset(&config.v_offset_range, &config.v_deadzone_range);
     let y_variance = get_random_in_range(&config.y_variance);
