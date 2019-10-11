@@ -248,7 +248,7 @@ minnoisevalue=0.0
 maxnoisevalue = 0.25 
 distancefactor = 1.0
 resource = "ice"
-resource_amount = "veryhigh"
+resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_ice_l]
 name = "asteroid_ice_l"
@@ -261,7 +261,7 @@ minnoisevalue=0.0
 maxnoisevalue = 1 
 distancefactor = 2.0
 resource = "ice"
-resource_amount = "veryhigh"
+resource_amount = "high"
 
 [defaults.resourceasteroids.asteroid_ice_m]
 name = "asteroid_ice_m"
@@ -274,7 +274,7 @@ minnoisevalue=0.0
 maxnoisevalue = 1 
 distancefactor = 2.0
 resource = "ice"
-resource_amount = "high"
+resource_amount = "medium"
 
 [defaults.resourceasteroids.asteroid_ice_s]
 name = "asteroid_ice_s"
@@ -494,7 +494,7 @@ distancefactor = 2.0
 
 [defaults.debris.debris_xenon_xl]
 name = "debris_xenon_xl"
-density_factor = 0.7  
+density_factor = 0.1  
 density_randomization = [0.1,0.5]
 rotation = 360 
 rotationvariation = 10 
@@ -557,7 +557,7 @@ name = "fogtest_nebula_vol_macro"
 localred=255
 localgreen=255
 localblue=255 
-localdensity=1.0 
+localdensity=0.5 
 uniformred=49 
 uniformgreen=49
 uniformblue=49
@@ -573,7 +573,7 @@ name = "fog_smallstones_v1_macro"
 localred=255 
 localgreen=255
 localblue=255
-localdensity=1.0 
+localdensity=0.5  
 uniformred=10 
 uniformgreen=14 
 uniformblue=20 
@@ -589,7 +589,7 @@ name = "fogvolume_small_macro"
 localred=100 
 localgreen=100
 localblue=100
-localdensity=0.8
+localdensity=0.5 
 uniformred=49
 uniformgreen=49
 uniformblue=49

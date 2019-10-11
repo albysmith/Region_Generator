@@ -1,5 +1,5 @@
 [config]
-number_of_cycles = 10
+number_of_cycles = 117
 # enter your desired output path here (don't forget the ending "/"!!!)
 out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 
@@ -25,7 +25,7 @@ y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_cubed.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
-region_objects =  [1,2,3,4,5,6]
+region_objects =  [1,2,3,4,5,7]
 
 [spline_cubed.fields.fields_mods]
 # multipliers are chosen at random between these values
@@ -48,7 +48,7 @@ x_offset = [10000, 300000]
 z_offset = [10000, 300000]
 [splat.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
-region_objects =  [1,2,3,4,5,6]
+region_objects =  [1,2,3,4,5,7]
 
 [splat.fields.fields_mods]
 density_factor = [0.9,1.1]
@@ -76,7 +76,7 @@ y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_squared.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
-region_objects =  [1,2,3,4,5,6]
+region_objects =  [1,2,3,4,5,7]
 
 [spline_squared.fields.fields_mods]
 density_factor = [0.9,1.1]
@@ -104,7 +104,7 @@ y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_sin.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
-region_objects =  [1,2,3,4,5,6]
+region_objects =  [1,2,3,4,5,7]
 
 [spline_sin.fields.fields_mods]
 density_factor = [0.9,1.1]
@@ -134,7 +134,7 @@ y_values = [-10000,10000]
 y_variance = [-100, 100]
 [spline_ellipse.fields]
 # 1: resource roids, 2: non-resource roids, 3: debris, 4: lockboxes, 5: resource fog, 6: non-resource fog, 7: sound
-region_objects =  [1,2,3,4,5,6]
+region_objects =  [1,2,3,4,5,7]
 
 [spline_ellipse.fields.fields_mods]
 density_factor = [0.9,1.1]

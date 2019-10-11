@@ -288,13 +288,13 @@ fn main() {
             create_region_spline_sin(&toml_parsed.spline_sin, &defaults_parsed.defaults, count);
         region_names.push(("sin", count));
         region_def_string.push_str(spline_sin_region.as_str());
-        let spline_ellipse_region = create_region_spline_ellipse(
-            &toml_parsed.spline_ellipse,
-            &defaults_parsed.defaults,
-            count,
-        );
-        region_names.push(("ellipse", count));
-        region_def_string.push_str(spline_ellipse_region.as_str());
+        // let spline_ellipse_region = create_region_spline_ellipse(
+        //     &toml_parsed.spline_ellipse,
+        //     &defaults_parsed.defaults,
+        //     count,
+        // );
+        // region_names.push(("ellipse", count));
+        // region_def_string.push_str(spline_ellipse_region.as_str());
     }
 
     let out_path = &toml_parsed.config.out_path;
@@ -750,7 +750,7 @@ fn get_lockbox(fields_mods: &FieldsMods, lockbox: &Lockbox) -> Vec<String> {
     let maxnoisevalue =
         roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
     let distancefactor = roid_choice.distancefactor;
-    let field = format!("<object ref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    let field = format!("<object groupref=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
     add_strings.push(field);
     add_strings
 }
@@ -768,13 +768,11 @@ fn get_resource_nebula(fields_mods: &FieldsMods, nebula: &Nebula) -> Vec<String>
     let localred = roid_choice.localred;
     let localgreen = roid_choice.localgreen;
     let localblue = roid_choice.localblue;
-    let localdensity =
-        roid_choice.localdensity as f32 * get_variant_in_range(&fields_mods.density_factor);
+    let localdensity = roid_choice.localdensity;
     let uniformred = roid_choice.uniformred;
     let uniformgreen = roid_choice.uniformgreen;
     let uniformblue = roid_choice.uniformblue;
-    let uniformdensity = roid_choice.uniformdensity as f32
-        * get_variant_in_range(&fields_mods.density_randomization);
+    let uniformdensity = roid_choice.uniformdensity;
     let backgroundfog = roid_choice.backgroundfog;
     let resources = &roid_choice.resources;
     let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
@@ -801,21 +799,21 @@ fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -
         .choose(&mut prng)
         .unwrap()
     {
-        1 => &positionals.fog_outside_set3_macro,
-        2 => &positionals.fog_outside_set1_whiteblue_macro,
-        3 => &positionals.fog_outside_set1_lightbrown_macro,
-        4 => &positionals.fog_outside_set1_big_lightorange_macro,
-        5 => &positionals.fog_outside_set1_lightorange_macro,
-        6 => &positionals.fog_outside_set1_lightblue_macro,
-        7 => &positionals.fog_outside_set1_big_lightpurple_macro,
-        8 => &positionals.fog_outside_set1_blue_macro,
-        9 => &positionals.fog_outside_set1_burgundy_macro,
-        10 => &positionals.fog_outside_set1_green_macro,
-        11 => &positionals.fog_outside_set1_darkblue_macro,
-        12 => &positionals.fog_outside_set1_red_macro,
-        13 => &positionals.fog_outside_set1_grey_macro,
-        14 => &positionals.fog_outside_set1_dust_macro,
-        15 => &positionals.fog_outside_set1_lightbrown2_macro,
+        1 => &positionals.fog_outside_set3_macro,  //ok
+        2 => &positionals.fog_outside_set1_whiteblue_macro,  //ok
+        3 => &positionals.fog_outside_set1_lightbrown_macro,  //cuts fps in half......
+        4 => &positionals.fog_outside_set1_big_lightorange_macro,  //ugly
+        5 => &positionals.fog_outside_set1_lightorange_macro,  //broken
+        6 => &positionals.fog_outside_set1_lightblue_macro,  //broken
+        7 => &positionals.fog_outside_set1_big_lightpurple_macro,  //ok i guess, but resource heavy and probably needs lower density
+        8 => &positionals.fog_outside_set1_blue_macro,  //ok
+        9 => &positionals.fog_outside_set1_burgundy_macro,  // 99
+        10 => &positionals.fog_outside_set1_green_macro,  //ok
+        11 => &positionals.fog_outside_set1_darkblue_macro,  // 98
+        12 => &positionals.fog_outside_set1_red_macro,  // ok
+        13 => &positionals.fog_outside_set1_grey_macro,  // broken
+        14 => &positionals.fog_outside_set1_dust_macro,  // ok but heavy
+        15 => &positionals.fog_outside_set1_lightbrown2_macro,  // broken
         _ => panic!("broken at plain fog"),
     };
     let lodrule = &roid_choice.lodrule;
