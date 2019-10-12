@@ -75,7 +75,16 @@ struct FieldsMods {
     noisescale: Vec<f64>,
     minnoisevalue: Vec<f64>,
     maxnoisevalue: Vec<f64>,
-    distancefactor: Vec<f64>,
+    lateral_1: Vec<f64>,
+    lateral_2: Vec<f64>,
+    lateral_3: Vec<f64>,
+    lateral_4: Vec<f64>,
+    lateral_5: Vec<f64>,
+    radial_1: Vec<f64>,
+    radial_2: Vec<f64>,
+    radial_3: Vec<f64>,
+    radial_4: Vec<f64>,
+    radial_5: Vec<f64>,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct DefaultsToml {
@@ -321,14 +330,12 @@ fn main() {
 
 fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
     let name = format!("sector_{}_region_{}_cubed", counts.0, counts.1).to_string();
-    let mut region_string = format!("\n<region name=\"{}d\" > \n", name).to_string();
+    let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_cubed(&spline_cubed);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_cubed.radius);
-    region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&spline_cubed.fields, defaults);
-    region_string.push_str(fields_string.as_str());
+    region_string.push_str(get_spline_boundary_format(&positions, &lengths, &spline_cubed.radius).as_str());
+    region_string.push_str(get_falloff(&spline_cubed.fields.fields_mods).as_str());    
+    region_string.push_str(get_fields_and_resources(&spline_cubed.fields, defaults).as_str());
     region_string.push_str("</region> \n");
     (region_string, (name, counts.0))
 }
@@ -338,11 +345,9 @@ fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults, co
     let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_squared(&spline_squared);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_squared.radius);
-    region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n\n");
-    let fields_string = get_fields_and_resources(&spline_squared.fields, defaults);
-    region_string.push_str(fields_string.as_str());
+    region_string.push_str(get_spline_boundary_format(&positions, &lengths, &spline_squared.radius).as_str());
+    region_string.push_str(get_falloff(&spline_squared.fields.fields_mods).as_str());    
+    region_string.push_str(get_fields_and_resources(&spline_squared.fields, defaults).as_str());
     region_string.push_str("</region> \n");
     (region_string, (name, counts.0))
 }
@@ -352,11 +357,9 @@ fn create_region_spline_sin(spline_sin: &Spline, defaults: &Defaults, counts: (i
     let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_sin(&spline_sin);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_sin.radius);
-    region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&spline_sin.fields, defaults);
-    region_string.push_str(fields_string.as_str());
+    region_string.push_str(get_spline_boundary_format(&positions, &lengths, &spline_sin.radius).as_str());
+    region_string.push_str(get_falloff(&spline_sin.fields.fields_mods).as_str());    
+    region_string.push_str(get_fields_and_resources(&spline_sin.fields, defaults).as_str());
     region_string.push_str("</region> \n");
     (region_string, (name, counts.0))
 }
@@ -366,11 +369,9 @@ fn create_region_spline_ellipse(spline_ellipse: &Ellipse, defaults: &Defaults, c
     let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_ellipse(&spline_ellipse);
     let lengths = get_lengths(&positions);
-    let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_ellipse.radius);
-    region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&spline_ellipse.fields, defaults);
-    region_string.push_str(fields_string.as_str());
+    region_string.push_str(get_spline_boundary_format(&positions, &lengths, &spline_ellipse.radius).as_str());
+    region_string.push_str(get_falloff(&spline_ellipse.fields.fields_mods).as_str());    
+    region_string.push_str(get_fields_and_resources(&spline_ellipse.fields, defaults).as_str());
     region_string.push_str("</region> \n");
     (region_string, (name, counts.0))
 }
@@ -378,16 +379,9 @@ fn create_region_spline_ellipse(spline_ellipse: &Ellipse, defaults: &Defaults, c
 fn create_region_splat(splat: &Splat, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
     let name = format!("sector_{}_region_{}_splat", counts.0, counts.1).to_string();
     let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
-    let boundary_string = format!(
-        "<boundary class=\"cylinder\"> \n<size r=\"{}\" linear=\"{}\" />\n</boundary>\n",
-        get_random_in_range(&splat.radius),
-        get_random_in_range(&splat.linear)
-    )
-    .to_string();
-    region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"0.3\" />\n<step position=\"0.5\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.1\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"0.3\" />\n<step position=\"0.5\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.1\" />\n</radial>\n</falloff>\n");
-    let fields_string = get_fields_and_resources(&splat.fields, defaults);
-    region_string.push_str(fields_string.as_str());
+    region_string.push_str(format!("<boundary class=\"cylinder\"> \n<size r=\"{}\" linear=\"{}\" />\n</boundary>\n", get_random_in_range(&splat.radius), get_random_in_range(&splat.linear)).as_str());
+    region_string.push_str(get_falloff(&splat.fields.fields_mods).as_str());
+    region_string.push_str(get_fields_and_resources(&splat.fields, defaults).as_str());
     region_string.push_str("</region> \n");
     (region_string, (name, counts.0))
 }
@@ -547,11 +541,7 @@ fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i32> {
     lengths
 }
 
-fn get_spline_boundary_format(
-    positions: &Vec<(i64, i64, i64)>,
-    lengths: &Vec<i32>,
-    radius_range: &Vec<i64>,
-) -> String {
+fn get_spline_boundary_format(positions: &Vec<(i64, i64, i64)>, lengths: &Vec<i32>, radius_range: &Vec<i64>) -> String {
     let mut boundary_string = "  <boundary class=\"splinetube\"> \n".to_string();
     let radius = get_random_in_range(radius_range);
     boundary_string.push_str(format!("    <size r=\"{}\" /> \n", radius).as_str());
@@ -570,6 +560,21 @@ fn get_spline_boundary_format(
     }
     boundary_string.push_str("  </boundary> \n");
     boundary_string
+}
+
+fn get_falloff (fieldmods: &FieldsMods) -> String {
+    let mut falloff_string = "<falloff>\n<lateral>\n".to_string();
+    falloff_string.push_str(format!("<step position=\"0.0\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_5)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.25\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_4)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.5\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_3)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.75\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_2)).as_str());
+    falloff_string.push_str(format!("<step position=\"1.0\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_1)).as_str());
+    falloff_string.push_str(format!("</lateral>\n<radial>\n<step position=\"0.0\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.radial_5)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.25\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_4)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.5\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_3)).as_str());
+    falloff_string.push_str(format!("<step position=\"0.75\" value=\"{}\" />\n", get_variant_in_range(&fieldmods.lateral_2)).as_str());
+    falloff_string.push_str(format!("<step position=\"1.0\" value=\"{}\" />\n</radial>\n</falloff>\n", get_variant_in_range(&fieldmods.lateral_1)).as_str());
+    falloff_string
 }
 
 fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
