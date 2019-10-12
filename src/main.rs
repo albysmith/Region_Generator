@@ -19,6 +19,8 @@ struct Toml {
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Config {
     number_of_cycles: i64,
+    region_range: Vec<i64>,
+    region_types: Vec<i64>,
     out_path: String,
 }
 
@@ -55,19 +57,19 @@ struct Spline {
 struct Splat {
     radius: Vec<i64>,
     linear: Vec<i64>,
-    x_offset: Vec<i64>,
-    z_offset: Vec<i64>,
+    // x_offset: Vec<i64>,
+    // z_offset: Vec<i64>,
     fields: Fields,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct Fields {
     region_objects: Vec<i64>,
+    region_count: Vec<i64>,
     fields_mods: FieldsMods,
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct FieldsMods {
     density_factor: Vec<f64>,
-    density_randomization: Vec<f64>,
     rotation: Vec<f64>,
     rotationvariation: Vec<f64>,
     noisescale: Vec<f64>,
@@ -258,6 +260,7 @@ struct Offset {
 }
 
 fn main() {
+    let mut prng = rand::thread_rng();
     let toml_str = include_str!("Config.toml");
     let toml_parsed: Toml = toml::from_str(&toml_str).unwrap();
     let defaults_str = include_str!("RegionConfig.toml");
@@ -265,37 +268,26 @@ fn main() {
     let offsets_str = include_str!("offsets.toml");
     let offsets_parsed: OffsetsFile = toml::from_str(&offsets_str).unwrap();
 
-    let mut region_def_string = "".to_string();
+    let mut region_def_string = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<regions>\n".to_string();
     let mut region_names = Vec::new();
 
-    for count in 0..toml_parsed.config.number_of_cycles {
-        let spline_cubed_region =
-            create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults, count);
-        region_names.push(("cubed", count));
-        region_def_string.push_str(spline_cubed_region.as_str());
-        let spline_squared_region = create_region_spline_squared(
-            &toml_parsed.spline_squared,
-            &defaults_parsed.defaults,
-            count,
-        );
-        region_names.push(("squared", count));
-        region_def_string.push_str(spline_squared_region.as_str());
-        let splat_region =
-            create_region_splat(&toml_parsed.splat, &defaults_parsed.defaults, count);
-        region_names.push(("splat", count));
-        region_def_string.push_str(splat_region.as_str());
-        let spline_sin_region =
-            create_region_spline_sin(&toml_parsed.spline_sin, &defaults_parsed.defaults, count);
-        region_names.push(("sin", count));
-        region_def_string.push_str(spline_sin_region.as_str());
-        // let spline_ellipse_region = create_region_spline_ellipse(
-        //     &toml_parsed.spline_ellipse,
-        //     &defaults_parsed.defaults,
-        //     count,
-        // );
-        // region_names.push(("ellipse", count));
-        // region_def_string.push_str(spline_ellipse_region.as_str());
+    for sector in 0..toml_parsed.config.number_of_cycles {
+        let region_count = get_random_in_range(&toml_parsed.config.region_range);
+        for region in 0..region_count {
+            let obj = toml_parsed.config.region_types.choose(&mut prng).unwrap();
+            let region = match obj {
+                1 => create_region_spline_cubed(&toml_parsed.spline_cubed, &defaults_parsed.defaults, (sector, region)),
+                2 => create_region_spline_squared(&toml_parsed.spline_squared, &defaults_parsed.defaults, (sector, region)),
+                3 => create_region_splat(&toml_parsed.splat, &defaults_parsed.defaults, (sector, region)),
+                4 => create_region_spline_sin(&toml_parsed.spline_sin, &defaults_parsed.defaults, (sector, region)),
+                5 => create_region_spline_ellipse(&toml_parsed.spline_ellipse, &defaults_parsed.defaults, (sector, region)),
+                _ => panic!("broken at region shape choice"),
+            };
+            region_names.push(region.1);
+            region_def_string.push_str(region.0.as_str());
+        }
     }
+    region_def_string.push_str("\n</regions>");
 
     let out_path = &toml_parsed.config.out_path;
     let mut outputfile = File::create(format!("{}{}", out_path, "region_definitions.xml")).unwrap();
@@ -308,14 +300,15 @@ fn main() {
             congroup += 1;
             connections_string.push_str(&format!("\n new region - {}\n", congroup));
         }
-        let formula = region.0;
-        let cycle_count = region.1 as usize;
-        let name = format!("{}_{}", cycle_count, formula);
-        let mut offset_values = offsets_parsed.offset[cycle_count].clone();
-        if formula == "splat" {
-            offset_values.x += get_random_in_range(&toml_parsed.splat.x_offset);
-            offset_values.z += get_random_in_range(&toml_parsed.splat.z_offset);
-        }
+        // let formula = region.0;
+        // let cycle_count = region.1 as usize;
+        let name = &region.0;
+        let offset_values = offsets_parsed.offset[region.1 as usize].clone();
+        // old code: creates offset in connections file (requires offset_values to be mut)
+        // if formula == "splat" {
+        //     offset_values.x += get_random_in_range(&toml_parsed.splat.x_offset);
+        //     offset_values.z += get_random_in_range(&toml_parsed.splat.z_offset);
+        // }
         connections_string.push_str(format!("
         <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
         offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, name, name).as_str());
@@ -326,68 +319,65 @@ fn main() {
         .unwrap();
 }
 
-fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, count: i64) -> String {
-    let mut region_string = format!("\n<region name=\"{}_cubed\" > \n", count).to_string();
+fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
+    let name = format!("sector_{}_region_{}_cubed", counts.0, counts.1).to_string();
+    let mut region_string = format!("\n<region name=\"{}d\" > \n", name).to_string();
     let positions = get_positions_spline_cubed(&spline_cubed);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_cubed.radius);
     region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&spline_cubed.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    region_string
+    (region_string, (name, counts.0))
 }
 
-fn create_region_spline_squared(
-    spline_squared: &Spline,
-    defaults: &Defaults,
-    count: i64,
-) -> String {
-    let mut region_string = format!("\n<region name=\"{}_squared\" > \n", count).to_string();
+fn create_region_spline_squared(spline_squared: &Spline, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
+    let name = format!("sector_{}_region_{}_squared", counts.0, counts.1).to_string();
+    let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_squared(&spline_squared);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_squared.radius);
     region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n\n");
     let fields_string = get_fields_and_resources(&spline_squared.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    region_string
+    (region_string, (name, counts.0))
 }
 
-fn create_region_spline_sin(spline_sin: &Spline, defaults: &Defaults, count: i64) -> String {
-    let mut region_string = format!("\n<region name=\"{}_sin\" > \n", count).to_string();
+fn create_region_spline_sin(spline_sin: &Spline, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
+    let name = format!("sector_{}_region_{}_sin", counts.0, counts.1).to_string();
+    let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_sin(&spline_sin);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_sin.radius);
     region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&spline_sin.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    region_string
+    (region_string, (name, counts.0))
 }
 
-fn create_region_spline_ellipse(
-    spline_ellipse: &Ellipse,
-    defaults: &Defaults,
-    count: i64,
-) -> String {
-    let mut region_string = format!("\n<region name=\"{}_ellipse\" > \n", count).to_string();
+fn create_region_spline_ellipse(spline_ellipse: &Ellipse, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
+    let name = format!("sector_{}_region_{}_ellipse", counts.0, counts.1).to_string();
+    let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let positions = get_positions_spline_ellipse(&spline_ellipse);
     let lengths = get_lengths(&positions);
     let boundary_string = get_spline_boundary_format(&positions, &lengths, &spline_ellipse.radius);
     region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"1.0\" />\n<step position=\"0.3\" value=\"0.8\" />\n<step position=\"0.5\" value=\"0.6\" />\n<step position=\"0.7\" value=\"0.4\" />\n<step position=\"0.9\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&spline_ellipse.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    region_string
+    (region_string, (name, counts.0))
 }
 
-fn create_region_splat(splat: &Splat, defaults: &Defaults, count: i64) -> String {
-    let mut region_string = format!("\n<region name=\"{}_splat\" > \n", count).to_string();
+fn create_region_splat(splat: &Splat, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
+    let name = format!("sector_{}_region_{}_splat", counts.0, counts.1).to_string();
+    let mut region_string = format!("\n<region name=\"{}\" > \n", name).to_string();
     let boundary_string = format!(
         "<boundary class=\"cylinder\"> \n<size r=\"{}\" linear=\"{}\" />\n</boundary>\n",
         get_random_in_range(&splat.radius),
@@ -395,11 +385,11 @@ fn create_region_splat(splat: &Splat, defaults: &Defaults, count: i64) -> String
     )
     .to_string();
     region_string.push_str(boundary_string.as_str());
-    region_string.push_str("<falloff> \n<lateral> \n<step position=\"0.0\" value=\"0.0\" /> \n<step position=\"0.1\" value=\"1.0\" /> \n<step position=\"0.9\" value=\"1.0\" /> \n<step position=\"1.0\" value=\"0.0\" /> \n</lateral> \n<radial> \n<step position=\"0.0\" value=\"1.0\" /> \n<step position=\"0.3\" value=\"1.0\" /> \n<step position=\"0.5\" value=\"0.9\" />\n<step position=\"0.9\" value=\"0.4\" />\n<step position=\"1.0\" value=\"0.0\" />\n</radial>\n</falloff>\n");
+    region_string.push_str("<falloff>\n<lateral>\n<step position=\"0.0\" value=\"0.3\" />\n<step position=\"0.5\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.1\" />\n</lateral>\n<radial>\n<step position=\"0.0\" value=\"0.3\" />\n<step position=\"0.5\" value=\"0.2\" />\n<step position=\"1.0\" value=\"0.1\" />\n</radial>\n</falloff>\n");
     let fields_string = get_fields_and_resources(&splat.fields, defaults);
     region_string.push_str(fields_string.as_str());
     region_string.push_str("</region> \n");
-    region_string
+    (region_string, (name, counts.0))
 }
 
 fn get_random_in_range(range: &Vec<i64>) -> (i64) {
@@ -416,9 +406,10 @@ fn get_variant_in_range(range: &Vec<f64>) -> (f32) {
 
 fn distance(point_a: &(i64, i64, i64), point_b: &(i64, i64, i64)) -> (f64) {
     let dx = (point_a.0 - point_b.0) as f64 + 1.0;
-    let dy = (point_a.1 - point_b.1) as f64 + 1.0;
+    let mut dy = (point_a.1 - point_b.1) as f64 + 1.0;
     let dz = (point_a.2 - point_b.2) as f64 + 1.0;
-    let value = ((((dz / dx).powi(2)) + 1.0).sin() * dx) + dy;
+    if dy < 0.0 { dy = -dy }
+    let value = (((dz/dx).powi(2) + 1.0).sqrt() * dx ) + dy;
     value
 }
 
@@ -460,7 +451,7 @@ fn get_positions_spline_cubed(config: &Spline) -> Vec<(i64, i64, i64)> {
         y += y_variance;
         let z = (((x as f64 + h_offset).powi(3)) / width + v_offset) as i64;
         let position = (x, y, z);
-        if z < 10000000 {
+        if z < 10000000 && x > -10000000 {
             positions.push(position)
         }
     }
@@ -483,7 +474,7 @@ fn get_positions_spline_squared(config: &Spline) -> Vec<(i64, i64, i64)> {
         y += y_variance;
         let z = (((x as f64 + h_offset).powi(2)) / width + v_offset) as i64;
         let position = (x, y, z);
-        if z < 10000000 {
+        if z < 10000000 && x > -10000000 {
             positions.push(position)
         }
     }
@@ -506,7 +497,7 @@ fn get_positions_spline_sin(config: &Spline) -> Vec<(i64, i64, i64)> {
         y += y_variance;
         let z = ((((x as f64 * width) + h_offset).sin()) * x as f64 + v_offset) as i64;
         let position = (x, y, z);
-        if z < 10000000 && z > -10000000 {
+        if z < 10000000 && x > -10000000 {
             positions.push(position)
         }
     }
@@ -521,16 +512,19 @@ fn get_positions_spline_ellipse(config: &Ellipse) -> Vec<(i64, i64, i64)> {
     let y_variance = get_random_in_range(&config.y_variance);
 
     let mut positions = Vec::new();
-    let mut angle: f32 = get_variant_in_range(&config.starting_angle) as f32;
+    let mut angle: f64 = get_variant_in_range(&config.starting_angle) as f64;
     let mut y = get_random_in_range(&config.y_values);
-    for _ in 0..=step_count {
-        angle += 0.06;
-        let x = radius as f32 * angle.cos() + radius as f32 * angle.sin() + h_offset as f32;
+    for _ in 0..step_count {
+        angle += 0.13;
+        let x = radius as f64 * angle.cos() + radius as f64 * angle.sin() + h_offset as f64;
         y += y_variance;
-        let z = -radius as f32 * angle.sin() + radius as f32 * angle.cos() + v_offset as f32;
+        let z = -radius as f64 * angle.sin() + radius as f64 * angle.cos() + v_offset as f64;
         let position = (x as i64, y, z as i64);
-        positions.push(position);
+        if z < 10000000.0 && x > -10000000.0 {
+            positions.push(position)
+        }
     }
+    // println!("{:?}", positions);
     positions
 }
 
@@ -539,18 +533,16 @@ fn get_lengths(positions: &Vec<(i64, i64, i64)>) -> Vec<i32> {
     for j in 0..positions.len() {
         let mut inlength: i32 = 0;
         let current_pos = &positions[j];
-        if j as i64 + 1 == positions.len() as i64 {
-            let prior_pos = &positions[j - 1];
-            inlength = (distance(current_pos, prior_pos) / 2.0) as i32;
-        } else if j != 0 {
+        if j != 0 {
             let prior_pos = &positions[j - 1];
             inlength = (distance(current_pos, prior_pos) / 2.0) as i32;
         } else {
         }
         if inlength < 0 {
-            inlength = -inlength
+            inlength = inlength * -1
         }
         lengths.push(inlength);
+        // println!("{:?}", inlength);
     }
     lengths
 }
@@ -581,9 +573,12 @@ fn get_spline_boundary_format(
 }
 
 fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
+    let mut prng = rand::thread_rng();
     let mut fields_string = "<fields> \n".to_string();
     let mut resources_string = "<resources> \n".to_string();
-    for obj in fields.region_objects.iter() {
+    let field_count = get_random_in_range(&fields.region_count);
+    for _ in 0..field_count {
+        let obj = fields.region_objects.choose(&mut prng).unwrap();
         let add_strings = match obj {
             1 => get_resource_asteroid(&fields.fields_mods, &defaults.resourceasteroids),
             2 => get_nonresource_asteroid(&fields.fields_mods, &defaults.asteroids),
@@ -859,3 +854,4 @@ fn get_sound_region(fields_mods: &FieldsMods, sounds: &Sounds) -> Vec<String> {
     add_strings.push(field);
     add_strings
 }
+
