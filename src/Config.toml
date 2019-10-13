@@ -7,6 +7,9 @@ region_types = [1,1,1,1,2,2,2,2,3,4,4,4,4,5,5,5]
 out_path = "E:/Rust/Projects/OutPut Files/Regions/"
 # input the path to your clean cluster file with all sectors that you want to add regions to
 clean_cluster_file = "E:/Rust/Projects/OutPut Files/Regions/clusters no tags.xml"
+pitch = [1,360]
+yaw = [1,360]
+roll = [1,360]
 
 [spline_cubed]
 # step_range * step_rate = the min and max x values for your region

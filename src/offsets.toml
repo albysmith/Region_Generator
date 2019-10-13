@@ -57,7 +57,7 @@ z=-49389440
 [[offset]]
 cluster = "tppirate_Cluster_91_macro"
 name = "tppirate_Cluster_91_Sector001_macro"
-x=155547840 
+x=55547840 
 y=-73777748 
 z=67167584
           
@@ -260,9 +260,9 @@ z=-114351520
 [[offset]]
 cluster = "tpthree_cluster084_macro"
 name = "tpthree_cluster084_sector001_macro"
-x=195183328 
+x=135183328 
 y=-97921638 
-z=-168229416
+z=-128229416
           
 [[offset]]
 cluster = "tpthree_cluster085_macro"
@@ -275,7 +275,7 @@ z=113889184
 cluster = "tpthree_cluster104_macro"
 name = "tpthree_cluster104_sector001_macro"
 x=-99845024 
-y=-29174688 
+y=-69174688 
 z=-102232704
           
 [[offset]]
@@ -386,9 +386,9 @@ z=162467584
 [[offset]]
 cluster = "tpthree_cluster259_macro"
 name = "tpthree_cluster259_sector001_macro"
-x=-161043796 
+x=-61043796 
 y=16218576 
-z=-106501824
+z=-76501824
           
 [[offset]]
 cluster = "tpthree_cluster1260_macro"
@@ -778,7 +778,7 @@ z=105538464
 [[offset]]
 cluster = "tpthree_cluster290_macro"
 name = "tpthree_cluster290_sector001_macro"
-x=155782656 
+x=105782656 
 y=36423136 
 z=87082016
           

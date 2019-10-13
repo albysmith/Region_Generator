@@ -23,6 +23,9 @@ struct Config {
     region_types: Vec<i64>,
     out_path: String,
     clean_cluster_file: String,
+    pitch: Vec<i64>,
+    yaw: Vec<i64>,
+    roll: Vec<i64>,
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -316,16 +319,19 @@ fn main() {
     for region in region_names.iter() {
         if congroup != region.1 {
             congroup += 1;
-            connections_string.push_str(&format!("\n new region - {}\n", congroup));
+            connections_string.push_str(&format!("\n new region\n"));
         }
         let name = &region.0;
         let mut offset_values = offsets_parsed.offset[region.1 as usize].clone();
         if region.0.contains("splat") {
             offset_values.y -= 100000;
         }
+        let pitch = get_random_in_range(&toml_parsed.config.pitch);
+        let yaw = get_random_in_range(&toml_parsed.config.yaw);
+        let roll = get_random_in_range(&toml_parsed.config.roll);
         connections_string.push_str(format!("
-        <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
-        offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, name, name).as_str());
+        <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n<rotation pitch=\"{}\" yaw=\"{}\" roll=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
+        offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, pitch, yaw, roll, name, name).as_str());
     }
     // let mut connectionfile = File::create(format!("{}{}", out_path, "connections.xml")).unwrap();
     // connectionfile
