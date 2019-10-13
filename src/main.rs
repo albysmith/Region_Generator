@@ -22,6 +22,7 @@ struct Config {
     region_range: Vec<i64>,
     region_types: Vec<i64>,
     out_path: String,
+    clean_cluster_file: String,
 }
 
 #[derive(Deserialize, Debug, Default, Clone)]
@@ -69,6 +70,13 @@ struct Fields {
 }
 #[derive(Deserialize, Debug, Default, Clone)]
 struct FieldsMods {
+    resource_roid_weight: Vec<i64>,
+    nonresource_roid_weight: Vec<i64>,
+    debris_weight: Vec<i64>,
+    lockbox_weight: Vec<i64>,
+    resource_neb_weight: Vec<i64>,
+    positional_weight: Vec<i64>,
+    sound_weight: Vec<i64>,
     density_factor: Vec<f64>,
     rotation: Vec<f64>,
     rotationvariation: Vec<f64>,
@@ -276,6 +284,7 @@ fn main() {
     let defaults_parsed: DefaultsToml = toml::from_str(&defaults_str).unwrap();
     let offsets_str = include_str!("offsets.toml");
     let offsets_parsed: OffsetsFile = toml::from_str(&offsets_str).unwrap();
+    let clusters_str = include_str!("E:/Rust/Projects/OutPut Files/Regions/clustersnotags.xml");
 
     let mut region_def_string = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<regions>\n".to_string();
     let mut region_names = Vec::new();
@@ -309,23 +318,21 @@ fn main() {
             congroup += 1;
             connections_string.push_str(&format!("\n new region - {}\n", congroup));
         }
-        // let formula = region.0;
-        // let cycle_count = region.1 as usize;
         let name = &region.0;
-        let offset_values = offsets_parsed.offset[region.1 as usize].clone();
-        // old code: creates offset in connections file (requires offset_values to be mut)
-        // if formula == "splat" {
-        //     offset_values.x += get_random_in_range(&toml_parsed.splat.x_offset);
-        //     offset_values.z += get_random_in_range(&toml_parsed.splat.z_offset);
-        // }
+        let mut offset_values = offsets_parsed.offset[region.1 as usize].clone();
+        if region.0.contains("splat") {
+            offset_values.y -= 100000;
+        }
         connections_string.push_str(format!("
         <!-- CLUSTER: {} SECTOR: {} -->\n<connection name=\"{}\" ref=\"regions\"> \n<offset>\n <position x=\"{}\" y=\"{}\" z=\"{}\" />\n</offset>\n<macro name=\"{}_macro\">\n<component connection=\"cluster\" ref=\"standardregion\" />\n<properties>\n<region ref=\"{}\" />\n</properties>\n</macro>\n</connection>\n", 
         offset_values.cluster, offset_values.name, name, offset_values.x, offset_values.y, offset_values.z, name, name).as_str());
     }
-    let mut connectionfile = File::create(format!("{}{}", out_path, "connections.xml")).unwrap();
-    connectionfile
-        .write_all(connections_string.as_bytes())
-        .unwrap();
+    // let mut connectionfile = File::create(format!("{}{}", out_path, "connections.xml")).unwrap();
+    // connectionfile
+    //     .write_all(connections_string.as_bytes())
+    //     .unwrap();
+    let mut outputfileclusters = File::create(format!("{}{}", out_path, "clusters.xml")).unwrap();
+    outputfileclusters.write_all(convert_to_clusters_file(connections_string, clusters_str.to_string()).as_bytes()).unwrap();
 }
 
 fn create_region_spline_cubed(spline_cubed: &Spline, defaults: &Defaults, counts: (i64, i64)) -> (String, (String, i64)) {
@@ -605,18 +612,11 @@ fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
     fields_string
 }
 
-fn get_resource_asteroid(
-    fields_mods: &FieldsMods,
-    resourceasteroids: &ResourceRoids,
-) -> Vec<String> {
+fn get_resource_asteroid(fields_mods: &FieldsMods, resourceasteroids: &ResourceRoids) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-    ]
-    .choose(&mut prng)
-    .unwrap()
-    {
+    let obj = fields_mods.resource_roid_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &resourceasteroids.asteroid_highyield_v1,
         2 => &resourceasteroids.asteroid_highyield_sil_v1,
         3 => &resourceasteroids.asteroid_highyield_niv_v1,
@@ -667,7 +667,8 @@ fn get_resource_asteroid(
 fn get_nonresource_asteroid(fields_mods: &FieldsMods, asteroids: &NonResourceRoids) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2, 3, 4, 5, 6].choose(&mut prng).unwrap() {
+    let obj = fields_mods.nonresource_roid_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &asteroids.asteroid_xenon_xxl,
         2 => &asteroids.asteroid_xenon_xl,
         3 => &asteroids.asteroid_xenon_l,
@@ -695,10 +696,8 @@ fn get_nonresource_asteroid(fields_mods: &FieldsMods, asteroids: &NonResourceRoi
 fn get_debris(fields_mods: &FieldsMods, debris: &Debris) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-        .choose(&mut prng)
-        .unwrap()
-    {
+    let obj = fields_mods.debris_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &debris.debris_xl,
         2 => &debris.debris_l,
         3 => &debris.debris_m,
@@ -734,7 +733,8 @@ fn get_debris(fields_mods: &FieldsMods, debris: &Debris) -> Vec<String> {
 fn get_lockbox(fields_mods: &FieldsMods, lockbox: &Lockbox) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2].choose(&mut prng).unwrap() {
+    let obj = fields_mods.lockbox_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &lockbox.lockboxes_rare,
         2 => &lockbox.lockboxes_extra,
         _ => panic!("broken at lockbox"),
@@ -758,7 +758,8 @@ fn get_lockbox(fields_mods: &FieldsMods, lockbox: &Lockbox) -> Vec<String> {
 fn get_resource_nebula(fields_mods: &FieldsMods, nebula: &Nebula) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2, 3, 4].choose(&mut prng).unwrap() {
+    let obj = fields_mods.resource_neb_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &nebula.fog_smallstones_v1_macro,
         2 => &nebula.fogpattern_v2_macro,
         3 => &nebula.fogtest_nebula_vol_macro,
@@ -795,10 +796,8 @@ fn get_resource_nebula(fields_mods: &FieldsMods, nebula: &Nebula) -> Vec<String>
 fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-        .choose(&mut prng)
-        .unwrap()
-    {
+    let obj = fields_mods.positional_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &positionals.fog_outside_set3_macro,  //ok
         2 => &positionals.fog_outside_set1_whiteblue_macro,  //ok
         3 => &positionals.fog_outside_set1_lightbrown_macro,  //cuts fps in half......
@@ -836,7 +835,8 @@ fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -
 fn get_sound_region(fields_mods: &FieldsMods, sounds: &Sounds) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let roid_choice = match [1, 2, 3, 4, 5, 6, 7, 8].choose(&mut prng).unwrap() {
+    let obj = fields_mods.sound_weight.choose(&mut prng).unwrap();
+    let roid_choice = match obj {
         1 => &sounds.zoned_sound_01,
         2 => &sounds.zoned_sound_02,
         3 => &sounds.zoned_sound_03,
@@ -860,3 +860,36 @@ fn get_sound_region(fields_mods: &FieldsMods, sounds: &Sounds) -> Vec<String> {
     add_strings
 }
 
+fn convert_to_clusters_file (connections_str: String, clusters_str: String) -> String {
+    // let connections_str =
+    //     include_str!("E:/Rust/Projects/OutPut Files/Regions/connections.xml");
+    let mut convec: Vec<String> = vec![];
+    let mut out_string = "".to_string();
+    let mut regioncount:usize = 0;
+    for connections in connections_str.split_terminator(" new region") {
+        convec.push(connections.to_string());
+    }
+    for cluster in clusters_str.split_terminator("</connection>") {
+        if cluster.contains("<component connection=\"space\"") | cluster.contains("ref=\"sectors\"")
+        {
+            out_string.push_str(cluster);
+            out_string.push_str("</connection>");
+        }
+        if cluster.contains("<connections>") {
+             out_string.push_str(&convec[regioncount]);
+             regioncount += 1;
+        }
+    }
+    out_string.push_str(
+        "          </connections>
+    </macro>
+  </add>
+</diff>",
+    );
+    out_string
+    // let mut outputfile =
+    //     File::create("E:/Rust/Projects/OutPut Files/Regions/clusters.xml")
+    //         .unwrap();
+    // outputfile
+    // outputfile.write_all(out_string.as_bytes()).unwrap();
+}

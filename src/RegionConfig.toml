@@ -44,7 +44,7 @@ resource_amount = "veryhigh"
 
 [defaults.resourceasteroids.asteroid_ore_xxl]
 name = "asteroid_ore_xxl"
-density_factor = 1.0
+density_factor = 0.2
 density_randomization = [0.1,0.5]
 rotation = 360
 rotationvariation = 4
