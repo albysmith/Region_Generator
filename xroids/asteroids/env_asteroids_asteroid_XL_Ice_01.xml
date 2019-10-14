@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_XL_Ice_01" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_XL_Ice_01_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part detail_s  ">
+				<offset></offset>
+				<parts>
+					<part name="detail_s">
+						<size>
+							<max x="783.4412" y="977.2781" z="875.699"></max>
+							<center x="31.18875" y="-41.68533" z="22.59283"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_main">
+						<size>
+							<max x="799.6076" y="989.3759" z="891.2195"></max>
+							<center x="35.90585" y="-11.84061" z="35.28995"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part nocollision  ">
+				<offset>
+					<position x="42.86108" y="2.000977" z="422.6343"></position>
+				</offset>
+				<parts>
+					<part name="fx_light">
+						<size>
+							<max x="1950.161" y="2231.68" z="239.6956"></max>
+							<center x="0" y="0" z="3.051758E-05"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part animation textureanimation nocollision  ">
+				<offset>
+					<position x="-335.6065" y="8.397186" z="246.1204"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="2000"></animation>
+				</animations>
+				<parts>
+					<part name="anim_dust02">
+						<size>
+							<max x="1941.047" y="908.9648" z="2190.395"></max>
+							<center x="37.09628" y="-48.02631" z="-330.1386"></center>
+						</size>
+						<size_raw>
+							<max x="1903.951" y="956.991" z="2520.533"></max>
+							<center x="37.09634" y="-48.02631" z="-330.1385"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="2"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="1"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="1"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part nocollision  ">
+				<offset>
+					<position x="42.86108" y="2.000977" z="-397.7869"></position>
+				</offset>
+				<parts>
+					<part name="fx_light01">
+						<size>
+							<max x="1950.161" y="2231.68" z="239.6957"></max>
+							<center x="0" y="0" z="1.220703E-04"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

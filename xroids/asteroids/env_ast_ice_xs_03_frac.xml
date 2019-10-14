@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_ice_xs_03_frac" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_ice_xs_03_frac_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.379391" y="2.52865" z="3.086446"/>
+							<center x="4.506111E-05" y="-1.192093E-07" z="8.34465E-07"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part detail_s nocollision  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_dist">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_strong_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.374031" y="2.498417" z="3.005862"/>
+							<center x="-6.449759E-02" y="6.774735E-02" z="1.532459E-02"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="connection_pickup01" tags="pickup ">
+				<offset/>
+			</connection>
+		</connections>
+	</component>
+</components>

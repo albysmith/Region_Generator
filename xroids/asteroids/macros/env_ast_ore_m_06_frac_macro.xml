@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Benedikt (192.168.3.121) at 01.07.2013_15-29-01-->
+<macros>
+  <macro name="env_ast_ore_m_06_frac_macro" class="asteroid">
+    <component ref="env_ast_ore_m_06_frac" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,802}" unique="0" />
+      <hull max="280000" />
+      <effects>
+        <explosion ref="explosion_asteroid_A_M" />
+      </effects>
+      <drop ref="asteroid_ore_m" />
+      <glow time="80" />
+    </properties>
+  </macro>
+</macros>

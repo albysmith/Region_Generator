@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_A_S_Ice_01" class="destructible">
+		<properties>
+			<hull max="0"/>
+		</properties>
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_A_S_Ice_01_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="destructible">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part detail_s  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_strong_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="25.63898" y="25.43577" z="38.69448"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="26.863" y="26.67885" z="39.93203"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

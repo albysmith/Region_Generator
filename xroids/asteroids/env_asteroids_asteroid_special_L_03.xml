@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_special_L_03" class="destructible">
+		<properties>
+			<hull max="0"/>
+		</properties>
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_special_L_03_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="destructible">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="375.2635" y="354.925" z="772.8936"/>
+							<center x="3.051758E-05" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

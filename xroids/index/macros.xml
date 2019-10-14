@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<diff>
+  <!-- <replace sel="//index[@entry name='engineparts']">
+
+  </replace> -->
+  <add sel="/index">
+<entry name="asteroid_field_01_macro" value="extensions\xroids\asteroids\macros\asteroid_field_01_macro" />>
+<entry name="env_ast_crystal_l_01_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_l_01_macro" />
+<entry name="env_ast_crystal_l_02_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_l_02_macro" />
+<entry name="env_ast_crystal_l_03_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_l_03_macro" />
+<entry name="env_ast_crystal_m_01_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_01_macro" />
+<entry name="env_ast_crystal_m_02_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_02_macro" />
+<entry name="env_ast_crystal_m_03_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_03_macro" />
+<entry name="env_ast_crystal_m_04_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_04_macro" />
+<entry name="env_ast_crystal_m_05_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_05_macro" />
+<entry name="env_ast_crystal_m_06_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_m_06_macro" />
+<entry name="env_ast_crystal_s_01_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_01_macro" />
+<entry name="env_ast_crystal_s_02_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_02_macro" />
+<entry name="env_ast_crystal_s_03_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_03_macro" />
+<entry name="env_ast_crystal_s_04_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_04_macro" />
+<entry name="env_ast_crystal_s_05_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_05_macro" />
+<entry name="env_ast_crystal_s_06_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_s_06_macro" />
+<entry name="env_ast_crystal_xs_01_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_01_macro" />
+<entry name="env_ast_crystal_xs_02_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_02_macro" />
+<entry name="env_ast_crystal_xs_03_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_03_macro" />
+<entry name="env_ast_crystal_xs_04_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_04_macro" />
+<entry name="env_ast_crystal_xs_05_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_05_macro" />
+<entry name="env_ast_crystal_xs_06_macro" value="extensions\xroids\asteroids\macros\env_ast_crystal_xs_06_macro" />
+<entry name="env_ast_ice_l_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_l_01_macro" />
+<entry name="env_ast_ice_l_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_l_02_macro" />
+<entry name="env_ast_ice_l_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_l_03_macro" />
+<entry name="env_ast_ice_m_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_01_frac_macro" />
+<entry name="env_ast_ice_m_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_01_macro" />
+<entry name="env_ast_ice_m_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_02_frac_macro" />
+<entry name="env_ast_ice_m_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_02_macro" />
+<entry name="env_ast_ice_m_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_03_frac_macro" />
+<entry name="env_ast_ice_m_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_03_macro" />
+<entry name="env_ast_ice_m_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_04_frac_macro" />
+<entry name="env_ast_ice_m_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_04_macro" />
+<entry name="env_ast_ice_m_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_05_frac_macro" />
+<entry name="env_ast_ice_m_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_05_macro" />
+<entry name="env_ast_ice_m_06_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_06_frac_macro" />
+<entry name="env_ast_ice_m_06_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_m_06_macro" />
+<entry name="env_ast_ice_s_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_01_frac_macro" />
+<entry name="env_ast_ice_s_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_01_macro" />
+<entry name="env_ast_ice_s_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_02_frac_macro" />
+<entry name="env_ast_ice_s_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_02_macro" />
+<entry name="env_ast_ice_s_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_03_frac_macro" />
+<entry name="env_ast_ice_s_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_03_macro" />
+<entry name="env_ast_ice_s_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_04_frac_macro" />
+<entry name="env_ast_ice_s_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_04_macro" />
+<entry name="env_ast_ice_s_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_05_frac_macro" />
+<entry name="env_ast_ice_s_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_05_macro" />
+<entry name="env_ast_ice_s_06_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_06_frac_macro" />
+<entry name="env_ast_ice_s_06_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_s_06_macro" />
+<entry name="env_ast_ice_xl_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xl_01_macro" />
+<entry name="env_ast_ice_xs_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_01_frac_macro" />
+<entry name="env_ast_ice_xs_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_01_macro" />
+<entry name="env_ast_ice_xs_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_02_frac_macro" />
+<entry name="env_ast_ice_xs_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_02_macro" />
+<entry name="env_ast_ice_xs_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_03_frac_macro" />
+<entry name="env_ast_ice_xs_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_03_macro" />
+<entry name="env_ast_ice_xs_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_04_frac_macro" />
+<entry name="env_ast_ice_xs_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_04_macro" />
+<entry name="env_ast_ice_xs_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_05_frac_macro" />
+<entry name="env_ast_ice_xs_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_05_macro" />
+<entry name="env_ast_ice_xs_06_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_06_frac_macro" />
+<entry name="env_ast_ice_xs_06_macro" value="extensions\xroids\asteroids\macros\env_ast_ice_xs_06_macro" />
+<entry name="env_ast_niv_l_01_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_l_01_macro" />
+<entry name="env_ast_niv_l_02_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_l_02_macro" />
+<entry name="env_ast_niv_l_03_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_l_03_macro" />
+<entry name="env_ast_niv_l_04_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_l_04_macro" />
+<entry name="env_ast_niv_l_05_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_l_05_macro" />
+<entry name="env_ast_niv_m_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_01_frac_macro" />
+<entry name="env_ast_niv_m_01_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_01_macro" />
+<entry name="env_ast_niv_m_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_02_frac_macro" />
+<entry name="env_ast_niv_m_02_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_02_macro" />
+<entry name="env_ast_niv_m_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_03_frac_macro" />
+<entry name="env_ast_niv_m_03_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_03_macro" />
+<entry name="env_ast_niv_m_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_04_frac_macro" />
+<entry name="env_ast_niv_m_04_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_04_macro" />
+<entry name="env_ast_niv_m_04_turretbase_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_04_turretbase_macro" />
+<entry name="env_ast_niv_m_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_05_frac_macro" />
+<entry name="env_ast_niv_m_05_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_m_05_macro" />
+<entry name="env_ast_niv_s_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_01_frac_macro" />
+<entry name="env_ast_niv_s_01_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_01_macro" />
+<entry name="env_ast_niv_s_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_02_frac_macro" />
+<entry name="env_ast_niv_s_02_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_02_macro" />
+<entry name="env_ast_niv_s_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_03_frac_macro" />
+<entry name="env_ast_niv_s_03_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_03_macro" />
+<entry name="env_ast_niv_s_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_04_frac_macro" />
+<entry name="env_ast_niv_s_04_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_04_macro" />
+<entry name="env_ast_niv_s_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_05_frac_macro" />
+<entry name="env_ast_niv_s_05_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_s_05_macro" />
+<entry name="env_ast_niv_xl_01_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xl_01_macro" />
+<entry name="env_ast_niv_xl_02_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xl_02_macro" />
+<entry name="env_ast_niv_xl_03_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xl_03_macro" />
+<entry name="env_ast_niv_xs_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_01_frac_macro" />
+<entry name="env_ast_niv_xs_01_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_01_macro" />
+<entry name="env_ast_niv_xs_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_02_frac_macro" />
+<entry name="env_ast_niv_xs_02_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_02_macro" />
+<entry name="env_ast_niv_xs_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_03_frac_macro" />
+<entry name="env_ast_niv_xs_03_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_03_macro" />
+<entry name="env_ast_niv_xs_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_04_frac_macro" />
+<entry name="env_ast_niv_xs_04_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_04_macro" />
+<entry name="env_ast_niv_xs_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_05_frac_macro" />
+<entry name="env_ast_niv_xs_05_macro" value="extensions\xroids\asteroids\macros\env_ast_niv_xs_05_macro" />
+<entry name="env_ast_ore_l_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_l_01_macro" />
+<entry name="env_ast_ore_l_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_l_02_macro" />
+<entry name="env_ast_ore_l_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_l_03_macro" />
+<entry name="env_ast_ore_l_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_l_04_macro" />
+<entry name="env_ast_ore_l_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_l_05_macro" />
+<entry name="env_ast_ore_m_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_01_frac_macro" />
+<entry name="env_ast_ore_m_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_01_macro" />
+<entry name="env_ast_ore_m_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_02_frac_macro" />
+<entry name="env_ast_ore_m_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_02_macro" />
+<entry name="env_ast_ore_m_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_03_frac_macro" />
+<entry name="env_ast_ore_m_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_03_macro" />
+<entry name="env_ast_ore_m_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_04_frac_macro" />
+<entry name="env_ast_ore_m_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_04_macro" />
+<entry name="env_ast_ore_m_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_05_frac_macro" />
+<entry name="env_ast_ore_m_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_05_macro" />
+<entry name="env_ast_ore_m_06_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_06_frac_macro" />
+<entry name="env_ast_ore_m_06_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_06_macro" />
+<entry name="env_ast_ore_m_explosive_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_m_explosive_03_macro" />
+<entry name="env_ast_ore_s_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_01_frac_macro" />
+<entry name="env_ast_ore_s_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_01_macro" />
+<entry name="env_ast_ore_s_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_02_frac_macro" />
+<entry name="env_ast_ore_s_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_02_macro" />
+<entry name="env_ast_ore_s_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_03_frac_macro" />
+<entry name="env_ast_ore_s_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_03_macro" />
+<entry name="env_ast_ore_s_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_04_frac_macro" />
+<entry name="env_ast_ore_s_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_04_macro" />
+<entry name="env_ast_ore_s_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_05_frac_macro" />
+<entry name="env_ast_ore_s_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_s_05_macro" />
+<entry name="env_ast_ore_xl_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xl_01_macro" />
+<entry name="env_ast_ore_xl_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xl_02_macro" />
+<entry name="env_ast_ore_xs_01_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_01_frac_macro" />
+<entry name="env_ast_ore_xs_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_01_macro" />
+<entry name="env_ast_ore_xs_02_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_02_frac_macro" />
+<entry name="env_ast_ore_xs_02_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_02_macro" />
+<entry name="env_ast_ore_xs_03_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_03_frac_macro" />
+<entry name="env_ast_ore_xs_03_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_03_macro" />
+<entry name="env_ast_ore_xs_04_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_04_frac_macro" />
+<entry name="env_ast_ore_xs_04_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_04_macro" />
+<entry name="env_ast_ore_xs_05_frac_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_05_frac_macro" />
+<entry name="env_ast_ore_xs_05_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xs_05_macro" />
+<entry name="env_ast_ore_xxl_01_macro" value="extensions\xroids\asteroids\macros\env_ast_ore_xxl_01_macro" />
+<entry name="env_ast_rad_m_01_macro" value="extensions\xroids\asteroids\macros\env_ast_rad_m_01_macro" />
+<entry name="env_ast_rad_xs_01_macro" value="extensions\xroids\asteroids\macros\env_ast_rad_xs_01_macro" />
+<entry name="env_asteroids_asteroid_a_l_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_01_macro" />
+<entry name="env_asteroids_asteroid_a_l_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_02_macro" />
+<entry name="env_asteroids_asteroid_a_l_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_03_macro" />
+<entry name="env_asteroids_asteroid_a_l_04_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_04_macro" />
+<entry name="env_asteroids_asteroid_a_l_05_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_05_macro" />
+<entry name="env_asteroids_asteroid_a_l_crystal_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_crystal_01_macro" />
+<entry name="env_asteroids_asteroid_a_l_crystal_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_crystal_02_macro" />
+<entry name="env_asteroids_asteroid_a_l_crystal_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_l_crystal_03_macro" />
+<entry name="env_asteroids_asteroid_a_m_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_01_macro" />
+<entry name="env_asteroids_asteroid_a_m_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_02_macro" />
+<entry name="env_asteroids_asteroid_a_m_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_03_macro" />
+<entry name="env_asteroids_asteroid_a_m_crystal_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_crystal_01_macro" />
+<entry name="env_asteroids_asteroid_a_m_crystal_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_crystal_02_macro" />
+<entry name="env_asteroids_asteroid_a_m_crystal_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_m_crystal_03_macro" />
+<entry name="env_asteroids_asteroid_a_s_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_01_macro" />
+<entry name="env_asteroids_asteroid_a_s_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_02_macro" />
+<entry name="env_asteroids_asteroid_a_s_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_03_macro" />
+<entry name="env_asteroids_asteroid_a_s_crystal_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_crystal_01_macro" />
+<entry name="env_asteroids_asteroid_a_s_crystal_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_crystal_02_macro" />
+<entry name="env_asteroids_asteroid_a_s_crystal_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_s_crystal_03_macro" />
+<entry name="env_asteroids_asteroid_a_xs_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_01_macro" />
+<entry name="env_asteroids_asteroid_a_xs_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_02_macro" />
+<entry name="env_asteroids_asteroid_a_xs_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_03_macro" />
+<entry name="env_asteroids_asteroid_a_xs_crystal_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_crystal_01_macro" />
+<entry name="env_asteroids_asteroid_a_xs_crystal_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_crystal_02_macro" />
+<entry name="env_asteroids_asteroid_a_xs_crystal_03_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xs_crystal_03_macro" />
+<entry name="env_asteroids_asteroid_a_xxl_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_a_xxl_01_macro" />
+<entry name="env_asteroids_asteroid_l_ice_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_l_ice_01_macro" />
+<entry name="env_asteroids_asteroid_l_ice_02_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_l_ice_02_macro" />
+<entry name="env_asteroids_asteroid_m_ice_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_m_ice_01_macro" />
+<entry name="env_asteroids_asteroid_s_ice_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_s_ice_01_macro" />
+<entry name="env_asteroids_asteroid_xl_ice_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_xl_ice_01_macro" />
+<entry name="env_asteroids_asteroid_xs_ice_01_macro" value="extensions\xroids\asteroids\macros\env_asteroids_asteroid_xs_ice_01_macro" />
+</add>
+</diff>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

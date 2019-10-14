@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_A_XS_Crystal_01" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_A_XS_Crystal_01_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_asteroid">
+						<size>
+							<max x="2.745785" y="1.402305" z="2.175009"></max>
+							<center x="-2.206862E-02" y="5.383193E-03" z="0.046067"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="pickup" tags="pickup ">
+				<offset></offset>
+			</connection>
+		</connections>
+	</component>
+</components>

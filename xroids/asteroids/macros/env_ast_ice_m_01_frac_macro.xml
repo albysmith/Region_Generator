@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Markus (192.168.3.120) at 04.10.2013_12-11-28-->
+<macros>
+  <macro name="env_ast_ice_m_01_frac_macro" class="asteroid">
+    <component ref="env_ast_ice_m_01_frac" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,802}" unique="0" />
+      <hull max="250000" />
+      <effects>
+        <explosion ref="explosion_asteroid_ice_a_m" />
+      </effects>
+      <drop ref="asteroid_ice_m" />
+    </properties>
+  </macro>
+</macros>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_ice_xs_06" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_ice_xs_06_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part nocollision  ">
+				<offset/>
+				<parts>
+					<part name="fx_haze">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_ice_haze_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="33.77988" y="33.01206" z="33.52132"/>
+							<center x="-0.2585602" y="-1.026386" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.33336" y="1.865336" z="3.301521"/>
+							<center x="3.516674E-05" y="0" z="6.914139E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part detail_s nocollision  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_dist">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_strong_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.239633" y="1.765581" z="3.208414"/>
+							<center x="-1.715541E-03" y="2.837181E-05" z="-3.002644E-03"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="connection_pickup01" tags="pickup ">
+				<offset/>
+			</connection>
+		</connections>
+	</component>
+</components>

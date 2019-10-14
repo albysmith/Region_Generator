@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_niv_m_04_turretbase" class="destructible">
+		<properties>
+			<hull max="100000"/>
+		</properties>
+		<source geometry="assets\environments\asteroids\env_ast_niv_m_04_turretbase_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="destructible">
+				<offset/>
+			</connection>
+			<connection name="Connection004" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_niv_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_niv_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_niv_01"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="asteroids.ast_niv_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="142.2692" y="101.1706" z="148.9739"/>
+							<center x="-5.340576E-05" y="0" z="-7.629395E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection005" tags="part  ">
+				<offset/>
+				<parts/>
+			</connection>
+			<connection name="Connection001" tags="turret_medium_xe ">
+				<offset>
+					<position x="-56.75531" y="31.18867" z="24.08777"/>
+					<quaternion qx="-0.7819608" qy="-0.1945395" qz="-0.5921871" qw="-2.500272E-03"/>
+				</offset>
+			</connection>
+			<connection name="Connection002" tags="turret_medium_xe">
+				<offset>
+					<position x="48.39191" y="-6.265551" z="-93.92"/>
+					<quaternion qx="-1.808525E-02" qy="-0.6427279" qz="-0.6587078" qw="-0.3907403"/>
+				</offset>
+			</connection>
+			<connection name="Connection003" tags="turret_medium_xe">
+				<offset>
+					<position x="24.07935" y="-21.97199" z="56.37369"/>
+					<quaternion qx="0.3589012" qy="8.902046E-02" qz="-5.273111E-02" qw="-0.9276232"/>
+				</offset>
+			</connection>
+		</connections>
+	</component>
+</components>

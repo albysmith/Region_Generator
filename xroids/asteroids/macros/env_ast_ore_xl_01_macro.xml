@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Lino (192.168.3.140) at 12.10.2015_17-01-49-->
+<macros>
+  <macro name="env_ast_ore_xl_01_macro" class="asteroid">
+    <component ref="env_ast_ore_xl_01" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,803}" unique="0" />
+      <hull max="5000000" />
+      <drop ref="asteroid_ore_l" />
+    </properties>
+  </macro>
+</macros>

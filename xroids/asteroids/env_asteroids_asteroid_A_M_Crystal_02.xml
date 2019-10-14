@@ -1,0 +1,673 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_A_M_Crystal_02" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_A_M_Crystal_02_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights>
+					<omni name="XU Omni05" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="-37.05507" y="28.33413" z="-6.320774"></position>
+						</offset>
+					</omni>
+					<omni name="XU Omni04" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="42.04059" y="45.97825" z="4.085609"></position>
+						</offset>
+					</omni>
+					<omni name="XU Omni03" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="20.85274" y="53.43989" z="-21.69122"></position>
+						</offset>
+					</omni>
+					<omni name="XU Omni02" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="71.79114" y="-30.36187" z="-30.73666"></position>
+						</offset>
+					</omni>
+					<omni name="XU Omni01" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="57.85906" y="45.65885" z="-27.10379"></position>
+						</offset>
+					</omni>
+					<omni name="XU Omni06" shadow="0" r="126" g="253" b="255" range="35" shadowrange="35" lighteffect="1" trigger="1" intensity="4">
+						<lightanimations></lightanimations>
+						<offset>
+							<position x="-17.82395" y="25.23055" z="31.26161"></position>
+						</offset>
+					</omni>
+				</lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_asteroid">
+						<size>
+							<max x="76.28291" y="48.61464" z="49.78101"></max>
+							<center x="18.74318" y="0.6160431" z="-2.671246"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part animation textureanimation  ">
+				<offset>
+					<position x="53.71059" y="37.89591" z="-21.11819"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke02">
+						<size>
+							<max x="43.39537" y="16.46651" z="2.969254"></max>
+							<center x="-3.777008" y="6.833481" z="-0.3170242"></center>
+						</size>
+						<size_raw>
+							<max x="47.17237" y="9.63303" z="3.28628"></max>
+							<center x="-3.777008" y="6.833481" z="-0.3170242"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part animation textureanimation  ">
+				<offset>
+					<position x="34.12243" y="41.01258" z="10.68664"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke03">
+						<size>
+							<max x="39.54753" y="19.33598" z="19.64661"></max>
+							<center x="4.363365" y="5.88974" z="-2.708287"></center>
+						</size>
+						<size_raw>
+							<max x="35.18416" y="13.44623" z="22.35489"></max>
+							<center x="4.363358" y="5.88974" z="-2.708287"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part animation textureanimation  ">
+				<offset>
+					<position x="44.47334" y="37.27832" z="-2.973592"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke04">
+						<size>
+							<max x="6.06817" y="18.35223" z="37.97452"></max>
+							<center x="6.233215E-02" y="5.987411" z="-4.527808"></center>
+						</size>
+						<size_raw>
+							<max x="6.005839" y="12.36482" z="42.50233"></max>
+							<center x="6.233215E-02" y="5.987408" z="-4.527807"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part animation textureanimation  ">
+				<offset>
+					<position x="-34.46404" y="20.45107" z="-10.64976"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke05">
+						<size>
+							<max x="25.53984" y="19.82695" z="26.45396"></max>
+							<center x="-3.044632" y="5.809799" z="3.472819"></center>
+						</size>
+						<size_raw>
+							<max x="28.58447" y="14.01715" z="22.98114"></max>
+							<center x="-3.044632" y="5.809801" z="3.472819"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection06" tags="part animation textureanimation  ">
+				<offset>
+					<position x="-34.34347" y="20.36472" z="-9.093858"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke06">
+						<size>
+							<max x="24.20672" y="24.41378" z="28.52848"></max>
+							<center x="1.432674" y="7.281029" z="0.1345034"></center>
+						</size>
+						<size_raw>
+							<max x="22.77405" y="17.13275" z="28.39398"></max>
+							<center x="1.432674" y="7.281029" z="0.1345034"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection07" tags="part animation textureanimation  ">
+				<offset>
+					<position x="-15.36897" y="23.15177" z="26.33581"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke07">
+						<size>
+							<max x="25.44308" y="35.93426" z="19.47613"></max>
+							<center x="-2.69664" y="6.732254" z="1.577663"></center>
+						</size>
+						<size_raw>
+							<max x="28.13971" y="29.20201" z="17.89847"></max>
+							<center x="-2.696638" y="6.73225" z="1.577663"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection08" tags="part animation textureanimation  ">
+				<offset>
+					<position x="61.22684" y="-26.04138" z="-19.86612"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke08">
+						<size>
+							<max x="44.46246" y="29.69384" z="2.925752"></max>
+							<center x="6.511936" y="-4.301958" z="0.3880272"></center>
+						</size>
+						<size_raw>
+							<max x="37.95052" y="33.9958" z="2.537724"></max>
+							<center x="6.511936" y="-4.301958" z="0.3880272"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection09" tags="part animation textureanimation  ">
+				<offset>
+					<position x="61.72853" y="-28.57894" z="-24.27"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="800"></animation>
+				</animations>
+				<parts>
+					<part name="anim_crystal_smoke09">
+						<size>
+							<max x="18.64132" y="17.78588" z="24.37397"></max>
+							<center x="1.338894" y="-6.534241" z="2.517321"></center>
+						</size>
+						<size_raw>
+							<max x="17.30243" y="24.32012" z="21.85665"></max>
+							<center x="1.33889" y="-6.534241" z="2.517321"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3" rotaroundcenter="true">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="3"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="121" value="20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="520" value="-20" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="2"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="240" value="14.94286" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="640" value="-15.05714" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1" rotaroundcenter="true">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"></key>
+									<key frame="800" value="-1"></key>
+								</uv_property>
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="800" value="1"></key>
+								</uv_property>
+								<uv_property name="rotation_angle" controller="bezier_float">
+									<key frame="0" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+									<key frame="200" value="-7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="600" value="7.5" in_tangent_type="auto" out_tangent_type="auto"></key>
+									<key frame="800" value="0" in_tangent_type="linear" out_tangent_type="linear"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection10" tags="part  ">
+				<offset>
+					<position x="54.0977" y="32.48489" z="2.401165"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield04">
+						<size>
+							<max x="37.2464" y="4.730206" z="14.57599"></max>
+							<center x="-12.05711" y="7.662334" z="6.142997"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection11" tags="part  ">
+				<offset>
+					<position x="25.22416" y="35.10779" z="-19.79306"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield02">
+						<size>
+							<max x="33.46572" y="3.618503" z="11.13729"></max>
+							<center x="-4.371424" y="6.267181" z="7.096656"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection12" tags="part  ">
+				<offset>
+					<position x="-43.76625" y="18.7431" z="-18.43266"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield06">
+						<size>
+							<max x="17.01867" y="15.91756" z="11.84026"></max>
+							<center x="8.503071" y="-1.726097" z="12.11189"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection13" tags="part  ">
+				<offset>
+					<position x="-6.640442" y="28.26421" z="31.11453"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield05">
+						<size>
+							<max x="18.25363" y="31.89501" z="32.74366"></max>
+							<center x="7.777678" y="-6.376358" z="-11.98559"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection14" tags="part  ">
+				<offset>
+					<position x="66.74603" y="-12.06671" z="-26.00815"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield03">
+						<size>
+							<max x="36.90345" y="31.12158" z="16.57368"></max>
+							<center x="8.809662E-02" y="-9.312132" z="1.930735"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection15" tags="part  ">
+				<offset>
+					<position x="61.45831" y="33.9617" z="-23.82035"></position>
+				</offset>
+				<parts>
+					<part name="part_crystalfield01">
+						<size>
+							<max x="31.53485" y="16.87207" z="20.98631"></max>
+							<center x="-3.599255" y="-2.212053" z="1.867748"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

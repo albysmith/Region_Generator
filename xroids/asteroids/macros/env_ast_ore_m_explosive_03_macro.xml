@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Owen (192.168.3.120) at 20.02.2015_09-54-33-->
+<macros>
+  <macro name="env_ast_ore_m_explosive_03_macro" class="asteroid">
+    <component ref="env_ast_ore_m_03" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,803}" unique="0" />
+      <explosiondamage value="90000" />
+      <hull max="610000" />
+      <effects>
+        <explosion ref="explosion_asteroid_a_m_damaging" />
+        <longrangescan ref="scfx_result_good_01" />
+      </effects>
+      <drop ref="asteroid_ore_m_rigged" />
+    </properties>
+  </macro>
+</macros>

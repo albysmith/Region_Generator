@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_A_L_02" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_A_L_02_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_asteroid">
+						<size>
+							<max x="131.968" y="131.4458" z="312.3386"></max>
+							<center x="41.42443" y="24.98367" z="22.35353"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

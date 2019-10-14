@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_M_Ice_01" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_M_Ice_01_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="detail_l">
+						<size>
+							<max x="59.98865" y="66.47517" z="86.53153"></max>
+							<center x="4.980255" y="4.223686" z="-0.7796974"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_main">
+						<size>
+							<max x="58.84515" y="65.15068" z="85.7094"></max>
+							<center x="5.224731" y="4.406399" z="-0.9396896"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part nocollision  ">
+				<offset>
+					<position x="30.81421" y="0" z="-2.046341"></position>
+				</offset>
+				<parts>
+					<part name="fx_light">
+						<size>
+							<max x="264.7071" y="256.922" z="229.1575"></max>
+							<center x="-8.916779" y="-1.104279" z="-4.90303"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

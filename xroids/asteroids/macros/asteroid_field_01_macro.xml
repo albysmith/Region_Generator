@@ -1,0 +1,1448 @@
+<?xml version="1.0"?>
+<macros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <macro name="asteroid_field_01_macro" class="asteroid">
+    <component ref="asteroid_field_01" />
+    <properties>
+      <ai>
+        <type global="" local="" />
+      </ai>
+    </properties>
+    <connections>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_Crystal_02">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_Crystal_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_Crystal_03">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_Crystal_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0340">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0339">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0338">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0337">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0336">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0335">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0334">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0333">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0332">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0331">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0330">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0329">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0328">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0327">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0326">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0325">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0324">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0323">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0322">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0321">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0320">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0319">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0318">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0317">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0316">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0295">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0294">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0293">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0292">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0291">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0290">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0289">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0288">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0285">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0286">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0287">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0284">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0283">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0282">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0275">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0276">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0277">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0278">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0279">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0280">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0281">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0274">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0273">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0272">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0271">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0135">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0134">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0133">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0132">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0131">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0130">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0129">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0128">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0127">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0126">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0125">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0124">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0123">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0122">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0121">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0120">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0119">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0118">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0117">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0116">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0115">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0114">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0113">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0112">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0111">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0270">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0269">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0268">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0267">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0266">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0265">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0264">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0263">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0262">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0261">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0260">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0259">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0258">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0257">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0256">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0255">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0254">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0253">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0252">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0251">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0250">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0249">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0248">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0247">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0246">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0245">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0244">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0243">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0242">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0241">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0240">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0239">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0238">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0237">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0236">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0235">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0234">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0233">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0232">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0231">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0230">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0229">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0228">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0227">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0226">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0225">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0224">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0223">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0222">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0221">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0120">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0119">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0118">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0117">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0116">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0115">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0114">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0113">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0112">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0111">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0110">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_019">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_018">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_017">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_016">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_015">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_014">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_013">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_012">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_011">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0320">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0319">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0318">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0317">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0316">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0315">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0314">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0313">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0312">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0311">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0310">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_039">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_038">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_037">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_036">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_035">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_034">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_033">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_032">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_031">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0120">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0119">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0118">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0117">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0116">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0115">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0114">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0113">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0112">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0111">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0110">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_019">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_018">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_017">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_016">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_015">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_014">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_013">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_012">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_011">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0220">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0219">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0218">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0217">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0216">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0215">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0214">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0213">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0212">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0211">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_0210">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_029">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_028">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_027">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_026">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_025">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_024">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_023">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_022">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_021">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0315">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0314">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0313">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0312">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0311">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0310">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_039">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_038">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_037">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_036">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_035">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_034">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_033">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_032">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_031">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0215">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0214">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0213">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0212">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0211">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_0210">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_029">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_028">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_027">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_026">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_025">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_024">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_023">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_022">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_021">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0110">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_019">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_018">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_017">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_016">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_015">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_014">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_013">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_012">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_011">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0210">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_029">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_028">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_027">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_026">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_025">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_024">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_023">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_022">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_021">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_0310">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_039">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_038">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_037">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_036">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_035">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_034">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_033">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_032">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_031">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_015">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_014">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_013">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_012">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_011">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_022">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_021">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_02">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_031">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_03">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_02">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_XS_01">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_XS_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_03">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_02">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_S_01">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_S_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_03">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_02">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_02" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_M_01">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_M_01" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_03">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_03" connection="space" />
+        </macro>
+      </connection>
+      <connection ref="ConnectionFor_env_asteroids_asteroid_A_L_01">
+        <macro>
+          <component ref="env_asteroids_asteroid_A_L_01" connection="space" />
+        </macro>
+      </connection>
+    </connections>
+  </macro>
+</macros>

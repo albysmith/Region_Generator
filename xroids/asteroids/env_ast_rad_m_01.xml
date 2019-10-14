@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_rad_m_01" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_rad_m_01_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection001" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_rad_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_rad_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_rad_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="157.5541" y="130.3883" z="100.7182"/>
+							<center x="1.220703E-04" y="0" z="-2.670288E-05"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

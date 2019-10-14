@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_ice_s_06_frac" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_ice_s_06_frac_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part detail_s nocollision  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_dust">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.dust"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="107.7637" y="62.59182" z="97.78111"/>
+							<center x="-13.24028" y="-5.227022" z="16.12379"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part nocollision  ">
+				<offset/>
+				<parts>
+					<part name="fx_haze">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_ice_haze_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="175.8232" y="171.8267" z="174.4774"/>
+							<center x="-7.629395E-06" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="26.28394" y="25.05565" z="28.26043"/>
+							<center x="-1.621246E-05" y="0" z="-1.239777E-05"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part detail_s nocollision  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_dist">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_strong_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="26.01298" y="24.58179" z="27.8815"/>
+							<center x="-0.1879234" y="1.841259E-02" z="1.526356E-02"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

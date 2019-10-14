@@ -1,0 +1,2361 @@
+<components>
+  <component name="asteroid_field_01" class="asteroid">
+    <source geometry="assets\environments\asteroids\\asteroid_field_01_data" />
+    <layers>
+      <layer>
+        <waypoints />
+        <lights></lights>
+      </layer>
+    </layers>
+    <connections>
+      <connection name="container" tags="contents" value="0"
+      optional="0" />
+      <connection name="position" tags="position" value="1"
+      optional="1" />
+      <connection name="space" tags="asteroid">
+        <offset />
+      </connection>
+      <connection name="Connection01" tags="part">
+        <offset>
+          <position x="11.1366" y="-173.0669" z="302.2383" />
+        </offset>
+        <parts>
+          <part name="part_test">
+            <size>
+              <max x="20.42245" y="6.189911" z="28.21692" />
+              <center x="0" y="6.189911" z="0" />
+            </size>
+          </part>
+        </parts>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_01"
+      tags="position">
+        <offset>
+          <position x="553.3024" y="590.4437" z="1140.619" />
+          <quaternion qx="0.5275578" qy="-0.7464896"
+          qz="-0.3496093" qw="-0.2054489" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_03"
+      tags="position">
+        <offset>
+          <position x="-425.2033" y="69.46801" z="412.0229" />
+          <quaternion qx="-0.294774" qy="-0.1001489"
+          qz="-0.3095157" qw="-0.8984868" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_01"
+      tags="position">
+        <offset>
+          <position x="2446.363" y="48.27629" z="-805.0422" />
+          <quaternion qx="-0.2417542" qy="-0.9188651"
+          qz="-7.724585E-02" qw="0.3021172" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_02"
+      tags="position">
+        <offset>
+          <position x="-518.1248" y="170.4132" z="-1663.85" />
+          <quaternion qx="0.7047393" qy="-0.7072182"
+          qz="-6.077751E-04" qw="-5.643114E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_03"
+      tags="position">
+        <offset>
+          <position x="-3770.058" y="-386.9151" z="1711.292" />
+          <quaternion qx="0.6567627" qy="-0.7486373"
+          qz="4.503066E-02" qw="7.859579E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_01"
+      tags="position">
+        <offset>
+          <position x="-2390.344" y="-310.1485" z="2200.051" />
+          <quaternion qx="-0.18561" qy="-0.5851392" qz="-0.7805853"
+          qw="-0.1176765" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_02"
+      tags="position">
+        <offset>
+          <position x="-1828.473" y="254.8905" z="990.0612" />
+          <quaternion qx="-0.4720117" qy="-0.4987829"
+          qz="0.4201346" qw="-0.5932179" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_03"
+      tags="position">
+        <offset>
+          <position x="1291.084" y="10.93551" z="2279.393" />
+          <quaternion qx="0.2151082" qy="0.1784877" qz="-0.8823713"
+          qw="0.3785386" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_01"
+      tags="position">
+        <offset>
+          <position x="-23.49988" y="-427.9219" z="-1536.573" />
+          <quaternion qx="0.3436378" qy="-0.635171" qz="0.5573529"
+          qw="-0.4096689" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_02"
+      tags="position">
+        <offset>
+          <position x="-2134.497" y="-349.6977" z="-1987.734" />
+          <quaternion qx="-0.5763047" qy="-0.4874742" qz="0.505726"
+          qw="-0.4177116" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_03"
+      tags="position">
+        <offset>
+          <position x="-1091.332" y="-85.28064" z="706.5699" />
+          <quaternion qx="-0.708137" qy="0.7036613"
+          qz="4.467421E-02" qw="-3.750946E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_031"
+      tags="position">
+        <offset>
+          <position x="-2.225555" y="-231.6217" z="332.3792" />
+          <quaternion qx="0.2190573" qy="-0.108156" qz="0.7113812"
+          qw="-0.6589788" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_02"
+      tags="position">
+        <offset>
+          <position x="-72.54797" y="-518.4203" z="885.9484" />
+          <quaternion qx="0.3320644" qy="-0.2508595"
+          qz="-0.3800023" qw="-0.8260757" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_021"
+      tags="position">
+        <offset>
+          <position x="-740.676" y="134.5397" z="-418.8638" />
+          <quaternion qx="-0.1586284" qy="-0.7518185"
+          qz="5.176877E-02" qw="-0.6379075" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_022"
+      tags="position">
+        <offset>
+          <position x="12.46667" y="110.4497" z="-110.5669" />
+          <quaternion qx="6.834925E-02" qy="-0.3626363"
+          qz="-8.713267E-02" qw="-0.9253276" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_011"
+      tags="position">
+        <offset>
+          <position x="-1372.277" y="-186.1374" z="568.377" />
+          <quaternion qx="-0.7251867" qy="1.756198E-02"
+          qz="0.3350765" qw="-0.6012649" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_012"
+      tags="position">
+        <offset>
+          <position x="1023.21" y="-414.945" z="-357.5908" />
+          <quaternion qx="0.5086094" qy="0.1087567" qz="-0.4399562"
+          qw="-0.7320704" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_013"
+      tags="position">
+        <offset>
+          <position x="640.5432" y="-945.187" z="298.3442" />
+          <quaternion qx="-0.1482006" qy="-0.3724316"
+          qz="-0.8120679" qw="-0.424119" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_014"
+      tags="position">
+        <offset>
+          <position x="-366.4962" y="-662.6312" z="277.8257" />
+          <quaternion qx="0.1271654" qy="0.3406278" qz="0.1031881"
+          qw="-0.925826" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_L_015"
+      tags="position">
+        <offset>
+          <position x="279.4376" y="208.0516" z="1781.893" />
+          <quaternion qx="0.5253531" qy="0.3998993" qz="0.4625653"
+          qw="-0.5917077" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_031"
+      tags="position">
+        <offset>
+          <position x="2240.089" y="196.3191" z="-1216.099" />
+          <quaternion qx="-0.7728944" qy="-0.6297575"
+          qz="-6.160227E-02" qw="-4.738092E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_032"
+      tags="position">
+        <offset>
+          <position x="-1621.146" y="-104.4009" z="-1816.411" />
+          <quaternion qx="0.3063923" qy="-0.1612068" qz="0.3471538"
+          qw="-0.871562" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_033"
+      tags="position">
+        <offset>
+          <position x="-4130.163" y="-220.7831" z="-1082.364" />
+          <quaternion qx="-0.6691977" qy="-0.5459524"
+          qz="0.3622887" qw="0.3505099" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_034"
+      tags="position">
+        <offset>
+          <position x="996.5434" y="128.4725" z="2427.689" />
+          <quaternion qx="5.639007E-02" qy="-0.6591443"
+          qz="-0.5589477" qw="0.4999264" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_035"
+      tags="position">
+        <offset>
+          <position x="-400.587" y="213.6427" z="-2286.67" />
+          <quaternion qx="-0.4825522" qy="0.4854642" qz="0.5161684"
+          qw="-0.5148185" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_036"
+      tags="position">
+        <offset>
+          <position x="2275.586" y="443.3871" z="360.9154" />
+          <quaternion qx="0.6066851" qy="-4.846993E-02"
+          qz="0.4519475" qw="-0.6521712" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_037"
+      tags="position">
+        <offset>
+          <position x="-1870.408" y="376.9237" z="2976.334" />
+          <quaternion qx="-0.2520644" qy="-0.7969643"
+          qz="-0.3448966" qw="-0.4270338" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_038"
+      tags="position">
+        <offset>
+          <position x="3156.994" y="-267.9901" z="2163.539" />
+          <quaternion qx="-0.6700624" qy="-0.5717909"
+          qz="0.2874314" qw="0.3761049" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_039"
+      tags="position">
+        <offset>
+          <position x="-1374.492" y="-32.50361" z="1600.74" />
+          <quaternion qx="0.3227502" qy="-0.3116324"
+          qz="-0.7837368" qw="0.4295046" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0310"
+      tags="position">
+        <offset>
+          <position x="-3107.856" y="-78.59437" z="-2091.357" />
+          <quaternion qx="0.6376536" qy="1.184923E-02"
+          qz="-0.7309077" qw="-0.2429635" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_021"
+      tags="position">
+        <offset>
+          <position x="1425.525" y="273.5339" z="1231.297" />
+          <quaternion qx="0.3739418" qy="-0.7637291" qz="0.5216487"
+          qw="-6.905091E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_022"
+      tags="position">
+        <offset>
+          <position x="2398.885" y="2.713601" z="-2477.467" />
+          <quaternion qx="-0.5253515" qy="-0.4159586"
+          qz="-9.262724E-02" qw="-0.7364812" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_023"
+      tags="position">
+        <offset>
+          <position x="2003.036" y="74.44015" z="2213.719" />
+          <quaternion qx="-0.6294151" qy="-0.619831"
+          qz="-0.3586624" qw="-0.3016744" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_024"
+      tags="position">
+        <offset>
+          <position x="2188.522" y="-82.53453" z="39.55679" />
+          <quaternion qx="-0.7312833" qy="0.3633038" qz="0.3794619"
+          qw="-0.4350215" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_025"
+      tags="position">
+        <offset>
+          <position x="-1899.12" y="-271.0594" z="-364.2884" />
+          <quaternion qx="-5.770195E-02" qy="-0.8323172"
+          qz="0.3664163" qw="0.4118952" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_026"
+      tags="position">
+        <offset>
+          <position x="-1841.581" y="-267.081" z="1988.865" />
+          <quaternion qx="0.1860286" qy="3.126217E-02"
+          qz="-0.7705195" qw="-0.6088643" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_027"
+      tags="position">
+        <offset>
+          <position x="1108.557" y="-160.7133" z="-1883.967" />
+          <quaternion qx="-8.048637E-02" qy="-0.4140328"
+          qz="0.524365" qw="-0.7396892" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_028"
+      tags="position">
+        <offset>
+          <position x="-1911.817" y="246.7887" z="-561.6492" />
+          <quaternion qx="0.3276161" qy="-0.3253657" qz="0.6140477"
+          qw="-0.6401173" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_029"
+      tags="position">
+        <offset>
+          <position x="-349.8578" y="111.8583" z="874.714" />
+          <quaternion qx="-0.5782955" qy="0.548539" qz="0.3543874"
+          qw="-0.4889671" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0210"
+      tags="position">
+        <offset>
+          <position x="-503.3814" y="99.51078" z="2252.194" />
+          <quaternion qx="0.4252462" qy="-0.4889596"
+          qz="-0.7615755" qw="-9.321821E-03" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_011"
+      tags="position">
+        <offset>
+          <position x="-44.87619" y="311.6544" z="-1311.425" />
+          <quaternion qx="0.1688404" qy="-0.2103722" qz="0.5794816"
+          qw="-0.7690498" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_012"
+      tags="position">
+        <offset>
+          <position x="1921.827" y="442.7633" z="2051.28" />
+          <quaternion qx="-0.7149897" qy="-0.6869688"
+          qz="-8.475264E-02" qw="0.0983902" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_013"
+      tags="position">
+        <offset>
+          <position x="339.2094" y="-14.80758" z="-546.1118" />
+          <quaternion qx="0.2732241" qy="0.5796828" qz="-0.7619608"
+          qw="-9.344625E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_014"
+      tags="position">
+        <offset>
+          <position x="-1465.956" y="473.8516" z="122.1898" />
+          <quaternion qx="-0.9239666" qy="1.990521E-02"
+          qz="0.262311" qw="0.2776375" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_015"
+      tags="position">
+        <offset>
+          <position x="2347.569" y="206.1959" z="522.9391" />
+          <quaternion qx="-8.571175E-02" qy="-0.7868071"
+          qz="9.867223E-04" qw="-0.6112179" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_016"
+      tags="position">
+        <offset>
+          <position x="458.8897" y="-213.7736" z="-1518.44" />
+          <quaternion qx="-0.338923" qy="0.4043142" qz="0.1920736"
+          qw="-0.8275076" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_017"
+      tags="position">
+        <offset>
+          <position x="-1240.498" y="-304.9607" z="-239.4754" />
+          <quaternion qx="-0.649149" qy="0.3284844" qz="-0.5495664"
+          qw="-0.4107073" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_018"
+      tags="position">
+        <offset>
+          <position x="-365.6998" y="245.1901" z="1272.04" />
+          <quaternion qx="0.4017834" qy="-0.5276223"
+          qz="-0.1989946" qw="-0.7215164" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_019"
+      tags="position">
+        <offset>
+          <position x="-965.6461" y="-139.7056" z="592.6095" />
+          <quaternion qx="-0.1753701" qy="-0.1356364"
+          qz="-0.6989805" qw="-0.6799077" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0110"
+      tags="position">
+        <offset>
+          <position x="1957.873" y="-445.219" z="260.102" />
+          <quaternion qx="-0.8454807" qy="1.578051E-02"
+          qz="0.2780906" qw="-0.4556083" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_021"
+      tags="position">
+        <offset>
+          <position x="268.7598" y="29.4741" z="-1932.596" />
+          <quaternion qx="0.4358759" qy="-0.3146344" qz="0.4157293"
+          qw="-0.7336119" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_022"
+      tags="position">
+        <offset>
+          <position x="1572.558" y="-124.0951" z="1723.593" />
+          <quaternion qx="-0.1305151" qy="-0.2101672"
+          qz="-0.9527282" qw="0.1763647" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_023"
+      tags="position">
+        <offset>
+          <position x="709.8839" y="175.2226" z="-1005.952" />
+          <quaternion qx="0.1579408" qy="0.2297176" qz="0.1489159"
+          qw="-0.9487405" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_024"
+      tags="position">
+        <offset>
+          <position x="-1190.22" y="106.3634" z="-1297.673" />
+          <quaternion qx="-0.771986" qy="0.5371827" qz="0.2776528"
+          qw="-0.1959112" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_025"
+      tags="position">
+        <offset>
+          <position x="-2296.677" y="-179.4553" z="1440.879" />
+          <quaternion qx="-0.9607306" qy="0.113837" qz="0.1713183"
+          qw="-0.1862468" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_026"
+      tags="position">
+        <offset>
+          <position x="-1522.553" y="3.660261" z="-207.7696" />
+          <quaternion qx="-0.6378817" qy="-0.6681912"
+          qz="-0.2823207" qw="-0.2586935" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_027"
+      tags="position">
+        <offset>
+          <position x="2022.69" y="0.3297934" z="-861.0458" />
+          <quaternion qx="-0.8446501" qy="-0.318123"
+          qz="-0.2195499" qw="-0.3703535" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_028"
+      tags="position">
+        <offset>
+          <position x="1070.216" y="144.4052" z="2192.707" />
+          <quaternion qx="0.2604313" qy="0.1697216" qz="-0.9177381"
+          qw="0.2472384" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_029"
+      tags="position">
+        <offset>
+          <position x="205.6434" y="36.75365" z="1522.002" />
+          <quaternion qx="0.5203897" qy="-0.4719844" qz="0.4125125"
+          qw="-0.5798783" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0210"
+      tags="position">
+        <offset>
+          <position x="2008.058" y="-79.64795" z="-77.97639" />
+          <quaternion qx="-0.7320194" qy="-0.3059122"
+          qz="-0.4847407" qw="0.3682278" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0211"
+      tags="position">
+        <offset>
+          <position x="183.2143" y="-284.1266" z="2116.452" />
+          <quaternion qx="-0.3678863" qy="-0.7241823"
+          qz="0.4226886" qw="-0.4019379" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0212"
+      tags="position">
+        <offset>
+          <position x="-2401.082" y="-146.1075" z="-759.1998" />
+          <quaternion qx="-0.1464908" qy="-0.7921425"
+          qz="-6.842316E-02" qw="-0.5885313" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0213"
+      tags="position">
+        <offset>
+          <position x="-2489.21" y="123.3093" z="-1350.553" />
+          <quaternion qx="-0.2085392" qy="-0.7289598"
+          qz="-0.5803103" qw="0.2972693" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0214"
+      tags="position">
+        <offset>
+          <position x="741.821" y="-251.384" z="1668.119" />
+          <quaternion qx="0.1462648" qy="-0.2892371"
+          qz="-0.1711913" qw="-0.9303988" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0215"
+      tags="position">
+        <offset>
+          <position x="-735.0393" y="241.823" z="-556.0619" />
+          <quaternion qx="-4.061982E-02" qy="-0.1902625"
+          qz="-0.7547704" qw="-0.6264757" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_031"
+      tags="position">
+        <offset>
+          <position x="-974.5471" y="-441.5968" z="2152.512" />
+          <quaternion qx="-0.2537552" qy="-0.8990471"
+          qz="0.3504332" qw="6.722526E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_032"
+      tags="position">
+        <offset>
+          <position x="-464.3252" y="-111.3767" z="-707.0118" />
+          <quaternion qx="0.2058772" qy="-0.55077" qz="-0.0279904"
+          qw="-0.8083832" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_033"
+      tags="position">
+        <offset>
+          <position x="2437.8" y="171.9095" z="1122.186" />
+          <quaternion qx="-0.325278" qy="0.346958" qz="0.6158621"
+          qw="-0.6281149" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_034"
+      tags="position">
+        <offset>
+          <position x="-1207.251" y="327.5724" z="925.3646" />
+          <quaternion qx="-0.8399168" qy="-0.5324405"
+          qz="9.744979E-02" qw="-0.0393755" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_035"
+      tags="position">
+        <offset>
+          <position x="-740.1658" y="-261.5253" z="-1339.654" />
+          <quaternion qx="-0.3744074" qy="0.5934886"
+          qz="-0.7124436" qw="0.0037995" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_036"
+      tags="position">
+        <offset>
+          <position x="-1385.223" y="486.6312" z="2266.26" />
+          <quaternion qx="-0.1268306" qy="-8.870044E-02"
+          qz="-0.8584444" qw="-0.4889984" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_037"
+      tags="position">
+        <offset>
+          <position x="-3866.874" y="430.1418" z="-578.9906" />
+          <quaternion qx="-0.8337503" qy="-0.3149621"
+          qz="-0.4172856" qw="0.1775724" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_038"
+      tags="position">
+        <offset>
+          <position x="-2288.169" y="-60.60279" z="1835.682" />
+          <quaternion qx="-0.6814778" qy="-0.3383005"
+          qz="-0.6209457" qw="-0.1885926" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_039"
+      tags="position">
+        <offset>
+          <position x="-233.1821" y="-441.5709" z="1356.387" />
+          <quaternion qx="6.808694E-02" qy="-0.129858"
+          qz="-0.8701056" qw="0.47055" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0310"
+      tags="position">
+        <offset>
+          <position x="-773.9104" y="-466.6448" z="1687.58" />
+          <quaternion qx="-0.6706957" qy="0.6197665" qz="0.1138842"
+          qw="0.3912636" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0311"
+      tags="position">
+        <offset>
+          <position x="-2400.458" y="275.0593" z="-639.988" />
+          <quaternion qx="-0.8099196" qy="-0.347541"
+          qz="-0.2029901" qw="0.426662" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0312"
+      tags="position">
+        <offset>
+          <position x="2331.62" y="-474.1251" z="1150.214" />
+          <quaternion qx="-0.8645803" qy="0.1493513" qz="0.1179828"
+          qw="-0.4650539" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0313"
+      tags="position">
+        <offset>
+          <position x="-1677.386" y="7.910871" z="2271.767" />
+          <quaternion qx="5.722167E-02" qy="-0.7542762"
+          qz="-0.5344235" qw="-0.3770738" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0314"
+      tags="position">
+        <offset>
+          <position x="-2448.939" y="363.0005" z="2157.556" />
+          <quaternion qx="0.6213361" qy="-0.6368768" qz="0.3633479"
+          qw="-0.2762384" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0315"
+      tags="position">
+        <offset>
+          <position x="-1232.159" y="295.6644" z="1593.091" />
+          <quaternion qx="0.4273244" qy="0.6593748" qz="-0.2770546"
+          qw="-0.5530457" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_021"
+      tags="position">
+        <offset>
+          <position x="-662.2299" y="-693.9929" z="37.69405" />
+          <quaternion qx="-0.1406693" qy="0.5110219" qz="-0.118009"
+          qw="-0.8397278" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_022"
+      tags="position">
+        <offset>
+          <position x="1472.774" y="134.2934" z="2446.371" />
+          <quaternion qx="-0.5025688" qy="-0.7012352"
+          qz="-0.4944924" qw="-0.1056929" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_023"
+      tags="position">
+        <offset>
+          <position x="712.263" y="-695.6322" z="-877.7526" />
+          <quaternion qx="-0.4336488" qy="0.5489005" qz="0.1154344"
+          qw="-0.7052175" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_024"
+      tags="position">
+        <offset>
+          <position x="523.8889" y="56.94975" z="33.12542" />
+          <quaternion qx="-0.4531824" qy="0.5113726"
+          qz="-0.6806399" qw="-0.2642973" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_025"
+      tags="position">
+        <offset>
+          <position x="2466.374" y="559.0753" z="2335.735" />
+          <quaternion qx="-0.8570591" qy="0.2729235"
+          qz="-0.3163614" qw="-0.3014596" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_026"
+      tags="position">
+        <offset>
+          <position x="2409.996" y="283.0207" z="-1167.48" />
+          <quaternion qx="0.1648878" qy="-0.9620222"
+          qz="-0.1720599" qw="0.1331193" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_027"
+      tags="position">
+        <offset>
+          <position x="-1967.454" y="415.8714" z="-109.3783" />
+          <quaternion qx="0.2394501" qy="-0.6867539"
+          qz="-0.5212906" qw="-0.4464178" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_028"
+      tags="position">
+        <offset>
+          <position x="-2089.966" y="153.8681" z="1526.292" />
+          <quaternion qx="-0.5155039" qy="-0.6794071"
+          qz="-0.4566514" qw="-0.2532417" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_029"
+      tags="position">
+        <offset>
+          <position x="-1065.983" y="-219.8807" z="1227.459" />
+          <quaternion qx="-0.6124166" qy="0.4509636" qz="0.5892804"
+          qw="-0.2726286" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0210"
+      tags="position">
+        <offset>
+          <position x="-1509.393" y="522.8282" z="-1623.605" />
+          <quaternion qx="-0.1460825" qy="-4.097151E-02"
+          qz="0.7728262" qw="-0.616215" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0211"
+      tags="position">
+        <offset>
+          <position x="-840.5714" y="-745.1042" z="-1724.944" />
+          <quaternion qx="0.2182608" qy="0.2589685" qz="-0.9407298"
+          qw="-1.802829E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0212"
+      tags="position">
+        <offset>
+          <position x="561.6376" y="58.42564" z="-1993.685" />
+          <quaternion qx="-0.7773635" qy="0.110421" qz="-0.4557435"
+          qw="0.4192982" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0213"
+      tags="position">
+        <offset>
+          <position x="-574.574" y="87.19361" z="-615.0638" />
+          <quaternion qx="-0.3217303" qy="-0.0891515"
+          qz="0.7730963" qw="-0.5393178" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0214"
+      tags="position">
+        <offset>
+          <position x="108.4624" y="-526.1851" z="1620.938" />
+          <quaternion qx="-0.3563563" qy="0.3920369" qz="0.2649025"
+          qw="-0.8056946" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0215"
+      tags="position">
+        <offset>
+          <position x="1398.475" y="369.0405" z="-1676.362" />
+          <quaternion qx="0.6306133" qy="-0.673592" qz="-0.2637188"
+          qw="0.281164" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0216"
+      tags="position">
+        <offset>
+          <position x="560.4628" y="-389.147" z="-981.7291" />
+          <quaternion qx="-0.4883188" qy="-0.5531623"
+          qz="-0.4285342" qw="-0.5214543" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0217"
+      tags="position">
+        <offset>
+          <position x="1276.555" y="-637.084" z="-2029.962" />
+          <quaternion qx="-0.4840083" qy="-0.6914498"
+          qz="0.5328407" qw="6.094136E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0218"
+      tags="position">
+        <offset>
+          <position x="145.0203" y="-40.08369" z="673.9968" />
+          <quaternion qx="8.540655E-02" qy="-0.873057"
+          qz="-0.3999186" qw="-0.2655979" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0219"
+      tags="position">
+        <offset>
+          <position x="1099.397" y="756.462" z="113.013" />
+          <quaternion qx="0.135843" qy="0.2895055" qz="-0.8425227"
+          qw="-0.4334615" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0220"
+      tags="position">
+        <offset>
+          <position x="-1713.882" y="623.9944" z="91.99987" />
+          <quaternion qx="-0.4105596" qy="-0.1912234"
+          qz="-0.0222425" qw="-0.8912798" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_011"
+      tags="position">
+        <offset>
+          <position x="-2185.408" y="-386.0866" z="-2304.17" />
+          <quaternion qx="0.1752" qy="0.4656402" qz="-0.8645473"
+          qw="-7.100774E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_012"
+      tags="position">
+        <offset>
+          <position x="714.3356" y="178.7876" z="-1114.555" />
+          <quaternion qx="0.5611749" qy="-0.365284" qz="-0.5795569"
+          qw="0.4645043" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_013"
+      tags="position">
+        <offset>
+          <position x="1438.655" y="-493.2438" z="-1929.475" />
+          <quaternion qx="-0.6820802" qy="-0.4907904"
+          qz="-0.3175883" qw="-0.4393508" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_014"
+      tags="position">
+        <offset>
+          <position x="1734.291" y="-313.5071" z="-1941.122" />
+          <quaternion qx="0.463576" qy="0.4494254" qz="-0.16906"
+          qw="-0.7446695" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_015"
+      tags="position">
+        <offset>
+          <position x="-2330.924" y="91.78099" z="2026.657" />
+          <quaternion qx="-0.3608557" qy="0.5537819" qz="-0.687323"
+          qw="-0.3011578" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_016"
+      tags="position">
+        <offset>
+          <position x="1421.728" y="-138.8115" z="2077.042" />
+          <quaternion qx="0.4841261" qy="-0.6395326" qz="0.5303743"
+          qw="-0.2744504" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_017"
+      tags="position">
+        <offset>
+          <position x="1442.276" y="76.54175" z="-205.5912" />
+          <quaternion qx="0.5362065" qy="-0.6386408"
+          qz="-0.3094292" qw="-0.4570275" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_018"
+      tags="position">
+        <offset>
+          <position x="2270.537" y="224.5271" z="1905.701" />
+          <quaternion qx="0.7505897" qy="0.1934491" qz="-0.3307901"
+          qw="-0.5383032" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_019"
+      tags="position">
+        <offset>
+          <position x="-72.56784" y="-491.8961" z="-1623.743" />
+          <quaternion qx="0.3393753" qy="0.6390767" qz="-0.6461939"
+          qw="-0.2425672" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0110"
+      tags="position">
+        <offset>
+          <position x="854.8701" y="30.79433" z="-1331.224" />
+          <quaternion qx="-0.3726083" qy="-0.8917527"
+          qz="0.1435627" qw="-0.2129083" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0111"
+      tags="position">
+        <offset>
+          <position x="-1407.328" y="-95.13879" z="840.7794" />
+          <quaternion qx="-0.5753158" qy="0.2307752" qz="0.5812266"
+          qw="-0.5271909" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0112"
+      tags="position">
+        <offset>
+          <position x="2288.356" y="-481.7519" z="259.4231" />
+          <quaternion qx="-0.7331652" qy="1.770068E-02"
+          qz="0.4821134" qw="0.4792934" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0113"
+      tags="position">
+        <offset>
+          <position x="1860.949" y="119.7672" z="38.30343" />
+          <quaternion qx="-0.7660448" qy="0.2879525"
+          qz="-0.3681682" qw="-0.4412606" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0114"
+      tags="position">
+        <offset>
+          <position x="526.0485" y="372.9511" z="-1454.558" />
+          <quaternion qx="-0.3656848" qy="-0.310957"
+          qz="-0.5495935" qw="-0.6837597" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0115"
+      tags="position">
+        <offset>
+          <position x="-136.8154" y="88.05811" z="-1553.838" />
+          <quaternion qx="-1.347935E-02" qy="-0.3678419"
+          qz="-0.7038699" qw="-0.6075178" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0116"
+      tags="position">
+        <offset>
+          <position x="-2259.676" y="-128.3494" z="-903.4913" />
+          <quaternion qx="0.3039288" qy="0.5993088" qz="-0.7176075"
+          qw="-0.1830186" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0117"
+      tags="position">
+        <offset>
+          <position x="-729.1559" y="469.9642" z="-603.7542" />
+          <quaternion qx="-3.510866E-02" qy="-0.2463075"
+          qz="0.8143728" qw="-0.5243063" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0118"
+      tags="position">
+        <offset>
+          <position x="-2015.654" y="-120.7586" z="-1992.801" />
+          <quaternion qx="0.1891024" qy="0.4069568" qz="-0.8167687"
+          qw="-0.3626504" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0119"
+      tags="position">
+        <offset>
+          <position x="-1475.887" y="-271.7943" z="-345.6729" />
+          <quaternion qx="0.6820998" qy="-0.7239572"
+          qz="9.051275E-02" qw="-4.932617E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0120"
+      tags="position">
+        <offset>
+          <position x="1011.016" y="-180.2908" z="770.6429" />
+          <quaternion qx="-0.6469617" qy="0.3307415"
+          qz="-0.3181406" qw="-0.608964" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_031"
+      tags="position">
+        <offset>
+          <position x="340.1935" y="256.2386" z="1084.319" />
+          <quaternion qx="-0.3015747" qy="-0.1661578"
+          qz="0.4614199" qw="-0.8176404" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_032"
+      tags="position">
+        <offset>
+          <position x="-1683.502" y="292.1858" z="647.8725" />
+          <quaternion qx="-0.4501346" qy="0.3783977" qz="0.5482679"
+          qw="-0.5946396" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_033"
+      tags="position">
+        <offset>
+          <position x="1563.979" y="-328.7341" z="1816.164" />
+          <quaternion qx="0.3193814" qy="-0.168252" qz="0.1745072"
+          qw="-0.9160972" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_034"
+      tags="position">
+        <offset>
+          <position x="2100.475" y="-459.146" z="-2047.45" />
+          <quaternion qx="0.3336344" qy="-0.8313453"
+          qz="-0.3545603" qw="-0.2680301" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_035"
+      tags="position">
+        <offset>
+          <position x="1585.471" y="180.948" z="1818.476" />
+          <quaternion qx="-0.5908673" qy="0.5739785"
+          qz="-0.5548764" qw="0.116347" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_036"
+      tags="position">
+        <offset>
+          <position x="755.1659" y="-116.0698" z="1504.729" />
+          <quaternion qx="0.2926089" qy="-0.895174"
+          qz="6.229583E-02" qw="0.330398" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_037"
+      tags="position">
+        <offset>
+          <position x="69.78028" y="-100.4543" z="931.3604" />
+          <quaternion qx="-0.382175" qy="-0.3928464"
+          qz="-0.5904287" qw="-0.5924592" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_038"
+      tags="position">
+        <offset>
+          <position x="-1413.012" y="-162.1945" z="-1424.327" />
+          <quaternion qx="-0.2516786" qy="0.180943" qz="-0.7761525"
+          qw="-0.5490945" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_039"
+      tags="position">
+        <offset>
+          <position x="2001.443" y="2.900146" z="1115.994" />
+          <quaternion qx="-0.3070651" qy="-0.3003465"
+          qz="-0.6382001" qw="-0.6389081" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0310"
+      tags="position">
+        <offset>
+          <position x="-386.6136" y="412.6661" z="-676.5068" />
+          <quaternion qx="-0.3655234" qy="0.1822864" qz="0.4409537"
+          qw="-0.7992022" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0311"
+      tags="position">
+        <offset>
+          <position x="2409.967" y="-452.8" z="800.6201" />
+          <quaternion qx="8.434796E-02" qy="0.6994881"
+          qz="-0.1927094" qw="-0.6829823" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0312"
+      tags="position">
+        <offset>
+          <position x="2337.894" y="280.519" z="381.4602" />
+          <quaternion qx="-0.898515" qy="-4.758262E-02"
+          qz="0.4156424" qw="0.1328458" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0313"
+      tags="position">
+        <offset>
+          <position x="-1006.82" y="-491.0898" z="-377.5019" />
+          <quaternion qx="-0.0638028" qy="5.794423E-02"
+          qz="0.7693997" qw="-0.6329263" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0314"
+      tags="position">
+        <offset>
+          <position x="1263.943" y="-399.4637" z="-717.652" />
+          <quaternion qx="-0.739144" qy="0.5195614" qz="-0.4167335"
+          qw="-0.1002766" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0315"
+      tags="position">
+        <offset>
+          <position x="-2436.086" y="7.531182" z="-1542.816" />
+          <quaternion qx="-0.4913198" qy="-0.3155131"
+          qz="-1.566973E-02" qw="-0.8116716" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0316"
+      tags="position">
+        <offset>
+          <position x="-1562.8" y="-395.0115" z="1158.015" />
+          <quaternion qx="0.657195" qy="-0.7253405" qz="-0.0297558"
+          qw="0.2027081" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0317"
+      tags="position">
+        <offset>
+          <position x="2188.917" y="-375.9696" z="-734.839" />
+          <quaternion qx="0.2874753" qy="-0.4440753"
+          qz="-0.8272913" qw="0.1890612" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0318"
+      tags="position">
+        <offset>
+          <position x="1382.407" y="-23.22587" z="1018.666" />
+          <quaternion qx="-0.4850768" qy="-0.694758" qz="0.5229457"
+          qw="-9.240935E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0319"
+      tags="position">
+        <offset>
+          <position x="-1558.376" y="100.836" z="-1153.605" />
+          <quaternion qx="-0.6715449" qy="0.6424419" qz="0.3219786"
+          qw="0.1806256" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0320"
+      tags="position">
+        <offset>
+          <position x="-701.262" y="-38.34069" z="-1734.151" />
+          <quaternion qx="5.508531E-02" qy="0.7033755"
+          qz="-0.417346" qw="-0.5727573" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_011"
+      tags="position">
+        <offset>
+          <position x="-1272.465" y="379.2012" z="1950.824" />
+          <quaternion qx="4.205076E-02" qy="0.4482296"
+          qz="0.6779753" qw="-0.5810951" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_012"
+      tags="position">
+        <offset>
+          <position x="-827.3993" y="429.8279" z="-697.7735" />
+          <quaternion qx="7.306941E-02" qy="-0.4778468"
+          qz="-0.7928956" qw="-0.3709984" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_013"
+      tags="position">
+        <offset>
+          <position x="-2462.59" y="-228.4509" z="-777.9401" />
+          <quaternion qx="-0.8634965" qy="4.791412E-02"
+          qz="0.5006161" qw="3.823181E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_014"
+      tags="position">
+        <offset>
+          <position x="-566.3755" y="107.201" z="-1455.496" />
+          <quaternion qx="-0.6397156" qy="-0.6219936"
+          qz="0.3231633" qw="0.3153626" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_015"
+      tags="position">
+        <offset>
+          <position x="1114.389" y="-44.9252" z="1027.787" />
+          <quaternion qx="0.5520549" qy="-0.6543573"
+          qz="-4.196913E-02" qw="-0.5150637" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_016"
+      tags="position">
+        <offset>
+          <position x="-2206.766" y="312.2191" z="2198.672" />
+          <quaternion qx="-0.1079748" qy="0.2095837" qz="0.4696687"
+          qw="-0.8507805" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_017"
+      tags="position">
+        <offset>
+          <position x="-238.6804" y="283.4334" z="1228.358" />
+          <quaternion qx="-0.6519074" qy="0.4830139"
+          qz="-0.5126284" qw="-0.2809385" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_018"
+      tags="position">
+        <offset>
+          <position x="-1159.24" y="133.3891" z="2193.772" />
+          <quaternion qx="-0.5767496" qy="-0.6529813"
+          qz="0.4637459" qw="0.1609818" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_019"
+      tags="position">
+        <offset>
+          <position x="1239.26" y="-479.24" z="2230.025" />
+          <quaternion qx="-0.7418792" qy="-0.4664511"
+          qz="0.4772347" qw="-6.546496E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0110"
+      tags="position">
+        <offset>
+          <position x="-2295.538" y="441.8849" z="-933.0606" />
+          <quaternion qx="-0.7118484" qy="-0.6116094"
+          qz="0.2981403" qw="0.1741211" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0111"
+      tags="position">
+        <offset>
+          <position x="-207.9624" y="381.5675" z="1136.048" />
+          <quaternion qx="0.1375322" qy="-0.4624916"
+          qz="-0.8633913" qw="0.1474514" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0112"
+      tags="position">
+        <offset>
+          <position x="489.1312" y="-173.154" z="1723.282" />
+          <quaternion qx="-0.8652028" qy="0.1190033" qz="0.3990277"
+          qw="0.2793552" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0113"
+      tags="position">
+        <offset>
+          <position x="1650.153" y="86.23941" z="-1677.43" />
+          <quaternion qx="0.4056515" qy="-0.4120227" qz="0.6031298"
+          qw="-0.5494712" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0114"
+      tags="position">
+        <offset>
+          <position x="2153.115" y="-156.244" z="-1765.566" />
+          <quaternion qx="-0.8235235" qy="-0.2752954"
+          qz="0.2818877" qw="-0.4081186" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0115"
+      tags="position">
+        <offset>
+          <position x="-1204.972" y="389.8798" z="1201.722" />
+          <quaternion qx="-0.2947123" qy="1.534599E-02"
+          qz="0.7917672" qw="-0.5348026" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0116"
+      tags="position">
+        <offset>
+          <position x="-139.3448" y="253.392" z="-435.8036" />
+          <quaternion qx="-0.7286852" qy="0.5407916"
+          qz="5.849759E-02" qw="-0.4161013" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0117"
+      tags="position">
+        <offset>
+          <position x="-2323.286" y="87.20821" z="-833.1766" />
+          <quaternion qx="-7.337984E-02" qy="-0.5150468"
+          qz="-0.6941035" qw="-0.4975565" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0118"
+      tags="position">
+        <offset>
+          <position x="-2031.035" y="-424.6826" z="-1093.449" />
+          <quaternion qx="0.5597444" qy="6.258692E-02"
+          qz="-0.655037" qw="-0.5036823" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0119"
+      tags="position">
+        <offset>
+          <position x="-2312.858" y="-287.0205" z="263.2619" />
+          <quaternion qx="0.315916" qy="-0.7746262" qz="-0.2636407"
+          qw="0.4802552" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0120"
+      tags="position">
+        <offset>
+          <position x="1515.347" y="-339.2452" z="1693.686" />
+          <quaternion qx="-0.7246498" qy="-0.1187397"
+          qz="-0.4808176" qw="-0.4791637" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0221"
+      tags="position">
+        <offset>
+          <position x="671.3756" y="755.7922" z="-1202.471" />
+          <quaternion qx="-0.2569389" qy="0.1148697"
+          qz="-0.9422957" qw="0.1812899" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0222"
+      tags="position">
+        <offset>
+          <position x="-891.5988" y="795.3896" z="-701.5466" />
+          <quaternion qx="0.2331245" qy="-0.7570705"
+          qz="-0.5543154" qw="-0.2554048" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0223"
+      tags="position">
+        <offset>
+          <position x="-1433.981" y="137.1889" z="-734.0024" />
+          <quaternion qx="-0.7498498" qy="-0.6192881"
+          qz="-0.231581" qw="2.403732E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0224"
+      tags="position">
+        <offset>
+          <position x="-848.1431" y="-309.1733" z="-1170.547" />
+          <quaternion qx="-0.7072496" qy="0.3414895"
+          qz="-0.4457952" qw="0.4294758" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0225"
+      tags="position">
+        <offset>
+          <position x="-212.4794" y="734.4756" z="457.3224" />
+          <quaternion qx="-0.8880436" qy="0.206277" qz="-0.40789"
+          qw="4.953929E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0226"
+      tags="position">
+        <offset>
+          <position x="729.2161" y="453.5813" z="-1251.627" />
+          <quaternion qx="0.144786" qy="-0.118263" qz="0.692618"
+          qw="-0.6966572" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0227"
+      tags="position">
+        <offset>
+          <position x="55.02705" y="-438.6364" z="-627.2534" />
+          <quaternion qx="0.5648893" qy="0.4158308" qz="-0.3429693"
+          qw="-0.6247855" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0228"
+      tags="position">
+        <offset>
+          <position x="-452.3123" y="310.0344" z="208.1269" />
+          <quaternion qx="-0.29402" qy="-0.8894176" qz="-0.1898657"
+          qw="0.294006" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0229"
+      tags="position">
+        <offset>
+          <position x="-289.3434" y="-389.4916" z="-481.826" />
+          <quaternion qx="-0.3903105" qy="-0.9039776"
+          qz="0.1419536" qw="0.1016429" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0230"
+      tags="position">
+        <offset>
+          <position x="570.0712" y="389.7029" z="1235.246" />
+          <quaternion qx="-0.6560333" qy="0.4389356"
+          qz="-0.2466998" qw="-0.5622234" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0231"
+      tags="position">
+        <offset>
+          <position x="-1383.479" y="-671.0798" z="644.8036" />
+          <quaternion qx="-0.3723037" qy="-0.7196981"
+          qz="-0.4639652" qw="-0.3579957" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0232"
+      tags="position">
+        <offset>
+          <position x="356.1" y="-725.3441" z="284.7673" />
+          <quaternion qx="-0.7160482" qy="0.6942447"
+          qz="4.538829E-02" qw="-5.691272E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0233"
+      tags="position">
+        <offset>
+          <position x="1358.661" y="-399.4679" z="294.1159" />
+          <quaternion qx="-0.3209134" qy="0.6352199"
+          qz="3.977315E-02" qw="-0.7013761" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0234"
+      tags="position">
+        <offset>
+          <position x="-1260.519" y="-597.8541" z="-2930.159" />
+          <quaternion qx="-0.3596112" qy="0.1055239" qz="0.7278621"
+          qw="-0.5742485" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0235"
+      tags="position">
+        <offset>
+          <position x="653.6569" y="-315.1162" z="-4.8878" />
+          <quaternion qx="-0.5401355" qy="-0.5534405"
+          qz="-0.4294764" qw="-0.4663768" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0236"
+      tags="position">
+        <offset>
+          <position x="886.1097" y="-263.4272" z="700.9993" />
+          <quaternion qx="-0.7960207" qy="-0.5717329"
+          qz="-0.007511" qw="-0.1985346" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0237"
+      tags="position">
+        <offset>
+          <position x="574.3473" y="-584.0565" z="1455.847" />
+          <quaternion qx="-0.2969156" qy="0.3627663" qz="0.6974742"
+          qw="-0.542007" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0238"
+      tags="position">
+        <offset>
+          <position x="1326.516" y="513.7409" z="701.1696" />
+          <quaternion qx="4.442802E-02" qy="0.7535881"
+          qz="0.116455" qw="-0.6454218" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0239"
+      tags="position">
+        <offset>
+          <position x="-615.0314" y="-454.3922" z="1476.058" />
+          <quaternion qx="-0.1764331" qy="0.1414977"
+          qz="-0.8914817" qw="0.3925686" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0240"
+      tags="position">
+        <offset>
+          <position x="770.9894" y="711.2383" z="1312.323" />
+          <quaternion qx="0.2172619" qy="4.735669E-02"
+          qz="-0.9417145" qw="0.252445" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0241"
+      tags="position">
+        <offset>
+          <position x="527.9262" y="-534.1365" z="208.0995" />
+          <quaternion qx="-0.1355085" qy="-0.3771932"
+          qz="0.7345746" qw="-0.5475061" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0242"
+      tags="position">
+        <offset>
+          <position x="831.0687" y="-600.7632" z="201.7958" />
+          <quaternion qx="-0.7132791" qy="-0.4717157"
+          qz="-0.3499298" qw="-0.3824477" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0243"
+      tags="position">
+        <offset>
+          <position x="-240.4738" y="177.9709" z="1434.377" />
+          <quaternion qx="-0.5693928" qy="0.3782296"
+          qz="-0.4630192" qw="-0.5642228" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0244"
+      tags="position">
+        <offset>
+          <position x="-366.4905" y="72.88278" z="-129.8658" />
+          <quaternion qx="-0.5843747" qy="0.4716694"
+          qz="-0.4959113" qw="0.4360116" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0245"
+      tags="position">
+        <offset>
+          <position x="-284.8204" y="-213.5971" z="1336.151" />
+          <quaternion qx="-9.214533E-02" qy="0.2539697"
+          qz="0.6458675" qw="-0.7140474" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0246"
+      tags="position">
+        <offset>
+          <position x="1246.528" y="289.3275" z="-846.1317" />
+          <quaternion qx="0.2425338" qy="-0.2457146" qz="0.6688628"
+          qw="-0.6583497" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0247"
+      tags="position">
+        <offset>
+          <position x="-579.0731" y="-420.3502" z="425.8263" />
+          <quaternion qx="0.6956924" qy="-0.1834181" qz="0.1950174"
+          qw="-0.6665869" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0248"
+      tags="position">
+        <offset>
+          <position x="878.6304" y="-770.6822" z="391.6452" />
+          <quaternion qx="0.1854472" qy="-0.8072082" qz="0.2657032"
+          qw="-0.4933822" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0249"
+      tags="position">
+        <offset>
+          <position x="-1417.42" y="-80.62698" z="-472.2776" />
+          <quaternion qx="-0.1053134" qy="-0.3163248"
+          qz="0.5503904" qw="-0.7654529" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0250"
+      tags="position">
+        <offset>
+          <position x="-997.732" y="175.1438" z="116.9312" />
+          <quaternion qx="-0.2579814" qy="-6.311272E-02"
+          qz="0.5656499" qw="-0.7807064" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0251"
+      tags="position">
+        <offset>
+          <position x="1001.362" y="-306.2318" z="545.8755" />
+          <quaternion qx="-8.020537E-02" qy="0.5697609"
+          qz="-0.816519" qw="4.728953E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0252"
+      tags="position">
+        <offset>
+          <position x="-923.2541" y="743.6164" z="-1183.102" />
+          <quaternion qx="0.2271277" qy="8.076482E-02"
+          qz="-0.9449852" qw="-0.2211178" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0253"
+      tags="position">
+        <offset>
+          <position x="310.6172" y="0.3718313" z="876.515" />
+          <quaternion qx="-0.2967229" qy="-0.7937577"
+          qz="0.4894656" qw="-0.205737" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0254"
+      tags="position">
+        <offset>
+          <position x="-1008.495" y="-365.3794" z="518.8834" />
+          <quaternion qx="-0.5496671" qy="0.5456737"
+          qz="-0.4494428" qw="0.4450925" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0255"
+      tags="position">
+        <offset>
+          <position x="527.0119" y="607.92" z="-667.3413" />
+          <quaternion qx="-0.7187203" qy="0.498596" qz="0.4110681"
+          qw="-0.2566442" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0256"
+      tags="position">
+        <offset>
+          <position x="1415.645" y="452.6674" z="-1462.46" />
+          <quaternion qx="-0.7478123" qy="0.2715158" qz="0.359676"
+          qw="0.4875337" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0257"
+      tags="position">
+        <offset>
+          <position x="786.5742" y="-793.7551" z="973.6458" />
+          <quaternion qx="-0.6348893" qy="0.5277216"
+          qz="-0.1129967" qw="-0.5528627" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0258"
+      tags="position">
+        <offset>
+          <position x="-1348.986" y="-169.2605" z="-768.7041" />
+          <quaternion qx="-0.835257" qy="-0.406887" qz="-0.3147309"
+          qw="0.1942504" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0259"
+      tags="position">
+        <offset>
+          <position x="216.0209" y="-112.4324" z="-1101.555" />
+          <quaternion qx="-0.426125" qy="-0.5522979" qz="-0.544662"
+          qw="-0.4655403" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0260"
+      tags="position">
+        <offset>
+          <position x="-444.4761" y="432.6054" z="962.2567" />
+          <quaternion qx="-0.8870432" qy="-0.1693905"
+          qz="0.3925847" qw="0.1741792" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0261"
+      tags="position">
+        <offset>
+          <position x="298.0112" y="-288.0787" z="493.216" />
+          <quaternion qx="0.149988" qy="-0.1249678" qz="-0.8052569"
+          qw="-0.5598643" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0262"
+      tags="position">
+        <offset>
+          <position x="347.476" y="431.6455" z="-1243.942" />
+          <quaternion qx="0.3701679" qy="-0.4760227" qz="0.5924266"
+          qw="-0.5342368" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0263"
+      tags="position">
+        <offset>
+          <position x="-549.7023" y="-6.184461" z="-554.1274" />
+          <quaternion qx="1.323489E-02" qy="0.2460333"
+          qz="-0.7921054" qw="-0.5584456" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0264"
+      tags="position">
+        <offset>
+          <position x="-763.5478" y="-438.8849" z="-1227.253" />
+          <quaternion qx="0.434462" qy="-0.7422822" qz="0.3621698"
+          qw="0.3592951" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0265"
+      tags="position">
+        <offset>
+          <position x="-1021.801" y="-493.3756" z="-321.7261" />
+          <quaternion qx="0.2532796" qy="-0.3075944" qz="0.7188991"
+          qw="-0.569578" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0266"
+      tags="position">
+        <offset>
+          <position x="-811.4005" y="-397.3608" z="304.5984" />
+          <quaternion qx="0.6258315" qy="-0.4356186" qz="0.1378928"
+          qw="-0.6321051" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0267"
+      tags="position">
+        <offset>
+          <position x="202.3961" y="335.5591" z="-1174.797" />
+          <quaternion qx="0.8005894" qy="-0.157694"
+          qz="6.777998E-02" qw="-0.5741038" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0268"
+      tags="position">
+        <offset>
+          <position x="230.153" y="-773.3887" z="1019.04" />
+          <quaternion qx="4.812435E-02" qy="-0.6761661"
+          qz="-0.5960472" qw="0.4303616" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0269"
+      tags="position">
+        <offset>
+          <position x="-465.2432" y="-180.5418" z="-1366.583" />
+          <quaternion qx="-0.6743034" qy="-0.6947113"
+          qz="-0.2145509" qw="-0.1290696" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0270"
+      tags="position">
+        <offset>
+          <position x="-817.8644" y="-379.9557" z="-449.0584" />
+          <quaternion qx="0.5978681" qy="8.445992E-04"
+          qz="-0.7907318" qw="-0.1315151" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0111"
+      tags="position">
+        <offset>
+          <position x="-667.2765" y="255.1208" z="-862.8179" />
+          <quaternion qx="-0.3803535" qy="-0.841188" qz="0.3394837"
+          qw="0.1802355" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0112"
+      tags="position">
+        <offset>
+          <position x="-758.4484" y="-97.27386" z="696.5114" />
+          <quaternion qx="-0.1733577" qy="-0.1163503"
+          qz="-0.9017739" qw="-0.3784355" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0113"
+      tags="position">
+        <offset>
+          <position x="-99.67223" y="-25.03632" z="-646.9273" />
+          <quaternion qx="0.3140502" qy="-0.3684237" qz="0.4743504"
+          qw="-0.7352741" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0114"
+      tags="position">
+        <offset>
+          <position x="-291.0421" y="-255.678" z="-912.711" />
+          <quaternion qx="-0.6461096" qy="0.4276834"
+          qz="-0.6295506" qw="5.740461E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0115"
+      tags="position">
+        <offset>
+          <position x="697.87" y="-205.1565" z="1178.588" />
+          <quaternion qx="-0.4509964" qy="-0.373942" qz="0.3466837"
+          qw="-0.7325162" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0116"
+      tags="position">
+        <offset>
+          <position x="475.5762" y="35.23465" z="-847.8464" />
+          <quaternion qx="-0.8449766" qy="0.3361781" qz="0.4145845"
+          qw="3.344388E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0117"
+      tags="position">
+        <offset>
+          <position x="1447.824" y="151.9802" z="730.4791" />
+          <quaternion qx="0.4352883" qy="-0.8313084"
+          qz="-0.2842636" qw="0.1965821" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0118"
+      tags="position">
+        <offset>
+          <position x="-1236.462" y="-60.55572" z="1364.974" />
+          <quaternion qx="9.205344E-02" qy="-0.1541124"
+          qz="0.3730151" qw="-0.9102941" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0119"
+      tags="position">
+        <offset>
+          <position x="-275.6071" y="-161.9316" z="-1380.338" />
+          <quaternion qx="-0.9032935" qy="0.2555782" qz="0.1815894"
+          qw="-0.2928581" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0120"
+      tags="position">
+        <offset>
+          <position x="-1170.869" y="-152.4153" z="-1102.305" />
+          <quaternion qx="0.4423237" qy="0.1365694" qz="0.3214554"
+          qw="-0.8260539" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0121"
+      tags="position">
+        <offset>
+          <position x="1454.051" y="441.6563" z="162.5523" />
+          <quaternion qx="-0.5300251" qy="-0.8380458"
+          qz="-0.0709175" qw="0.1082741" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0122"
+      tags="position">
+        <offset>
+          <position x="837.3439" y="-77.08598" z="1231.875" />
+          <quaternion qx="-0.6878121" qy="0.656516" qz="-0.2136358"
+          qw="0.2241899" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0123"
+      tags="position">
+        <offset>
+          <position x="988.6174" y="-97.56761" z="-1150.121" />
+          <quaternion qx="-0.8955708" qy="3.779395E-02"
+          qz="0.4199956" qw="-0.1418745" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0124"
+      tags="position">
+        <offset>
+          <position x="1373.772" y="-57.09018" z="-1418.727" />
+          <quaternion qx="-0.1613549" qy="-3.413013E-02"
+          qz="0.7444851" qw="-0.646948" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0125"
+      tags="position">
+        <offset>
+          <position x="271.6293" y="433.036" z="45.87801" />
+          <quaternion qx="0.6648238" qy="-2.330853E-02"
+          qz="-0.3862672" qw="-0.6389552" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0126"
+      tags="position">
+        <offset>
+          <position x="1324.596" y="454.7977" z="765.41" />
+          <quaternion qx="-0.3452893" qy="-0.8489627"
+          qz="-0.1537772" qw="-0.3693106" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0127"
+      tags="position">
+        <offset>
+          <position x="-660.5412" y="-164.51" z="-615.095" />
+          <quaternion qx="1.447276E-02" qy="-0.9412483"
+          qz="0.2217819" qw="-0.2542735" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0128"
+      tags="position">
+        <offset>
+          <position x="161.9862" y="-394.8777" z="785.2971" />
+          <quaternion qx="5.949804E-02" qy="0.7088997"
+          qz="-6.419817E-02" qw="-0.6998569" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0129"
+      tags="position">
+        <offset>
+          <position x="572.461" y="-254.7844" z="717.266" />
+          <quaternion qx="0.6888424" qy="0.1037654" qz="0.250791"
+          qw="-0.6721851" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0130"
+      tags="position">
+        <offset>
+          <position x="1369.552" y="392.1391" z="1042.025" />
+          <quaternion qx="0.2006837" qy="-0.6772146"
+          qz="-8.46047E-03" qw="-0.7078381" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0131"
+      tags="position">
+        <offset>
+          <position x="-1136.611" y="-49.17769" z="-643.5228" />
+          <quaternion qx="-0.6357394" qy="0.5944164" qz="0.349717"
+          qw="-0.3467025" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0132"
+      tags="position">
+        <offset>
+          <position x="-544.653" y="400.3533" z="-968.5466" />
+          <quaternion qx="-0.8825994" qy="0.1589089" qz="0.3257751"
+          qw="-0.2993944" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0133"
+      tags="position">
+        <offset>
+          <position x="1325.392" y="37.47548" z="421.1568" />
+          <quaternion qx="0.559392" qy="-0.5813729" qz="-0.2455886"
+          qw="-0.5373755" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0134"
+      tags="position">
+        <offset>
+          <position x="1353.45" y="183.9543" z="-431.039" />
+          <quaternion qx="0.5231309" qy="0.1486905" qz="0.1661194"
+          qw="-0.8225749" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_0135"
+      tags="position">
+        <offset>
+          <position x="1445.106" y="-439.3707" z="871.4053" />
+          <quaternion qx="0.4698368" qy="0.1456127" qz="0.6889324"
+          qw="-0.5323746" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0271"
+      tags="position">
+        <offset>
+          <position x="1094.539" y="-645.6417" z="348.6787" />
+          <quaternion qx="-0.8766588" qy="-8.738671E-02"
+          qz="-0.2926471" qw="-0.37174" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0272"
+      tags="position">
+        <offset>
+          <position x="527.0055" y="-780.2428" z="-4264.914" />
+          <quaternion qx="-0.6982411" qy="0.6657577" qz="0.1700114"
+          qw="0.2008042" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0273"
+      tags="position">
+        <offset>
+          <position x="2928.435" y="386.5522" z="-1297.064" />
+          <quaternion qx="-0.4732339" qy="-0.7134265"
+          qz="-0.3354541" qw="-0.3931195" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0274"
+      tags="position">
+        <offset>
+          <position x="650.6412" y="-325.3044" z="2572.836" />
+          <quaternion qx="-0.8696377" qy="0.324881" qz="-0.1668768"
+          qw="0.3321666" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0275"
+      tags="position">
+        <offset>
+          <position x="-3485.868" y="340.5725" z="6251.81" />
+          <quaternion qx="-0.7049642" qy="0.667954" qz="0.2375017"
+          qw="-2.135037E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0276"
+      tags="position">
+        <offset>
+          <position x="3555.393" y="-20.62139" z="2527.995" />
+          <quaternion qx="0.2229312" qy="0.7020379" qz="0.4397047"
+          qw="-0.5139107" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0277"
+      tags="position">
+        <offset>
+          <position x="-1008.413" y="146.828" z="-2872.471" />
+          <quaternion qx="-0.8590854" qy="9.807513E-02"
+          qz="-0.1829034" qw="-0.4678674" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0278"
+      tags="position">
+        <offset>
+          <position x="-4927.209" y="225.7174" z="-2175.359" />
+          <quaternion qx="0.4995975" qy="-0.5094611" qz="0.449071"
+          qw="-0.5377612" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0279"
+      tags="position">
+        <offset>
+          <position x="-1902.034" y="310.1286" z="1252.527" />
+          <quaternion qx="0.2357924" qy="0.5864795" qz="-0.4497543"
+          qw="-0.6310031" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0280"
+      tags="position">
+        <offset>
+          <position x="-319.7328" y="-774.0132" z="3252.763" />
+          <quaternion qx="-0.9551987" qy="-0.060315"
+          qz="-9.703609E-02" qw="0.2730229" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0281"
+      tags="position">
+        <offset>
+          <position x="-1192.217" y="202.6723" z="3655.071" />
+          <quaternion qx="-0.7156572" qy="-0.142534"
+          qz="-0.4953544" qw="-0.4713203" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0282"
+      tags="position">
+        <offset>
+          <position x="-460.1931" y="580.446" z="-338.3645" />
+          <quaternion qx="-0.6254519" qy="-0.2001777"
+          qz="-2.928303E-02" qw="-0.753579" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0283"
+      tags="position">
+        <offset>
+          <position x="-6223.662" y="326.1241" z="780.7006" />
+          <quaternion qx="-8.735552E-02" qy="-0.1263479"
+          qz="-0.570599" qw="-0.8067354" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0284"
+      tags="position">
+        <offset>
+          <position x="-304.504" y="307.2157" z="17.00439" />
+          <quaternion qx="-0.9208532" qy="0.3407178"
+          qz="-0.1258458" qw="0.1417874" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0285"
+      tags="position">
+        <offset>
+          <position x="1748.355" y="-234.1665" z="888.1142" />
+          <quaternion qx="-0.1354044" qy="-0.2612557"
+          qz="-0.8459339" qw="-0.444755" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0286"
+      tags="position">
+        <offset>
+          <position x="-1770.458" y="396.5193" z="-1286.751" />
+          <quaternion qx="-0.6672597" qy="0.5063368" qz="0.132967"
+          qw="-0.5298182" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0287"
+      tags="position">
+        <offset>
+          <position x="-3884.875" y="157.1128" z="-1727.582" />
+          <quaternion qx="0.1218977" qy="0.1218977" qz="-0.6963522"
+          qw="-0.696689" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0288"
+      tags="position">
+        <offset>
+          <position x="1768.11" y="210.7752" z="1400.035" />
+          <quaternion qx="-0.3977711" qy="-0.3865906"
+          qz="-0.586736" qw="-0.5899718" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0289"
+      tags="position">
+        <offset>
+          <position x="2559.413" y="-144.6279" z="259.8273" />
+          <quaternion qx="-0.0945935" qy="0.2831055"
+          qz="-0.3036998" qw="-0.9048038" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0290"
+      tags="position">
+        <offset>
+          <position x="2367.021" y="-613.6031" z="-2239.271" />
+          <quaternion qx="-0.3643494" qy="-0.1565109"
+          qz="-0.5269179" qw="-0.7517388" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0291"
+      tags="position">
+        <offset>
+          <position x="-407.4792" y="-551.2151" z="1540.958" />
+          <quaternion qx="-0.5055825" qy="-0.7970191"
+          qz="-0.3037598" qw="-0.1299113" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0292"
+      tags="position">
+        <offset>
+          <position x="2367.866" y="2.536815" z="-3158.087" />
+          <quaternion qx="-0.4748652" qy="5.961338E-02"
+          qz="-0.8758621" qw="6.176415E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0293"
+      tags="position">
+        <offset>
+          <position x="-862.3965" y="-325.972" z="-670.2234" />
+          <quaternion qx="0.727477" qy="0.3364401" qz="0.1096974"
+          qw="-0.5878364" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0294"
+      tags="position">
+        <offset>
+          <position x="172.5605" y="466.3834" z="2054.889" />
+          <quaternion qx="0.1553358" qy="-0.822778" qz="-0.4145807"
+          qw="0.3564127" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_XS_0295"
+      tags="position">
+        <offset>
+          <position x="-477.7507" y="592.5214" z="3927.056" />
+          <quaternion qx="0.1325407" qy="0.1914503" qz="0.288201"
+          qw="-0.9288272" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0316"
+      tags="position">
+        <offset>
+          <position x="-86.39117" y="-36.74506" z="225.834" />
+          <quaternion qx="-0.8246647" qy="0.4652303" qz="0.2964375"
+          qw="-0.1249552" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0317"
+      tags="position">
+        <offset>
+          <position x="-2313.275" y="410.4302" z="-1594.127" />
+          <quaternion qx="0.1017953" qy="-0.261831" qz="-0.9171939"
+          qw="0.2825554" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0318"
+      tags="position">
+        <offset>
+          <position x="-1426.437" y="391.4708" z="-1563.406" />
+          <quaternion qx="-0.5308374" qy="-0.6154575"
+          qz="-0.5424265" qw="0.2125966" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0319"
+      tags="position">
+        <offset>
+          <position x="1467.023" y="67.50784" z="197.2212" />
+          <quaternion qx="0.5527973" qy="-0.8031558"
+          qz="-6.235204E-02" qw="-0.2132326" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0320"
+      tags="position">
+        <offset>
+          <position x="-3894.817" y="-46.44352" z="2247.637" />
+          <quaternion qx="-0.3933614" qy="0.1673626" qz="0.7214594"
+          qw="-0.5447504" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0321"
+      tags="position">
+        <offset>
+          <position x="4848.951" y="156.3188" z="1211.24" />
+          <quaternion qx="0.5902639" qy="-0.1688328"
+          qz="-0.2515533" qw="-0.7482011" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0322"
+      tags="position">
+        <offset>
+          <position x="398.7296" y="-367.6555" z="603.7239" />
+          <quaternion qx="0.54027" qy="-0.3200722" qz="-0.6130862"
+          qw="-0.4793614" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0323"
+      tags="position">
+        <offset>
+          <position x="2485.975" y="-187.9003" z="-3341.151" />
+          <quaternion qx="0.3048934" qy="-0.2447475" qz="-0.627156"
+          qw="-0.6736572" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0324"
+      tags="position">
+        <offset>
+          <position x="-1590.364" y="345.7386" z="5666.175" />
+          <quaternion qx="5.306738E-02" qy="-0.5533102"
+          qz="0.2084401" qw="-0.8047263" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0325"
+      tags="position">
+        <offset>
+          <position x="904.4201" y="6.023907" z="814.761" />
+          <quaternion qx="7.636298E-02" qy="2.544534E-02"
+          qz="-0.7065794" qw="-0.7030411" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0326"
+      tags="position">
+        <offset>
+          <position x="5273.444" y="60.23574" z="-3631.619" />
+          <quaternion qx="0.6402665" qy="-0.7434199"
+          qz="-2.739834E-02" qw="-0.1914025" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0327"
+      tags="position">
+        <offset>
+          <position x="-940.1694" y="-35.53614" z="-539.1187" />
+          <quaternion qx="-0.35331" qy="-0.6955698" qz="0.5313292"
+          qw="-0.3302182" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0328"
+      tags="position">
+        <offset>
+          <position x="1670.474" y="-122.3165" z="1028.285" />
+          <quaternion qx="0.470954" qy="-0.2506559" qz="-0.8070797"
+          qw="-0.252975" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0329"
+      tags="position">
+        <offset>
+          <position x="-2367.073" y="-481.3577" z="-1455.963" />
+          <quaternion qx="-4.837918E-02" qy="-0.051084"
+          qz="-0.7037225" qw="-0.7069827" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0330"
+      tags="position">
+        <offset>
+          <position x="-5064.916" y="429.0141" z="248.0707" />
+          <quaternion qx="-0.3137963" qy="-0.2088324"
+          qz="0.4841624" qw="-0.789625" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0331"
+      tags="position">
+        <offset>
+          <position x="37.56409" y="-81.39156" z="2548.758" />
+          <quaternion qx="-0.5375354" qy="-0.6772628"
+          qz="-0.4995409" qw="5.319431E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0332"
+      tags="position">
+        <offset>
+          <position x="308.7088" y="-194.8206" z="-37.87204" />
+          <quaternion qx="-0.2415729" qy="-0.8298279"
+          qz="-0.5011998" qw="-4.274247E-02" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0333"
+      tags="position">
+        <offset>
+          <position x="-2068.525" y="-387.7281" z="99.52576" />
+          <quaternion qx="-0.5334399" qy="-0.7150377"
+          qz="0.4089742" qw="0.1921017" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0334"
+      tags="position">
+        <offset>
+          <position x="-2813.003" y="-113.6293" z="-3765.372" />
+          <quaternion qx="-0.3737902" qy="-3.989136E-03"
+          qz="-0.9124972" qw="0.166174" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0335"
+      tags="position">
+        <offset>
+          <position x="3448.286" y="-496.1023" z="1242.427" />
+          <quaternion qx="0.1279273" qy="-0.5337201" qz="0.2011594"
+          qw="-0.8113645" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0336"
+      tags="position">
+        <offset>
+          <position x="84.45648" y="-329.1582" z="-4367.37" />
+          <quaternion qx="-0.9138936" qy="0.3827425" qz="0.1002901"
+          qw="-0.0908218" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0337"
+      tags="position">
+        <offset>
+          <position x="-218.5575" y="142.0148" z="3588.6" />
+          <quaternion qx="0.4282923" qy="-0.0347098" qz="0.377364"
+          qw="-0.8203399" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0338"
+      tags="position">
+        <offset>
+          <position x="209.9037" y="429.263" z="-1915.379" />
+          <quaternion qx="-0.1231176" qy="-0.2589546"
+          qz="0.5598038" qw="-0.7774345" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0339"
+      tags="position">
+        <offset>
+          <position x="2522.12" y="19.10985" z="4906.136" />
+          <quaternion qx="0.1755757" qy="0.5850822" qz="0.4308222"
+          qw="-0.6642621" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_S_0340"
+      tags="position">
+        <offset>
+          <position x="-112.1691" y="-405.4816" z="452.7855" />
+          <quaternion qx="-0.5922885" qy="-0.1947058"
+          qz="-0.6634082" qw="0.4137312" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_Crystal_03"
+      tags="position">
+        <offset>
+          <position x="1984.68" y="2189.059" z="0" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_env_asteroids_asteroid_A_M_Crystal_02"
+      tags="position">
+        <offset>
+          <position x="2243.742" y="2187.167" z="-69.68384" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_unit_service_mgd_ar_ore_collector_drone"
+      tags="position">
+        <offset>
+          <position x="1441.788" y="66.73409" z="-251.5455" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_unit_service_mgd_ar_ore_collector_drone1"
+      tags="position">
+        <offset>
+          <position x="1901.01" y="110.0865" z="60.17223" />
+          <quaternion qx="0.200553" qy="-0.8512645" qz="-0.1111952"
+          qw="0.4719775" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_unit_service_mgd_ar_ore_collector_drone2"
+      tags="position">
+        <offset>
+          <position x="2330.052" y="-490.4555" z="292.3813" />
+          <quaternion qx="-0.2568096" qy="-0.8360153"
+          qz="0.1423862" qw="0.4635228" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_unit_service_mgd_ar_ore_collector_drone3"
+      tags="position">
+        <offset>
+          <position x="-138.0706" y="78.17473" z="-1602.093" />
+        </offset>
+      </connection>
+      <connection name="ConnectionFor_unit_service_mgd_ar_ore_collector_drone4"
+      tags="position">
+        <offset>
+          <position x="-474.7283" y="-152.0086" z="-1322.268" />
+          <quaternion qx="5.615494E-02" qy="-0.92896"
+          qz="0.3546461" qw="-9.003417E-02" />
+        </offset>
+      </connection>
+    </connections>
+  </component>
+</components>

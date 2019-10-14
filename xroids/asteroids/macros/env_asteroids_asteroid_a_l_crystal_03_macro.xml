@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Benedikt (192.168.3.112) at 04.01.2012_14-23-53-->
+<macros>
+  <macro name="env_asteroids_asteroid_a_l_crystal_03_macro" class="asteroid">
+    <component ref="env_asteroids_asteroid_A_L_Crystal_03" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,802}" />
+      <hull max="1780000" />
+      <effects>
+        <explosion ref="explosion_asteroid_A_L" />
+      </effects>
+      <drop ref="asteroid_crystal_l" />
+    </properties>
+  </macro>
+</macros>

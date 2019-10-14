@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported by: Benedikt (192.168.3.121) at 01.07.2013_15-31-12-->
+<macros>
+  <macro name="env_ast_ore_xs_05_macro" class="asteroid">
+    <component ref="env_ast_ore_xs_05" />
+    <properties>
+      <identification name="{20001,801}" description="{20001,802}" unique="0" />
+      <hull max="12000" />
+      <effects>
+        <explosion ref="explosion_asteroid_A_XS" />
+      </effects>
+    </properties>
+  </macro>
+</macros>

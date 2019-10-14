@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_special_L_05" class="destructible">
+		<properties>
+			<hull max="0"/>
+		</properties>
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_special_L_05_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights>
+					<omni name="XU Omni01" shadow="0" r="63" g="126" b="255" range="400" shadowrange="400" lighteffect="1" trigger="1" intensity="0.4">
+						<lightanimations/>
+						<offset>
+							<position x="-282.9573" y="-129.9614" z="-818.2036"/>
+						</offset>
+					</omni>
+					<omni name="XU Omni02" shadow="0" r="63" g="126" b="255" range="400" shadowrange="400" lighteffect="1" trigger="1" intensity="0.4">
+						<lightanimations/>
+						<offset>
+							<position x="-436.3384" y="186.9856" z="568.8701"/>
+						</offset>
+					</omni>
+					<omni name="XU Omni03" shadow="0" r="63" g="126" b="255" range="400" shadowrange="400" lighteffect="1" trigger="1" intensity="0.4">
+						<lightanimations/>
+						<offset>
+							<position x="187.5366" y="-26.13867" z="925.4095"/>
+						</offset>
+					</omni>
+					<omni name="XU Omni04" shadow="0" r="63" g="126" b="255" range="400" shadowrange="400" lighteffect="1" trigger="1" intensity="0.4">
+						<lightanimations/>
+						<offset>
+							<position x="330.009" y="-123.9047" z="-1614.386"/>
+						</offset>
+					</omni>
+				</lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="destructible">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_holeypattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="372.071" y="533.6519" z="2228.58"/>
+							<center x="9.765625E-04" y="-9.155273E-05" z="-2.441406E-04"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part detail_m  ">
+				<offset>
+					<position x="-63.45421" y="-31.8367" z="-314.321"/>
+				</offset>
+				<parts>
+					<part name="detail_m_alpha">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="generic.generic_alphatrims_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="290.6612" y="303.5134" z="1556.354"/>
+							<center x="2.288818E-05" y="8.838791" z="6.755188"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part detail_l  ">
+				<offset>
+					<position x="-66.90746" y="-33.02731" z="-304.373"/>
+				</offset>
+				<parts>
+					<part name="part_water">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="lensflares.vertexcolor_basis"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="265.4088" y="259.2461" z="1542.938"/>
+							<center x="3.455208" y="2.412094" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part detail_l  ">
+				<offset>
+					<position x="-54.07825" y="-84.701" z="-253.5846"/>
+				</offset>
+				<parts>
+					<part name="detail_l_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="argon.ar_hulls_02"/>
+									<material id="2" ref="argon.ar_trims_01"/>
+									<material id="3" ref="generic.generic_techtrims_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="300.7942" y="284.4935" z="1638.282"/>
+							<center x="-20.38015" y="51.3894" z="-22.51678"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part detail_m animation textureanimation  ">
+				<offset>
+					<position x="-51.43423" y="-97.25169" z="-285.5695"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="100"/>
+				</animations>
+				<parts>
+					<part name="anim_distortion">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="270.3813" y="264.9476" z="1502.943"/>
+							<center x="-12.01838" y="67.36598" z="-20.10242"/>
+						</size>
+						<size_raw>
+							<max x="282.3997" y="197.5816" z="1523.045"/>
+							<center x="-12.01838" y="67.36599" z="-20.10248"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="100" value="-0.9899999"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection06" tags="part detail_m animation textureanimation  ">
+				<offset>
+					<position x="-50.84164" y="-98.19482" z="-282.0892"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="300"/>
+				</animations>
+				<parts>
+					<part name="anim_bubbles">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.resources_anim"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="256.5858" y="250.6057" z="1500.817"/>
+							<center x="-12.55872" y="66.71797" z="-22.75623"/>
+						</size>
+						<size_raw>
+							<max x="269.1445" y="183.8877" z="1523.573"/>
+							<center x="-12.55872" y="66.71797" z="-22.75616"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="300" value="2"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="u_offset" controller="linear_float">
+									<key frame="0" value="0"/>
+									<key frame="300" value="-3"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

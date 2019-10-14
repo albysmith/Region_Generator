@@ -3,7 +3,6 @@
 #asteroids
 # [asteroid_highyield_v1]
 [defaults.resourceasteroids.asteroid_highyield_v1]
-
 # [[resourceasteroids]]
 name = "asteroid_highyield_v1"
 density_factor = 1.0

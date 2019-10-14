@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_ice_xs_02_frac" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_ice_xs_02_frac_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="environments.icepattern_glass_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.010676" y="3.675725" z="4.009995"/>
+							<center x="-2.336502E-05" y="0" z="-1.907349E-06"/>
+						</size>
+						<pivot>
+							<offset>
+								<position x="0.4560547" y="-0.6686807" z="0.3542938"/>
+							</offset>
+						</pivot>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part detail_s nocollision  ">
+				<offset/>
+				<parts>
+					<part name="detail_s_dist">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.distortion_master_strong_geometry"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3.919975" y="3.577562" z="3.910553"/>
+							<center x="-8.92055E-03" y="-1.59812E-03" z="1.522303E-04"/>
+						</size>
+						<pivot>
+							<offset>
+								<position x="0.4560547" y="-0.6686807" z="0.3542938"/>
+							</offset>
+						</pivot>
+					</part>
+				</parts>
+			</connection>
+			<connection name="connection_pickup01" tags="pickup ">
+				<offset/>
+			</connection>
+		</connections>
+	</component>
+</components>

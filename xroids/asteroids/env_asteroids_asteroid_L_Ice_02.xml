@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_L_Ice_02" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_L_Ice_02_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset>
+					<position x="-32.6349" y="1.525879E-05" z="-51.22345"></position>
+				</offset>
+				<parts>
+					<part name="part_main">
+						<size>
+							<max x="278.0866" y="364.9024" z="126.8435"></max>
+							<center x="7.629395E-06" y="-1.525879E-05" z="-3.814697E-06"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

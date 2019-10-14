@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_L_Ice_01" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_L_Ice_01_data"></source>
+		<layers>
+			<layer>
+				<waypoints></waypoints>
+				<lights></lights>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"></connection>
+			<connection name="position" tags="position" value="1" optional="1"></connection>
+			<connection name="space" tags="asteroid">
+				<offset></offset>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset></offset>
+				<parts>
+					<part name="part_main">
+						<size>
+							<max x="275.0675" y="245.3738" z="199.4189"></max>
+							<center x="-0.1063232" y="0.2781754" z="-4.882813E-04"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part animation textureanimation nocollision  ">
+				<offset>
+					<position x="-335.6065" y="8.397186" z="246.1204"></position>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="2000"></animation>
+				</animations>
+				<parts>
+					<part name="anim_dust02">
+						<size>
+							<max x="953.7261" y="446.6164" z="1076.242"></max>
+							<center x="160.6421" y="-29.15524" z="-329.6869"></center>
+						</size>
+						<size_raw>
+							<max x="793.0841" y="475.7715" z="1405.929"></max>
+							<center x="160.6421" y="-29.15524" z="-329.6869"></center>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="3">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="2"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="2">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="1"></key>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="1">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"></key>
+									<key frame="2000" value="1"></key>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part nocollision  ">
+				<offset>
+					<position x="42.86108" y="2.000977" z="32.82111"></position>
+				</offset>
+				<parts>
+					<part name="fx_light">
+						<size>
+							<max x="886.7491" y="1016.75" z="95.86008"></max>
+							<center x="-0.1912231" y="-2.210938" z="13.10735"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part nocollision  ">
+				<offset>
+					<position x="42.86108" y="2.000977" z="-179.3193"></position>
+				</offset>
+				<parts>
+					<part name="fx_light01">
+						<size>
+							<max x="886.7299" y="1016.75" z="74.00292"></max>
+							<center x="-1.115967" y="-2.210938" z="40.4364"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part detail_s  ">
+				<offset></offset>
+				<parts>
+					<part name="detail_s">
+						<size>
+							<max x="273.132" y="243.9104" z="197.4646"></max>
+							<center x="1.344299E-02" y="1.823425E-02" z="-6.118774E-03"></center>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

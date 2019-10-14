@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_asteroids_asteroid_A_XL_04" class="destructible">
+		<properties>
+			<hull max="0"/>
+		</properties>
+		<source geometry="assets\environments\asteroids\env_asteroids_asteroid_A_XL_04_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="destructible">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset>
+					<position x="656.3943" y="-124.6359" z="-144.0195"/>
+					<quaternion qx="-0" qy="-0" qz="-2.181476E-02" qw="-0.999762"/>
+				</offset>
+				<parts>
+					<part name="part_asteroid01">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="677.5499" y="1544.477" z="975.387"/>
+							<center x="6.103516E-05" y="4.577637E-05" z="0"/>
+						</size>
+						<pivot>
+							<offset>
+								<position x="-37.16827" y="-55.78027" z="0"/>
+							</offset>
+						</pivot>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part  ">
+				<offset>
+					<position x="-741.4984" y="-125.285" z="-173.3042"/>
+					<quaternion qx="-0" qy="-0" qz="2.181488E-02" qw="-0.999762"/>
+				</offset>
+				<parts>
+					<part name="part_asteroid02">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="652.226" y="1552.006" z="988.3538"/>
+							<center x="6.103516E-05" y="1.525879E-05" z="3.051758E-05"/>
+						</size>
+						<pivot>
+							<offset>
+								<position x="22.91858" y="-31.38708" z="0"/>
+							</offset>
+						</pivot>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part nocollision  ">
+				<offset>
+					<position x="18.68945" y="-493.0587" z="-80.7466"/>
+				</offset>
+				<parts>
+					<part name="fx_dust">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.lightcone_core_dig"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1202.073" y="2699.04" z="1261.316"/>
+							<center x="0" y="-1.220703E-04" z="8.392334E-05"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part detail_xs nocollision  ">
+				<offset>
+					<position x="24.27626" y="-102.3652" z="-8.280418"/>
+				</offset>
+				<parts>
+					<part name="detail_xs_dust">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.dust_3"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="607.9636" y="1666.168" z="796.2156"/>
+							<center x="20.18221" y="0.2897339" z="-14.75437"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection05" tags="part animation textureanimation nocollision  ">
+				<offset>
+					<position x="-7.377228" y="-2059.615" z="-65.78729"/>
+				</offset>
+				<animations>
+					<animation name="loop" start="1" end="4000"/>
+				</animations>
+				<parts>
+					<part name="anim_dust">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.dust_core_dig"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="1253.164" y="3242.854" z="1668.465"/>
+							<center x="12.13504" y="-2.441406E-04" z="-6.103516E-05"/>
+						</size>
+						<size_raw>
+							<max x="1241.029" y="3242.854" z="1668.465"/>
+							<center x="12.13504" y="-2.441406E-04" z="-6.103516E-05"/>
+						</size_raw>
+						<uv_animations>
+							<uv_animation mapchannel="1">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="4000" value="-2"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="3">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="4000" value="-3"/>
+								</uv_property>
+							</uv_animation>
+							<uv_animation mapchannel="4">
+								<uv_property name="v_offset" controller="linear_float">
+									<key frame="0" value="-0"/>
+									<key frame="4000" value="1"/>
+								</uv_property>
+							</uv_animation>
+						</uv_animations>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection06" tags="part detail_l  ">
+				<offset>
+					<position x="-215.3623" y="-53.65397" z="29.87616"/>
+				</offset>
+				<parts>
+					<part name="detail_l_ring">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="argon.ar_hulls_02"/>
+									<material id="2" ref="argon.ar_trims_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="36.6546" y="260.4645" z="260.4646"/>
+							<center x="-12.9751" y="6.866455E-05" z="-6.103516E-05"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection07" tags="part detail_l  ">
+				<offset>
+					<position x="-285.0586" y="-85.34473" z="35.4978"/>
+					<quaternion qx="-0" qy="-0" qz="2.181487E-02" qw="-0.999762"/>
+				</offset>
+				<parts>
+					<part name="detail_l_core">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="sohnen.sohnen_core"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="98.24324" y="197.6244" z="205.1109"/>
+							<center x="0.600708" y="13.75887" z="-6.511063"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection08" tags="part detail_l  ">
+				<offset>
+					<position x="-55.18819" y="14.50789" z="-52.83551"/>
+				</offset>
+				<parts>
+					<part name="detail_l_fragments">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="sohnen.sohnen_core"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="236.5754" y="816.4637" z="376.4129"/>
+							<center x="-7.629395E-06" y="-1.907349E-05" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection09" tags="part  ">
+				<offset>
+					<position x="809.0148" y="123.7152" z="-92.28351"/>
+					<quaternion qx="-0" qy="-0" qz="-0.021815" qw="-0.999762"/>
+				</offset>
+				<parts>
+					<part name="part_asteroid04">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="554.2518" y="966.3129" z="868.1681"/>
+							<center x="-6.103516E-05" y="-3.051758E-05" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection10" tags="part  ">
+				<offset>
+					<position x="-728.3438" y="-23.61389" z="91.16544"/>
+					<quaternion qx="-0" qy="-0" qz="2.181487E-02" qw="-0.999762"/>
+				</offset>
+				<parts>
+					<part name="part_asteroid03">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_core_holey_pattern_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="593.0015" y="871.4486" z="731.6273"/>
+							<center x="0" y="3.814697E-06" z="-3.051758E-05"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

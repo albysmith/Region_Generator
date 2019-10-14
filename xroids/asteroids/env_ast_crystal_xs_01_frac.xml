@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_crystal_xs_01_frac" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_crystal_xs_01_frac_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_crystal_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="asteroids.ast_crystal_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="asteroids.ast_crystal_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="asteroids.ast_crystal_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="4.65026" y="3.991666" z="3.550089"/>
+							<center x="-0.3580136" y="7.571185E-02" z="0.2867827"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="connection_pickup01" tags="pickup ">
+				<offset/>
+			</connection>
+		</connections>
+	</component>
+</components>

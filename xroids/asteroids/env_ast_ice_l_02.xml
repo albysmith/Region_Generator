@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<components>
+	<component name="env_ast_ice_l_02" class="asteroid">
+		<source geometry="assets\environments\asteroids\env_ast_ice_l_02_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0" optional="0"/>
+			<connection name="position" tags="position" value="1" optional="1"/>
+			<connection name="space" tags="asteroid">
+				<offset/>
+			</connection>
+			<connection name="Connection01" tags="part nocollision  ">
+				<offset>
+					<position x="-47.70276" y="18.64661" z="86.9742"/>
+				</offset>
+				<parts>
+					<part name="fx_dust">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.dust"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="908.8901" y="993.6078" z="886.8391"/>
+							<center x="-10.7728" y="46.72546" z="69.67879"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection02" tags="part nocollision  ">
+				<offset/>
+				<parts>
+					<part name="fx_haze">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="asteroids.ast_ice_haze_01"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="3215.316" y="3240.676" z="3240.676"/>
+							<center x="-1.220703E-04" y="-24.24182" z="24.24182"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection03" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="part_main">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="environments.icepattern_solid_02"/>
+								</materials>
+							</lod>
+							<lod index="1">
+								<materials>
+									<material id="1" ref="environments.icepattern_solid_02"/>
+								</materials>
+							</lod>
+							<lod index="2">
+								<materials>
+									<material id="1" ref="environments.icepattern_solid_02"/>
+								</materials>
+							</lod>
+							<lod index="3">
+								<materials>
+									<material id="1" ref="environments.icepattern_solid_02"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="778.9052" y="792.9656" z="797.0563"/>
+							<center x="0" y="0" z="0"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+			<connection name="Connection04" tags="part  ">
+				<offset/>
+				<parts/>
+			</connection>
+		</connections>
+	</component>
+</components>
