@@ -596,7 +596,19 @@ fn get_fields_and_resources(fields: &Fields, defaults: &Defaults) -> String {
     let mut resources_string = "<resources> \n".to_string();
     let field_count = get_random_in_range(&fields.region_count);
     for _ in 0..field_count {
-        let obj = fields.region_objects.choose(&mut prng).unwrap();
+        let mut obj = fields.region_objects.choose(&mut prng).unwrap();
+        if fields_string.contains("positional ref") && obj == &6 {
+            obj = fields.region_objects.choose(&mut prng).unwrap();
+        }
+        if fields_string.contains("positional ref") && obj == &6 {
+            obj = fields.region_objects.choose(&mut prng).unwrap();
+        }
+        if fields_string.contains("positional ref") && obj == &6 {
+            obj = fields.region_objects.choose(&mut prng).unwrap();
+        }
+        if fields_string.contains("positional ref") && obj == &6 {
+            obj = fields.region_objects.choose(&mut prng).unwrap();
+        }
         let add_strings = match obj {
             1 => get_resource_asteroid(&fields.fields_mods, &defaults.resourceasteroids),
             2 => get_nonresource_asteroid(&fields.fields_mods, &defaults.asteroids),
@@ -802,38 +814,43 @@ fn get_resource_nebula(fields_mods: &FieldsMods, nebula: &Nebula) -> Vec<String>
 fn get_nonresource_nebula(fields_mods: &FieldsMods, positionals: &Positionals) -> Vec<String> {
     let mut prng = rand::thread_rng();
     let mut add_strings = Vec::new();
-    let obj = fields_mods.positional_weight.choose(&mut prng).unwrap();
-    let roid_choice = match obj {
-        1 => &positionals.fog_outside_set3_macro,  //ok
-        2 => &positionals.fog_outside_set1_whiteblue_macro,  //ok
-        3 => &positionals.fog_outside_set1_lightbrown_macro,  //cuts fps in half......
-        4 => &positionals.fog_outside_set1_big_lightorange_macro,  //ugly
-        5 => &positionals.fog_outside_set1_lightorange_macro,  //broken
-        6 => &positionals.fog_outside_set1_lightblue_macro,  //broken
-        7 => &positionals.fog_outside_set1_big_lightpurple_macro,  //ok i guess, but resource heavy and probably needs lower density
-        8 => &positionals.fog_outside_set1_blue_macro,  //ok
-        9 => &positionals.fog_outside_set1_burgundy_macro,  // 99
-        10 => &positionals.fog_outside_set1_green_macro,  //ok
-        11 => &positionals.fog_outside_set1_darkblue_macro,  // 98
-        12 => &positionals.fog_outside_set1_red_macro,  // ok
-        13 => &positionals.fog_outside_set1_grey_macro,  // broken
-        14 => &positionals.fog_outside_set1_dust_macro,  // ok but heavy
-        15 => &positionals.fog_outside_set1_lightbrown2_macro,  // broken
-        _ => panic!("broken at plain fog"),
-    };
-    let lodrule = &roid_choice.lodrule;
-    let density_factor =
-        roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
-    let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
-    let rotationvariation =
-        roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
-    let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
-    let minnoisevalue =
-        roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
-    let maxnoisevalue =
-        roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
-    let distancefactor = roid_choice.distancefactor;
-    let field = format!("<positional ref=\"{}\" lodrule=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, lodrule, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).to_string();
+    let objone = fields_mods.positional_weight.choose(&mut prng).unwrap();
+    let objtwo = fields_mods.positional_weight.choose(&mut prng).unwrap();
+    let objects = [objone, objtwo];
+    let mut field = "".to_string();
+    for obj in objects.iter() {
+        let roid_choice = match obj {
+            1 => &positionals.fog_outside_set3_macro,  //safe
+            2 => &positionals.fog_outside_set1_whiteblue_macro,  //ok
+            3 => &positionals.fog_outside_set1_lightbrown_macro,  //dead to me
+            4 => &positionals.fog_outside_set1_big_lightorange_macro,  //ugly
+            // 5 => &positionals.fog_outside_set1_lightorange_macro,  //broken
+            // 6 => &positionals.fog_outside_set1_lightblue_macro,  //broken
+            7 => &positionals.fog_outside_set1_big_lightpurple_macro,  //ok i guess, but resource heavy and probably needs lower density
+            8 => &positionals.fog_outside_set1_blue_macro,  //ok
+            9 => &positionals.fog_outside_set1_burgundy_macro,  // safe
+            10 => &positionals.fog_outside_set1_green_macro,  //ok
+            11 => &positionals.fog_outside_set1_darkblue_macro,  // safe
+            12 => &positionals.fog_outside_set1_red_macro,  // safe
+            // 13 => &positionals.fog_outside_set1_grey_macro,  // broken
+            14 => &positionals.fog_outside_set1_dust_macro,  // ok but heavy
+            // 15 => &positionals.fog_outside_set1_lightbrown2_macro,  // broken
+            _ => panic!("broken at plain fog"),
+        };
+        let lodrule = &roid_choice.lodrule;
+        let density_factor =
+            roid_choice.density_factor as f32 * get_variant_in_range(&fields_mods.density_factor);
+        let rotation = roid_choice.rotation as f32 * get_variant_in_range(&fields_mods.rotation);
+        let rotationvariation =
+            roid_choice.rotationvariation as f32 * get_variant_in_range(&fields_mods.rotationvariation);
+        let noisescale = roid_choice.noisescale as f32 * get_variant_in_range(&fields_mods.noisescale);
+        let minnoisevalue =
+            roid_choice.minnoisevalue as f32 * get_variant_in_range(&fields_mods.minnoisevalue);
+        let maxnoisevalue =
+            roid_choice.maxnoisevalue as f32 * get_variant_in_range(&fields_mods.maxnoisevalue);
+        let distancefactor = roid_choice.distancefactor;
+        field.push_str(format!("<positional ref=\"{}\" lodrule=\"{}\" densityfactor=\"{}\" rotation=\"{}\" rotationvariation=\"{}\" noisescale=\"{}\" minnoisevalue=\"{}\" maxnoisevalue=\"{}\" distancefactor=\"{}\" /> \n", roid_choice.name, lodrule, density_factor, rotation as i32, rotationvariation as i32, noisescale as i32, minnoisevalue, maxnoisevalue, distancefactor).as_str());
+    }
     add_strings.push(field);
     add_strings
 }
